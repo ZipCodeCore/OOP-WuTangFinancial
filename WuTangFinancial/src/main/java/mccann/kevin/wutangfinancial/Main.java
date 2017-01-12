@@ -11,7 +11,7 @@ public class Main {
     UI.getUserInput();
     Double fromCountry = CC.getRateFromCode(UI.getInputCountry());
     Double toCountry = CC.getRateFromCode(UI.getOutputCountry());
-        Double convertedAmount = CC.convert(UI.getAmount(), fromCountry, toCountry);
-        System.out.println(convertedAmount);
+    Double convertedAmount = CC.convert(UI.getAmount(), fromCountry, toCountry);
+    System.out.println(convertedAmount);
     }
 }

@@ -1,5 +1,6 @@
 package mccann.kevin.wutangfinancial;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 /**
@@ -36,10 +37,12 @@ public class CurrencyConverter extends Currency{
     }
 
     Double convert(double amount, double fromCountry, double toCountry) {
-        return amount * (toCountry / fromCountry);
+        DecimalFormat decimalFormat = new DecimalFormat("###.##");
+        double total = amount * (toCountry / fromCountry);
+        return Double.valueOf(decimalFormat.format(total));
     }
 
-    double getRateFromCode(String code) {
+    Double getRateFromCode(String code) {
         return currencies.get(code);
     }
 
