@@ -1,10 +1,7 @@
 package armstrong.alexandra.WuTangFinancial;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import java.text.DecimalFormat;
 
 import static org.junit.Assert.*;
 
