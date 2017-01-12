@@ -32,6 +32,27 @@ public class CurrencyConverterTest {
         assertEquals("I expect a Currency Code of USD",expected,actual);
     }
 
-//    @Test
-//    public void
+    @Test
+    public void getCurrencyFromCodeTest() {
+        Currency C = new Currency();
+        CurrencyConverter CC = new CurrencyConverter();
+        double expected = 1.0;
+        double actual = CC.getRateFromCode("USD");
+        assertEquals("USD Rate of 1.0 expected", expected, actual);
+
+    }
+
+    @Test
+    public void CurrencyConverterTestUSDtoEUR() {
+        CurrencyConverter CC = new CurrencyConverter();
+        double amount = 100;
+//        String inputCountry = "USD";
+//        String outputCountry = "EUR";
+        double fromCountry = CC.getRateFromCode("USA");
+        double toCountry = CC.getRateFromCode("EUR");
+        double expected = 94;
+        double actual = CC.convert(100, fromCountry, toCountry);
+        assertEquals("Expected 94 EUR",expected,actual);
+    }
+
 }

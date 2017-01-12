@@ -7,12 +7,11 @@ public class Main {
 
     public static void main(String args[]) {
     CurrencyConverter CC = new CurrencyConverter();
-    double amount = 100;
-    String inputCountry = "EUR";
-    String outputCountry = "EUR";
-    Currency fromCountry = CC.getCurrencyFromCode(inputCountry);
-    Currency toCountry = CC.getCurrencyFromCode(outputCountry);
-        Double convertedAmount = CC.convert(amount, fromCountry, toCountry);
+    UserInput UI = new UserInput();
+    UI.getUserInput();
+    Double fromCountry = CC.getRateFromCode(UI.getInputCountry());
+    Double toCountry = CC.getRateFromCode(UI.getOutputCountry());
+        Double convertedAmount = CC.convert(UI.getAmount(), fromCountry, toCountry);
         System.out.println(convertedAmount);
     }
 }
