@@ -1,5 +1,6 @@
 package squier.john.wutangFinancial;
 
+import java.util.Scanner;
 /**
  * This class converts currencies from one to another as long as both currencies are in
  * DollarExchangeRates
@@ -9,13 +10,8 @@ package squier.john.wutangFinancial;
  */
 public class CurrencyExchanger {
 
-    private DollarExchangeRates rates = new DollarExchangeRates();
-
-    public static void main(String[] args) {
-        return;
-    }
-
     public Double convertCurrency(String inputCurrency, String outputCurrency, Double amountToConvert) {
+        DollarExchangeRates rates = new DollarExchangeRates();
 
         Double inputRate = rates.getDollarExchangeRate(inputCurrency);
         Double outputRate = rates.getDollarExchangeRate(outputCurrency);

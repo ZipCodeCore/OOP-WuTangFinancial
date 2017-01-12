@@ -25,26 +25,37 @@ public class DollarExchangeRates {
         switch(inputCurrency.toLowerCase()) {
 
             case "dollar":
+            case "dollars":
                 return dollar;
             case "euro":
+            case "euros":
                 return euro;
             case "pound":
+            case "pounds":
                 return pound;
             case "rupee":
+            case "rupees":
                 return rupee;
             case "ausdollar":
+            case "ausdollars":
                 return ausDollar;
             case "candollar":
+            case "candollars":
                 return canDollar;
             case "sgpdollar":
+            case "sgpdollars":
                 return sgpDollar;
             case "franc":
+            case "francs":
                 return franc;
             case "ringgit":
+            case "ringgits":
                 return ringgit;
             case "yen":
+            case "yens":
                 return yen;
             case "yuan":
+            case "yuans":
                 return yuan;
             default:
                 return -1.0;
