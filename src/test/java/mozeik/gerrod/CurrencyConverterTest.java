@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by gerrodmozeik on 1/12/17.
  */
-public class CurrencyConverterTest {
+/*public class CurrencyConverterTest {
 
     @Test
 
@@ -36,4 +36,4 @@ public class CurrencyConverterTest {
         Double actual = c2.convertInputValueToOutputValue(1000000.59111111, 1.0000000);
         assertEquals("I expect this to be rounded to 1000000.59", actual, expected);
     }
-}
+}*/
