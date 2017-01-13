@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 
 /**
  * Created by gerrodmozeik on 1/12/17.
+ * This class takes relativeExchangeRate and inputMonetaryValue from Prompter and passes it to
  */
 public class CurrencyConverter {
     double relativeExchangeRate;

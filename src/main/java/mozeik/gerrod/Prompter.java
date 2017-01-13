@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Prompter {
     char caseIdentifier;
     Double inputMonetaryValue;
-    Double outputMonetaryValue;
 
     Scanner scanner = new Scanner(System.in);
 

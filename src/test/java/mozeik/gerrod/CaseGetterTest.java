@@ -16,7 +16,7 @@ public class CaseGetterTest {
         Double expected = 0.94;
         caseGetter.convertCaseIDToRelativeExchangeRate('a');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 0.94", actual, expected);
+        assertEquals("I expect this conversion rate to be 0.94", expected, actual);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class CaseGetterTest {
         Double expected = 1.063829787234043;
         caseGetter.convertCaseIDToRelativeExchangeRate('b');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 1.063829787234043", actual, expected);
+        assertEquals("I expect this conversion rate to be 1.063829787234043", expected, actual);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class CaseGetterTest {
         Double expected = 0.872340425531915;
         caseGetter.convertCaseIDToRelativeExchangeRate('c');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 0.872340425531915", actual, expected);
+        assertEquals("I expect this conversion rate to be 0.872340425531915", expected, actual);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class CaseGetterTest {
         Double expected = 83.317073170731707;
         caseGetter.convertCaseIDToRelativeExchangeRate('d');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 83.317073170731707", actual, expected);
+        assertEquals("I expect this conversion rate to be 83.317073170731707", expected, actual);
     }
 
 
@@ -57,7 +57,7 @@ public class CaseGetterTest {
         Double expected = 0.019320843091335;
         caseGetter.convertCaseIDToRelativeExchangeRate('e');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 0.019320843091335", actual, expected);
+        assertEquals("I expect this conversion rate to be 0.019320843091335", expected, actual);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class CaseGetterTest {
         Double expected = 1.083333333333333;
         caseGetter.convertCaseIDToRelativeExchangeRate('f');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 1.083333333333333", actual, expected);
+        assertEquals("I expect this conversion rate to be 1.083333333333333", expected, actual);
     }
 
     @Test
@@ -77,7 +77,7 @@ public class CaseGetterTest {
         Double expected = 0.706293706293706;
         caseGetter.convertCaseIDToRelativeExchangeRate('g');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 0.706293706293706", actual, expected);
+        assertEquals("I expect this conversion rate to be 0.706293706293706", expected, actual);
     }
 
     @Test
@@ -87,17 +87,17 @@ public class CaseGetterTest {
         Double expected = 4.425742574257426;
         caseGetter.convertCaseIDToRelativeExchangeRate('h');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 4.425742574257426", actual, expected);
+        assertEquals("I expect this conversion rate to be 4.425742574257426", expected, actual);
     }
 
     @Test
 
     public void caseIdentifierSwitchTestI() {
         CaseGetter caseGetter = new CaseGetter();
-        Double expected = 0.03858770718232;
+        Double expected = 25.914988814317674;
         caseGetter.convertCaseIDToRelativeExchangeRate('i');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 0.03858770718232", actual, expected);
+        assertEquals("I expect this conversion rate to be 25.914988814317674", expected, actual);
     }
 
     @Test
@@ -107,7 +107,7 @@ public class CaseGetterTest {
         Double expected = 0.059737569060773;
         caseGetter.convertCaseIDToRelativeExchangeRate('j');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be 0.059737569060773", actual, expected);
+        assertEquals("I expect this conversion rate to be 0.059737569060773", expected, actual);
     }
 
     @Test
@@ -117,7 +117,7 @@ public class CaseGetterTest {
         Double expected = -1.0;
         caseGetter.convertCaseIDToRelativeExchangeRate('k');
         Double actual = caseGetter.relativeExchangeRate;
-        assertEquals("I expect this conversion rate to be -1.0", actual, expected);
+        assertEquals("I expect this conversion rate to be -1.0", expected, actual);
     }
 
 }

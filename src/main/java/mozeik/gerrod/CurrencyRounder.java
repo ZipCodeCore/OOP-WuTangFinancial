@@ -8,9 +8,6 @@ import java.math.RoundingMode;
  */
 public class CurrencyRounder {
 
-    double convertedUnroundedMoney;
-    Double convertedRoundedMoney;
-    int decimalPlaces;
     BigDecimal bd = new BigDecimal(0);
 
     public static double round(double value, int places) {
