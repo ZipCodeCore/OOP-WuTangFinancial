@@ -19,18 +19,8 @@ public class CurrencyConverterTest {
     @Test
     public void deepCurrencyConverterValueTest(){
         CurrencyConverter c2 = new CurrencyConverter();
-        Double expected = 1000000.59;
-        Double actual = c2.convertInputValueToOutputValue(1000000.591111111,1.000000000);
-        assertEquals("I expect 1000000.59",actual,expected);
+        Double expected = 124.18;
+        Double actual = c2.convertInputValueToOutputValue(100.591111111,1.234500000000);
+        assertEquals("I expect 124.18",actual,expected);
     }
-
-    @Test
-    public void currencyRounderTest(){
-        CurrencyConverter c = new CurrencyConverter();
-        Double expected = 12.34;
-        Double actual = c.round(12.341236765,2);
-        assertEquals("I expect this 1 to get rounded to 1.00",expected,actual);
-        System.out.println(actual);
-    }
-
 }
