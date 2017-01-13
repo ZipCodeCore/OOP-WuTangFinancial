@@ -18,11 +18,11 @@ public class WuTangFinancial {
 
     }
 
-    public Double callCurrencyConverter(Double relativeExchangeRate, Double inputMonetaryValue) {
+    /*public Double callCurrencyConverter(Double relativeExchangeRate, Double inputMonetaryValue) {
 
         convertCaseIDToRelativeExchangeRate('a');
         return converter.convertInputValueToOutputValue(relativeExchangeRate,inputMonetaryValue);
-    }
+    }*/
 
 
     public Double convertCaseIDToRelativeExchangeRate(char caseIdentifier) {
