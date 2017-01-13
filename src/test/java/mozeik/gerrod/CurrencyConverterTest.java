@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
     public void currencyRounderTest() {
         CurrencyConverter c = new CurrencyConverter();
         Double expected = 12.45;
-        Double actual = c.round(12.451, 2);
+        Double actual = c.(12.451, 2);
         assertEquals("I expect this 1 to be rounded to 1.00", actual, expected);
         System.out.println(actual);
     }

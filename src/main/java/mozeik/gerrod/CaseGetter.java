@@ -34,7 +34,7 @@ public class CaseGetter {
                 relativeExchangeRate = 4.425742574257426;
                 return relativeExchangeRate;
             case 'i': //Malaysian Ringgit to Japanese Yen
-                relativeExchangeRate = 0.03858770718232;
+                relativeExchangeRate = 25.914988814317673;
                 return relativeExchangeRate;
             case 'j'://Japanese Yen to Chinese Yuan
                 relativeExchangeRate = 0.059737569060773;

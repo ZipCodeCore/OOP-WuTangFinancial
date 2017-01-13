@@ -9,11 +9,6 @@ import java.util.Scanner;
  */
 public class WuTangFinancial {
 
-
-    public Double inputMonetaryValue;
-    public Double outputMonetaryValue;
-    public Double relativeExchangeRate;
-
     public static void main(String[] args) {
         WuTangFinancialEngine wuTangFinancialEngine = new WuTangFinancialEngine();
         wuTangFinancialEngine.startEngine();
