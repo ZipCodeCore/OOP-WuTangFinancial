@@ -5,7 +5,7 @@ import java.math.BigDecimal;
  */
 public class ExchangeRates {
     private static final BigDecimal USD = new BigDecimal(1.00);
-    private static final BigDecimal EUR = new BigDecimal(94);
+    private static final BigDecimal EUR = new BigDecimal(0.94);
     private static final BigDecimal GBP = new BigDecimal(0.82);
     private static final BigDecimal INR = new BigDecimal (68.32);
     private static final BigDecimal AUD = new BigDecimal(1.35);
