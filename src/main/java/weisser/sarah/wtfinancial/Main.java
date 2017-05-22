@@ -6,5 +6,13 @@ package weisser.sarah.wtfinancial;
 public class Main {
 
     public static void main(String[] args) {
+        UserInput input = new UserInput();
+        input.setConvertFrom();
+        input.setConvertTo();
+        input.setAmountToConvert();
+        System.out.println("Converting " + input.getAmountToConvert() + " in "
+                + input.getConvertFrom().toString() + " to " + input.getConvertTo() + ".");
+
+
     }
 }

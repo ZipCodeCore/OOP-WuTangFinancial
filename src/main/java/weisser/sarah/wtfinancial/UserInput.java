@@ -10,12 +10,25 @@ public class UserInput {
     private Currency convertTo;
     private long amountToConvert;
     private int choice;
+    private int convertFromChoice;
+    private int convertToChoice;
     private int counter = 0;
 
-    public int askForConvertFrom() {
-        Scanner scanner = new Scanner(System.in);
+    public int askForConvertFromChoice() {
         System.out.println("What currency would you like to convert from?");
-        askForChoice();
+        convertFromChoice = getChoice();
+        return convertFromChoice;
+    }
+
+    public int askForConvertToChoice() {
+        System.out.println("What currency would you like to convert to?");
+        convertToChoice = getChoice();
+        return convertToChoice;
+    }
+
+    public int getChoice() {
+        System.out.println(printChoice());
+        Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt() - 1;
         while (((choice < 0) || (choice > 10)) && counter < 10) {
             System.out.println("That is not a valid option.");
@@ -26,18 +39,15 @@ public class UserInput {
                 return choice;
 
             }
-            askForChoice();
+            printChoice();
             choice = scanner.nextInt() - 1;
-
-
-
         }
 
         return choice;
     }
 
     public Currency setConvertFrom() {
-        choice = askForConvertFrom();
+        choice = askForConvertFromChoice();
         if (choice == -1) {
             return null;
         }
@@ -50,9 +60,22 @@ public class UserInput {
         return convertFrom;
     }
 
-    public void askForChoice() {
-        System.out.println("Please enter the number that corresponds to your choice:");
-        System.out.print("(1) US Dollar\n" +
+    public Currency setConvertTo() {
+        choice = askForConvertToChoice();
+        if (choice == -1) {
+            return null;
+        }
+        CurrencyCreator creator = new CurrencyCreator();
+        convertTo = creator.setCurrency(choice);
+        return convertTo;
+    }
+
+    public Currency getConvertTo() {
+        return convertTo;
+    }
+
+    public String printChoice() {
+        String choiceString = "Please enter the number that corresponds to your choice:\n" + "(1) US Dollar\n" +
                 "(2) Euro\n" +
                 "(3) British Pound\n" +
                 "(4) Indian Rupee\n" +
@@ -62,6 +85,22 @@ public class UserInput {
                 "(8) Swiss Franc\n" +
                 "(9) Malaysian Ringgit\n" +
                 "(10) Japanese Yen\n" +
-                "(11) Chinese Yuan Renminbi\n");
+                "(11) Chinese Yuan Renminbi";
+        return choiceString;
+    }
+
+    public long setAmountToConvert() {
+        System.out.println("How many units of the " + convertFrom + " would you like to exchange?");
+        Scanner scanner = new Scanner(System.in);
+        amountToConvert = scanner.nextLong();
+        if (amountToConvert <= 0) {
+            System.out.println("Don't waste my time if you don't have any money.");
+            amountToConvert = 0;
+        }
+        return amountToConvert;
+    }
+
+    public long getAmountToConvert() {
+        return amountToConvert;
     }
 }
