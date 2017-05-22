@@ -1,6 +1,6 @@
 # Wu-Tang Financial
 
-### Currency Exchange
+### mastakim.Currency Exchange
 
 ## Objectives
 
@@ -11,11 +11,11 @@
 
 After writing an amazing piece of software, Tariq was dubbed the Official METHOD-Man, and is now going on a international tour with his fellow Wu Brothers, coding and dropping Fresh BARS!!!! CHEYAH! BONG!!!!
 
-Now that he is an INTERNATIONAL rock star making crazy loot, he must make sure that he is being paid his rate. So, he needs you young coders to create him a Currency Exchange application, that will make sure he is not losing money in all his transactions. He would do it himself, but he is currently working with the RZA on the Man with Iron Fist 3 movie playing a character called "Man with the IRON Clad CODE" coming to theaters in 2018.
+Now that he is an INTERNATIONAL rock star making crazy loot, he must make sure that he is being paid his rate. So, he needs you young coders to create him a mastakim.Currency Exchange application, that will make sure he is not losing money in all his transactions. He would do it himself, but he is currently working with the RZA on the Man with Iron Fist 3 movie playing a character called "Man with the IRON Clad CODE" coming to theaters in 2018.
 
 ## Exchange Rates
 
-| Currency | Rate |
+| mastakim.Currency | Rate |
 |----------|------|
 | Us Dollar| 1.00 |
 | Euro                  | 0.94 |
