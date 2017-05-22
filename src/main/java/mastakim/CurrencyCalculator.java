@@ -1,6 +1,6 @@
 package mastakim;
 
-public class App {
+public class CurrencyCalculator {
 
     public static void main(String[] args) {
 
