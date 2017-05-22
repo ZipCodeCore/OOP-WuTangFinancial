@@ -19,10 +19,10 @@ public class testConversionToolToUSDollar {
         double euro=5.00;
 
         //when
-        String actual= conversionToolToUSDollar.convertEuroToUSDollar(euro);
+        double actual= conversionToolToUSDollar.convertEuroToUSDollar(euro);
 
         //then
-        Assert.assertEquals("Should convert euros to dollars", "5.32", actual);
+        Assert.assertEquals("Should convert euros to dollars", 5.32, actual, 0.01);
     }
 
 
@@ -38,9 +38,9 @@ public class testConversionToolToUSDollar {
         double pound=5.00;
 
         //when
-        String actual= conversionToolToUSDollar.convertPoundToUSDollar(pound);
+        double actual= conversionToolToUSDollar.convertPoundToUSDollar(pound);
         //then
-        Assert.assertEquals("should convert pounds to dollars and return a string", "6.10", actual);
+        Assert.assertEquals("should convert pounds to dollars and return a string", 6.10, actual, 0.01);
 
 
     }
@@ -49,9 +49,9 @@ public class testConversionToolToUSDollar {
         //given
         double rupee= 100;
         //when
-        String actual= conversionToolToUSDollar.convertIndianRupeeToUSDollar(rupee);
+        double actual= conversionToolToUSDollar.convertIndianRupeeToUSDollar(rupee);
         //then
-        Assert.assertEquals("should convert rupees into dollars and return a string", "1.46", actual);
+        Assert.assertEquals("should convert rupees into dollars and return a string", 1.46, actual, 0.01);
     }
 
     @Test
@@ -59,9 +59,9 @@ public class testConversionToolToUSDollar {
         //given
         double australianDollar=5.00;
         //when
-        String actual= conversionToolToUSDollar.convertAustralianDollarToUSDollar(australianDollar);
+        double actual= conversionToolToUSDollar.convertAustralianDollarToUSDollar(australianDollar);
         //then
-        Assert.assertEquals("should convert Australian dollars to US dollars", "3.70", actual);
+        Assert.assertEquals("should convert Australian dollars to US dollars", 3.70, actual, 0.01);
     }
 
     @Test
@@ -69,9 +69,9 @@ public class testConversionToolToUSDollar {
         //given
         double canadianDollar=5.00;
         //when
-        String actual= conversionToolToUSDollar.convertCanadianDollarToUSDollar(canadianDollar);
+        double actual= conversionToolToUSDollar.convertCanadianDollarToUSDollar(canadianDollar);
         //then
-        Assert.assertEquals("should convert Canadian dollars to US dollars", "3.79", actual);
+        Assert.assertEquals("should convert Canadian dollars to US dollars", 3.79, actual, 0.01);
     }
 
     @Test
@@ -79,9 +79,9 @@ public class testConversionToolToUSDollar {
         //given
         double singaporeDollar=5.00;
         //when
-        String actual= conversionToolToUSDollar.convertSingaporeDollarToUSDollar(singaporeDollar);
+        double actual= conversionToolToUSDollar.convertSingaporeDollarToUSDollar(singaporeDollar);
         //then
-        Assert.assertEquals("should convert the Singapore dollar to US dollars", "3.50", actual);
+        Assert.assertEquals("should convert the Singapore dollar to US dollars", 3.50, actual, 0.01);
     }
 
     @Test
@@ -89,9 +89,9 @@ public class testConversionToolToUSDollar {
         //given
         double swissFranc=5.00;
         //when
-        String actual= conversionToolToUSDollar.convertSwissFrancToUSDollar(swissFranc);
+        double actual= conversionToolToUSDollar.convertSwissFrancToUSDollar(swissFranc);
         //then
-        Assert.assertEquals("should convert the franc to US dollars", "4.95", actual);
+        Assert.assertEquals("should convert the franc to US dollars", 4.95, actual, 0.01);
     }
 
     @Test
@@ -99,9 +99,9 @@ public class testConversionToolToUSDollar {
         //given
         double ringgit=5.00;
         //when
-        String actual= conversionToolToUSDollar.convertMalaysianRinggitToUSDollar(ringgit);
+        double actual= conversionToolToUSDollar.convertMalaysianRinggitToUSDollar(ringgit);
         //then
-        Assert.assertEquals("should convert the Malaysian ringgit to US dollars", "1.12", actual);
+        Assert.assertEquals("should convert the Malaysian ringgit to US dollars", 1.12, actual, 0.01);
     }
 
     @Test
@@ -109,9 +109,9 @@ public class testConversionToolToUSDollar {
         //given
         double yen=100.00;
         //when
-        String actual= conversionToolToUSDollar.convertJapaneseYenToUSDollar(yen);
+        double actual= conversionToolToUSDollar.convertJapaneseYenToUSDollar(yen);
         //then
-        Assert.assertEquals("should convert the yen to US dollars", "0.86", actual);
+        Assert.assertEquals("should convert the yen to US dollars", 0.86, actual, 0.01);
     }
 
     @Test
@@ -119,9 +119,9 @@ public class testConversionToolToUSDollar {
         //given
         double yuan= 5.00;
         //when
-        String actual= conversionToolToUSDollar.convertChineseYuanToUSDollar(yuan);
+        double actual= conversionToolToUSDollar.convertChineseYuanToUSDollar(yuan);
         //then
-        Assert.assertEquals("should convert yuan to US dollars", "0.72", actual);
+        Assert.assertEquals("should convert yuan to US dollars", 0.72, actual, 0.01);
     }
 
 
