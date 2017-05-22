@@ -27,9 +27,9 @@ public class Console {
     }
 
 
-    public static String moneyToString(double amount) {
-        double whole = amount / 100;
-        double  part = amount % 100;
+    public static String moneyToString(long amount) {
+        long whole = amount / 100;
+        long  part = amount % 100;
         return String.format("$%d.%02d", whole, part);
     }
 
