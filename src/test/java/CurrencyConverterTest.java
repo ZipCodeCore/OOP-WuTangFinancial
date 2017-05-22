@@ -17,24 +17,46 @@ public class CurrencyConverterTest {
     }
 
     @Test
+    public void testGetFirstExchangeRate(){
+
+
+    }
+
+    @Test
+    public void testGetSecondExchangeRate(){
+
+
+    }
+
+    @Test
     public void testConvertDollarToEuro(){ //dollar to euro
         //:Given
         String firstCountry = "USD";
-        String secondCountry = "Euro";
+        String secondCountry = "EURO";
         double amount = 100.00;
+        double expectedAmount = 94.00;
+
         //:When
+        double actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
+        Assert.assertEquals("The expected converted amount from USD to EURO is ", expectedAmount, actualAmount, 0.001);
 
     }
 
     @Test
     public void testConvertEuroToDollar(){  //Euro to dollar
         //:Given
+        String firstCountry = "EURO";
+        String secondCountry = "USD";
+        double amount = 94.00;
+        double expectedAmount = 100.00;
 
         //:When
+        double actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
+        Assert.assertEquals("The expected converted amount from USD to EURO is ", expectedAmount, actualAmount, 0.001);
 
     }
 
