@@ -26,22 +26,23 @@ public class Console {
         return scanner.nextLine();
     }
 
-    public static long getMoneyInput(String prompt, Object... args) {
+
+    public static String moneyToString(double amount) {
+        double whole = amount / 100;
+        double  part = amount % 100;
+        return String.format("$%d.%02d", whole, part);
+    }
+
+    public static Double getDoubleInput(String prompt, Object... args) {
         String stringInput = getStringInput(prompt, args);
         try {
-            double doubleInput = Double.parseDouble(stringInput);
-            return Math.round(doubleInput*100);
+            Double doubleInput = Double.parseDouble(stringInput);
+            return doubleInput;
         } catch (NumberFormatException nfe) {
             println("[ %s ] is an invalid input!", stringInput);
             println("Try inputting a numeric value!");
-            return getMoneyInput(prompt, args);
+            return getDoubleInput(prompt, args);
         }
-    }
-
-    public static String moneyToString(long amount) {
-        long whole = amount / 100;
-        long part = amount % 100;
-        return String.format("$%d.%02d", whole, part);
     }
 
 }
