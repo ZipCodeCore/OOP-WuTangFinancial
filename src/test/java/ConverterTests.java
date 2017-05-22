@@ -3,25 +3,37 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by andrewwong on 5/22/17.
  */
 public class ConverterTests {
-    ExchangeRates rate;
+    double rateIn;
+    double rateOut;
     BigDecimal amountIn;
     Converter converter;
 
     @Before
     public void init() {
-        amountIn = new BigDecimal(500.00);
+        amountIn = new BigDecimal(100.00);
         converter = new Converter();
     }
 
     @Test
     public void testUSDToEuro() {
+
         //Given
+        rateIn = ExchangeRates.getUSD();
+        rateOut = ExchangeRates.getEUR();
+        BigDecimal actualAmountOut;
+        BigDecimal expectedAmountOut = new BigDecimal(00.94);
+
         //When
+        actualAmountOut = converter.convert(amountIn,rateIn,rateOut);
+
         //Then
+        assertEquals(expectedAmountOut, actualAmountOut);
     }
 
     @Test
