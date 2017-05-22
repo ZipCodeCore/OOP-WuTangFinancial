@@ -11,9 +11,9 @@ public class InputTest {
         //Given:
         InputSetup inputSetup = Mockito.mock(InputSetup.class);
         //When:
-        Mockito.when(inputSetup.askForInput("Please enter an initial currency type from the menu")).thenReturn("US Dollars");
+        Mockito.when(inputSetup.askForInput("Please enter an initial currency type from the menu")).thenReturn("US_Dollars");
         //Then:
-        Assert.assertTrue(Input.askForInitialCurrencyType(inputSetup).equals("US Dollars"));
+        Assert.assertTrue(Input.askForInitialCurrencyType(inputSetup).equals("US_Dollars"));
     }
 
     @Test
