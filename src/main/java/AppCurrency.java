@@ -12,9 +12,9 @@ public class AppCurrency {
 
         System.out.println("Welcome to Wu Tang Financial's Official Currency Calculator powered by WorldStarHipHop's Java Engine");
 
-        //CurrencyConverter converter = new CurrencyConverter();
+        CurrencyConverter converter = new CurrencyConverter();
 
-        //System.out.println(converter.convertTo("USD", "Euro", 100.00 ));
+        System.out.println(converter.convertTo("ETHER", "AUS", 100.00 ));
 
 
     }
