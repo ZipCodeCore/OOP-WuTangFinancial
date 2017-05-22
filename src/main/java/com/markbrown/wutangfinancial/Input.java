@@ -21,6 +21,6 @@ public class Input {
     }
 
     public static String askForExit(InputSetup asker) {
-        return asker.askForInput("Would you like to exit? Type exit.");
+        return asker.askForInput("Would you like to exit? Type exit. To stay hit return.");
     }
 }

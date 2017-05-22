@@ -41,7 +41,7 @@ public class InputTest {
         //Given:
         InputSetup inputSetup = Mockito.mock(InputSetup.class);
         //When:
-        Mockito.when(inputSetup.askForInput("Would you like to exit? Type exit.")).thenReturn("Exit");
+        Mockito.when(inputSetup.askForInput("Would you like to exit? Type exit. To stay hit return.")).thenReturn("Exit");
         //Then:
         Assert.assertTrue(Input.askForExit(inputSetup).equals("Exit"));
     }
