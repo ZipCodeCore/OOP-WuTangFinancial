@@ -10,11 +10,11 @@ public class DollarConversionTest {
     public void dollarsToEurosTest(){
         DollarConversion dollarConversion = new DollarConversion();
 
-        double expected = 94.50;
+        double expected = 94.47;
 
         double actual = dollarConversion.dollarToEuros(100.50);
 
-        Assert.assertEquals("This should return 94.00", expected, actual,.05);
+        Assert.assertEquals("This should return 94.00", expected, actual,.01);
     }
 
     @Test
@@ -28,7 +28,15 @@ public class DollarConversionTest {
         Assert.assertEquals("This should return 82.62", expected ,actual, .01);
     }
 
-    
+    @Test
+    public void dollarsToRupeeTest(){
+        DollarConversion dollarConversion = new DollarConversion();
+
+        double expected = 7173.60;
+        double actual = dollarConversion.dollarToRupee(105);
+
+        Assert.assertEquals("This will return 7173.60", expected ,actual,.01);
+    }
 
 
 }

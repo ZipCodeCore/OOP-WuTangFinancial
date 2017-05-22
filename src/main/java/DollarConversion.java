@@ -12,4 +12,9 @@ public class DollarConversion {
         double finalConversion = input * .82;
         return finalConversion;
     }
+
+    public double dollarToRupee(double input){
+        double finalConversion = input * 68.32;
+        return finalConversion;
+    }
 }
