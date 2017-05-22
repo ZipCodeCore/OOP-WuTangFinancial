@@ -1,7 +1,11 @@
-.idea/*
+# Intellij
+.idea/
 *.iml
-*/target/*
-*/target/**
-.classpath
-.project
-.settings/
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
