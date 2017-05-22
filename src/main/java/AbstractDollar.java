@@ -5,6 +5,6 @@ public abstract class AbstractDollar {
 
     public abstract float toUSDollar();
 
-    
+
 
 }

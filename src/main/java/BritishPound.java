@@ -2,4 +2,6 @@
  * Created by rahmirford on 5/22/17.
  */
 public class BritishPound {
+    private double rate = 0.82;
+
 }
