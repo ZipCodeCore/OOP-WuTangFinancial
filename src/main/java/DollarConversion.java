@@ -38,5 +38,8 @@ public class DollarConversion {
         return finalConversion;
     }
 
-
+    public double dollarToMalaysianRinggit(double input){
+        double finalConversion = input * 4.47;
+        return finalConversion;
+    }
 }
