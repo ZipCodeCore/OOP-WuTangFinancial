@@ -15,9 +15,12 @@ public class Input {
         return asker.askForInput("Please enter a target currency type from the menu");
     }
 
-    public static long askForMonetaryAmount(InputSetup asker) {
-        String money = asker.askForInput("Please enter the amount in currency units. Only first two decimals are accepted.");
-        return (long) (Double.parseDouble(money) * 100);
+    public static String askForMonetaryAmount(InputSetup asker) {
+        return asker.askForInput("Please enter the amount in currency units. Only first two decimals are accepted.");
+    }
+
+    public static long convertMoneyToLongType(String input) {
+        return (long) (Double.parseDouble(input)*100);
     }
 
     public static String askForExit(InputSetup asker) {

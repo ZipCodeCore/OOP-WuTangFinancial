@@ -33,7 +33,12 @@ public class InputTest {
         //When:
         Mockito.when(inputSetup.askForInput("Please enter the amount in currency units. Only first two decimals are accepted.")).thenReturn("100.00");
         //Then:
-        Assert.assertTrue(Input.askForMonetaryAmount(inputSetup) == 10000);
+        Assert.assertTrue(Input.askForMonetaryAmount(inputSetup).equals("100.00"));
+    }
+
+    @Test
+    public void testAskForMonetaryAmountAsLone() {
+        Assert.assertTrue(Input.convertMoneyToLongType("100.00") == 10000);
     }
 
     @Test

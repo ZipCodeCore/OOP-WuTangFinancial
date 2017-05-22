@@ -14,7 +14,8 @@ public class CurrencyConverterEngine {
             if (Input.askForExit(asker).equalsIgnoreCase("Exit")) {break;}
             Print.printAvailableCurrencies();
             obtainStartingCurrency();
-
+            obtainMoney();
+            obtainMoneyInTargetCurrency();
 
         }
 
@@ -29,4 +30,17 @@ public class CurrencyConverterEngine {
         CurrentCurrencyInformation.setCurrentCurrencyType(currencyInput);
         Print.printCurrentCurrency();
     }
+
+    private static void obtainMoney() {
+        InputSetup asker = new InputSetup(System.in, System.out);
+        String money = Input.askForMonetaryAmount(asker);
+        while (!InputChecker.checkForValidMoneyInput(money)) {
+            money = Input.askForInitialCurrencyType(asker);
+        }
+        long moneyAsLong = Input.convertMoneyToLongType(money);
+        CurrentMoneyInformation.setMoneyInOneHundredths(moneyAsLong);
+        Print.printCurrentMonetaryAmount();
+    }
+
+    private static void obtainMoneyInTargetCurrency() {}
 }

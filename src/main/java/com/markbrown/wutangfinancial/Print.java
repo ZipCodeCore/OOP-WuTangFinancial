@@ -35,5 +35,13 @@ public class Print {
         System.out.println();
     }
 
+    public static void printCurrentMonetaryAmount() {
+        System.out.println();
+        System.out.print("Currency amount: ");
+        System.out.printf("%,.2f", CurrentMoneyInformation.getMoneyInCurrency());
+        System.out.print(" " + CurrentCurrencyInformation.getCurrentCurrencyType());
+        System.out.println();
+    }
+
 
 }

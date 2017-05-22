@@ -16,4 +16,6 @@ public class CurrentMoneyInformation {
     public static long getMoneyInOneHundredths() {
         return moneyInOneHundredths;
     }
+
+    public static double getMoneyInCurrency() { return (double) moneyInOneHundredths / 100;}
 }
