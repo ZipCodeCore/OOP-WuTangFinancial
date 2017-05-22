@@ -8,13 +8,14 @@ public class AppCurrency {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        //Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to Wu Tang Financial's Official Currency Calculator powered by WorldStarHipHop's Java Engine");
 
-        int choice = input.nextInt();
+        CurrencyConverter convy = new CurrencyConverter();
 
-        System.out.println(choice);
+        System.out.println(convy.convertTo("USD", "Euro", 100.00 ));
+
 
     }
 }

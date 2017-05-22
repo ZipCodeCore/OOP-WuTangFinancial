@@ -19,7 +19,9 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertDollarToEuro(){ //dollar to euro
         //:Given
-
+        String firstCountry = "USD";
+        String secondCountry = "Euro";
+        double amount = 100.00;
         //:When
 
         //:Then
