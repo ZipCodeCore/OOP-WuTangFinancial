@@ -68,5 +68,13 @@ public class DollarConversionTest {
         Assert.assertEquals("This should return 254.54", expected, actual, 01);
     }
 
-    
+    @Test
+    public void dollarToSwissFranc(){
+        DollarConversion dollarConversion = new DollarConversion();
+
+        double expected = 26.26;
+        double actual = dollarConversion.dollarToSwissFranc(26);
+
+        Assert.assertEquals("This should return 26.26", expected, actual, .01);
+    }
 }

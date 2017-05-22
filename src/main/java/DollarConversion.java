@@ -32,4 +32,11 @@ public class DollarConversion {
         double finalConversion = input * 1.43;
         return finalConversion;
     }
+
+    public double dollarToSwissFranc(double input){
+        double finalConversion = input * 1.01;
+        return finalConversion;
+    }
+
+
 }
