@@ -1,49 +1,49 @@
 /**
  * Created by jennifermcginty on 5/22/17.
  */
-public class DollarConversion {
+public class USADollarConversion {
 
-    public double dollarToEuros(double input){
+    public double americanDollarToEuros(double input){
         double finalConversion = input * .94;
         return finalConversion;
     }
 
-    public double dollarToPounds(double input){
+    public double americanDollarToPounds(double input){
         double finalConversion = input * .82;
         return finalConversion;
     }
 
-    public double dollarToRupee(double input){
+    public double americanDollarToRupee(double input){
         double finalConversion = input * 68.32;
         return finalConversion;
     }
 
-    public double dollarsToAustralianDollar(double input){
+    public double americanDollarsToAustralianDollar(double input){
         double finalConversion = input * 1.35;
         return finalConversion;
     }
 
-    public double dollarToCanadianDollars(double input){
+    public double americanDollarToCanadianDollars(double input){
         double finalConversion = input * 1.32;
         return finalConversion;
     }
 
-    public double dollarToSingaporeDollars(double input){
+    public double americanDollarToSingaporeDollars(double input){
         double finalConversion = input * 1.43;
         return finalConversion;
     }
 
-    public double dollarToSwissFranc(double input){
+    public double americanDollarToSwissFranc(double input){
         double finalConversion = input * 1.01;
         return finalConversion;
     }
 
-    public double dollarToMalaysianRinggit(double input){
+    public double americanDollarToMalaysianRinggit(double input){
         double finalConversion = input * 4.47;
         return finalConversion;
     }
 
-    public double dollarToJapaneseYen(double input){
+    public double americanDollarToJapaneseYen(double input){
         double finalConversion = input * 115.84;
         return finalConversion;
     }
