@@ -9,20 +9,37 @@ public class Calculate {
 
     double money;
     double newSum;
-    Map<String, Double> currentCurrency = new TreeMap<>();
+    static Map<String, Double> currentCurrency = new TreeMap<>();
+    double currentRate;
 
 
-    public double convertToUSDollar(double money, Currency currency) {//take an enum, and money amount, to do the calculations
+    public double conversionMethod(double money, Currency currency) {//take an enum, and money amount, to do the calculations
+
+        money = money / currentRate;
 
         switch (currency) {
-            case EURO:// when called euro calls method to change it to usd, then convert to euro
-                newSum = money * 1.01;
-                money = newSum * 0.94;
-                break;
+            case USD:
+                return convertUSDToEuros(money);
+            case EURO:
+                return convertUSDToEuros(money);
             case SWISSFRANC:
-                newSum = money * 1.01;
-                money = newSum * 0.94;
-                break;
+               return convertUSDtoSwissFranc(money);
+            case AUSTRALIANDOLLAR:
+                return convertUSDToAustralianDollar(money);
+            case CANADIANDOLLAR:
+                return convertUSDToCanadianDollar(money);
+            case SINGAPORIANDOLLAR:
+                return convertUSDToSingaporeanDollar(money);
+            case YUAN:
+                return convertUSDToYuan(money);
+            case YEN:
+                return convertUSDToYen(money);
+            case RINGGIT:
+                return convertUSDToRinggit(money);
+            case RUPEE:
+                return convertUSDToRupee(money);
+            case BRITISHPOUND:
+                return convertUSDToPound(money);
             default:
                 break;
         }
@@ -32,19 +49,22 @@ public class Calculate {
 
 
     public double convertUSDToEuros(double money) {
-        money = money * 0.94;
+        currentRate = 0.94;
+        money = money * currentRate;
         currentCurrency.put("€", money);
         return money;
     }
 
     public double convertUSDToPound(double money) {
-        money = money * 0.82;
-        currentCurrency.put("£",money);
+        currentRate = 0.82;
+        money = money * currentRate;
+        currentCurrency.put("£", money);
         return money;
     }
 
     public double convertUSDToRupee(double money) {
-        money = money * 68.32;
+        currentRate = 68.32;
+        money = money * currentRate;
         return money;
     }
 
@@ -64,7 +84,6 @@ public class Calculate {
     }
 
     public double convertUSDtoSwissFranc(double money) {
-
         money = money * 1.01;
         return money;
     }
@@ -84,7 +103,8 @@ public class Calculate {
         return money;
     }
 
-    public double convertEurosToUSD(double money){
+    public double convertEurosToUSD(double money) {
+        money = money / 0.94;
         return money;
     }
 }
