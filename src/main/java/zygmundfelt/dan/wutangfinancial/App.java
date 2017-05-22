@@ -1,28 +1,39 @@
 package zygmundfelt.dan.wutangfinancial;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 /**
  * Welcome to the 36 chambers...
  *
  */
 public class App {
 
-    public static void main( String[] args ) {
+    private static void appEngine() {
+        boolean finished = false;
         CurrencyConverter.ConversionRate fromRate, toRate;
-        IOHandler.welcomeMessage();
-        String name = IOHandler.getStringInput("What's your name?");
-        IOHandler.printCurrencyMenu(name);
-        try {
-            fromRate = IOHandler.getInitialCurrencyType();
-            toRate = IOHandler.getFinalCurrencyType();
+
+        while(!finished) {
+            fromRate = IOHandler.getCurrencyType("What sort of currency you starting with?");
+            toRate = IOHandler.getCurrencyType("What sort of currency you leaving with?");
             CurrencyConverter converter = new CurrencyConverter(fromRate, toRate);
             long initialAmount = IOHandler.getMoneyInput("How much " + fromRate.toString() + " are you looking to exchange?");
             long finalAmount = converter.convert(initialAmount);
             IOHandler.printMoney(finalAmount,toRate);
-        } catch (Exception e) {
-            IOHandler.println("Don't be funny with your money. Peace.");
+            finished = IOHandler.promptContinue();
         }
+    }
 
+    private static void introduction() {
+        IOHandler.welcomeMessage();
+        String name = IOHandler.getStringInput("What's your name?");
+        IOHandler.printCurrencyMenu(name);
+    }
+
+    public static void main( String[] args ) {
+        introduction();
+        try {
+            appEngine();
+            IOHandler.exitMessage();
+        } catch (Exception e) {
+            IOHandler.println("Not a valid currency. Don't be funny with your money. Peace.\n");
+        }
     }
 }
