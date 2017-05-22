@@ -7,4 +7,9 @@ public class DollarConversion {
         double finalConversion = input * .94;
         return finalConversion;
     }
+
+    public double dollarToPounds(double input){
+        double finalConversion = input * .82;
+        return finalConversion;
+    }
 }
