@@ -6,7 +6,7 @@ public class CurrencyConverter {
 
     public double convertToEuro(double usDollarConvertedValue){
 
-        return 0;
+        return ;
     }
 
     public double convertToBritishPound(double usDollarConvertedValue){
