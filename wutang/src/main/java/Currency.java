@@ -3,7 +3,7 @@
  */
 public abstract class Currency
 {
-	private float rate;
+	private double rate;
 	private double amount;
 	private String name;
 
@@ -14,18 +14,18 @@ public abstract class Currency
 		this.name = "Unit";
 	}
 
-	public Currency(String name, double amount, float rate)
+	public Currency(String name, double amount, double rate)
 	{
 		this.name = name;
 		this.amount = amount;
 		this.rate = rate;
 	}
 
-	public float getRate() {
+	public double getRate() {
 		return rate;
 	}
 
-	public void setRate(float rate) {
+	public void setRate(double rate) {
 		this.rate = rate;
 	}
 

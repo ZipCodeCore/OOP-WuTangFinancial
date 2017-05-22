@@ -3,8 +3,13 @@
  */
 public class BritishGrandPound extends Currency
 {
-	public BritishGrandPound(String name, double amount, float rate)
+	public BritishGrandPound()
 	{
-		super(name, amount, rate);
+		super("GBP", 1.0, 0.84);
+	}
+
+	public BritishGrandPound(double amount)
+	{
+		super("GBP", amount, 0.84);
 	}
 }

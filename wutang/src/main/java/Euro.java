@@ -3,9 +3,13 @@
  */
 public class Euro extends Currency
 {
-	public Euro(String name, double amount, float rate)
+	public Euro()
 	{
-		super(name, amount, rate);
+		super("EUR", 1.0, 0.94);
 	}
 
+	public Euro(double amount)
+	{
+		super("EUR", amount, 0.94);
+	}
 }

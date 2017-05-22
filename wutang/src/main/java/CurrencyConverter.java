@@ -6,15 +6,24 @@ public class CurrencyConverter
 
 	public Currency currencyOne;
 	public Currency currencyTwo;
+	public Currency convertedCurrency;
+	public Currency unconvertedCurrency;
+	public Currency conversionType;
 
-	public double convertTo(Currency currencyOne)
+	public void convertTo(Currency conversionType)
 	{
-		return 1.0;
+		this.conversionType = conversionType;
 	}
 
-	public double convert(Currency currencyOne)
+	public void convertFrom(Currency unconvertedCurrency)
 	{
-		return 1.0;
+		this.unconvertedCurrency = unconvertedCurrency;
 	}
+
+	public void convertCurrency(Currency unconvertedCurrency)
+	{
+
+	}
+
 
 }
