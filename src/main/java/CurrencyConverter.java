@@ -4,25 +4,55 @@
 public class CurrencyConverter {
 
 
-    public double convertToEuro(float usDollarConvertedValue){return 0;}
+    public double convertToEuro(double usDollarConvertedValue){
 
-    public double convertToBritishPound(float usDollarConvertedValue){return 0;}
+        return 0;
+    }
 
-    public double convertToIndianRupee(float usDollarConvertedValue){return 0;}
+    public double convertToBritishPound(double usDollarConvertedValue){
 
-    public double convertToAustralianDollar(float usDollarConvertedValue){return 0;}
+        return 0;
+    }
 
-    public double convertToCanadianDollar(float usDollarConvertedValue){return 0;}
+    public double convertToIndianRupee(double usDollarConvertedValue){
 
-    public double convertToSingaporeDollar(float usDollarConvertedValue){return 0;}
+        return 0;
+    }
 
-    public double convertToSwissFranc(float usDollarConvertedValue){return 0;}
+    public double convertToAustralianDollar(double usDollarConvertedValue){
 
-    public double convertToMalaysianRinggit(float usDollarConvertedValue){return 0;}
+        return 0;
+    }
 
-    public double convertToJapaneseYen(float usDollarConvertedValue){return 0;}
+    public double convertToCanadianDollar(double usDollarConvertedValue){
 
-    public double convertToChineseYuanRenminbi(float usDollarConvertedValue){return 0;}
+        return 0;
+    }
+
+    public double convertToSingaporeDollar(double usDollarConvertedValue){
+
+        return 0;
+    }
+
+    public double convertToSwissFranc(double usDollarConvertedValue){
+
+        return 0;
+    }
+
+    public double convertToMalaysianRinggit(double usDollarConvertedValue){
+
+        return 0;
+    }
+
+    public double convertToJapaneseYen(double usDollarConvertedValue){
+
+        return 0;
+    }
+
+    public double convertToChineseYuanRenminbi(double usDollarConvertedValue){
+
+        return 0;
+    }
 
 
 }
