@@ -165,7 +165,7 @@ public class PaymentTest {
     @Test
     public void convertMYRtoJPYTest(){
         //Given
-        long expected = 25727;
+        long expected = 25915;
 
         //When
         Payment result = myr.convertTo(JPY);

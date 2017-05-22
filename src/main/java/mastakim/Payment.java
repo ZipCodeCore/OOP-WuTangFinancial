@@ -4,6 +4,7 @@ public class Payment {
 
     private long amount;
     private Currency currency;
+    private final long BIG = 100000000000000L;
 
     public Payment(long amount, Currency currency){
         this.amount = amount;
@@ -28,7 +29,7 @@ public class Payment {
     }
 
     public Payment convertTo(Currency currency){
-        long usdAmount = amount*this.currency.toDollar()/1000000;
-        return new Payment(usdAmount*currency.fromDollar()/1000000, currency);
+        long usdAmount = amount*this.currency.toDollar();
+        return new Payment(usdAmount*currency.fromDollar()/BIG, currency);
     }
 }
