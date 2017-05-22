@@ -17,4 +17,9 @@ public class DollarConversion {
         double finalConversion = input * 68.32;
         return finalConversion;
     }
+
+    public double dollarsToAustralianDollar(double input){
+        double finalConversion = input * 1.35;
+        return finalConversion;
+    }
 }
