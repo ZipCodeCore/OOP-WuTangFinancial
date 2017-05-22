@@ -3,4 +3,8 @@
  */
 public class USDollar {
     private double rate = 1.00;
+
+    public double getRate() {
+        return rate;
+    }
 }
