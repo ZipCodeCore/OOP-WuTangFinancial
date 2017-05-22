@@ -3,9 +3,6 @@
  */
 public class CurrencyConverter
 {
-
-	public Currency currencyOne;
-	public Currency currencyTwo;
 	public Currency convertedCurrency;
 	public Currency unconvertedCurrency;
 	public Currency conversionType;
@@ -22,7 +19,20 @@ public class CurrencyConverter
 
 	public void convertCurrency(Currency unconvertedCurrency)
 	{
-
+		conversionType = convertedCurrency;
+		double conversionRate = conversionType.getRate();
+		double conversionCheck = unconvertedCurrency.getRate();
+		double amountToConvert = unconvertedCurrency.getAmount();
+		double convertedAmount;
+		if (conversionRate > conversionCheck)
+		{
+			convertedAmount = amountToConvert * conversionRate;
+		}
+		else
+		{
+			convertedAmount = amountToConvert / conversionRate;
+		}
+		convertedCurrency.setAmount(convertedAmount);
 	}
 
 
