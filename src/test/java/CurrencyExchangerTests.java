@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -8,6 +9,9 @@ public class CurrencyExchangerTests {
     @Test
     public void DollarToEuroTest() {
 
-        int result = CurrencyConverter.convert(Currency.US_DOLLAR, Currency.EURO, 500);
+        double expectedValue = 470.0;
+        double actualValue = CurrencyConverter.convert(Currency.US_DOLLAR, Currency.EURO, 500);
+
+        Assert.assertEquals(expectedValue, actualValue, 0.001);
     }
 }

@@ -3,15 +3,8 @@
  */
 public class CurrencyConverter {
 
-    public static int convert(Enum<Currency> convertFrom, Enum<Currency> convertTo, double amount) {
-
-        return 0;
-
+    public static double convert(Currency convertFrom, Currency convertTo, double amount) {
+        double inUSD = convertFrom.getToUSRate(amount);
+        return convertTo.getToUSD(inUSD);
     }
-
-    private double getConversion(Enum<Currency> currencyType) {
-
-        return 0.0;
-    }
-
 }

@@ -24,22 +24,21 @@ public enum Currency {
         this.toUSRate = toUSRate;
     }
 
-//    private long toCents(double amt) {
-//        return Math.round(amt * 100);
-//    }
 
-
-    
-
-    private double getToUSRate() {
-        return toUSRate;
+    private BigDecimal round(double sum) {
+        BigDecimal dec = new BigDecimal(sum);
+        return dec.setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 
-    public BigDecimal toUSD(double amount) {
-        BigDecimal d = new BigDecimal(amount / toUSRate);
-        BigDecimal rounded = d.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+    public double getToUSRate(double amount) {
+        double sum = amount / toUSRate;
+        return round(sum).doubleValue();
 
-        return rounded;
+    }
+
+    public double getToUSD(double amount) {
+        double sum = amount * toUSRate;
+        return round(sum).doubleValue();
     }
 
 }
