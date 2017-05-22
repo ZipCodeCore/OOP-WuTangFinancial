@@ -1,4 +1,4 @@
-
+import java.text.DecimalFormat;
 
 /**
  * Created by aurorabanuelos on 5/22/17.
@@ -6,13 +6,12 @@
 public class CurrencyConverter {
 
 
-
     public double convert(String currentCurrency, String foreignCurrency, double amountToBeConverted){
 
         double convertedAmount;
         double toUSDAmount;
 
-        toUSDAmount = amountToBeConverted * getFXRate(currentCurrency);
+        toUSDAmount = amountToBeConverted / getFXRate(currentCurrency);
         convertedAmount = toUSDAmount * getFXRate(foreignCurrency);
 
         return convertedAmount;
