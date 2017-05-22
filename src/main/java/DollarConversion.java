@@ -27,4 +27,9 @@ public class DollarConversion {
         double finalConversion = input * 1.32;
         return finalConversion;
     }
+
+    public double dollarToSingaporeDollars(double input){
+        double finalConversion = input * 1.43;
+        return finalConversion;
+    }
 }
