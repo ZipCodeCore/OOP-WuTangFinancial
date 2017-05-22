@@ -79,12 +79,22 @@ public class DollarConversionTest {
     }
 
     @Test
-    public void dollatToMalaysianRinggitTest(){
+    public void dollarToMalaysianRinggitTest(){
         DollarConversion dollarConversion = new DollarConversion();
 
         double expected =134.10;
         double actual = dollarConversion.dollarToMalaysianRinggit(30);
 
         Assert.assertEquals("This should return 134.10", expected, actual, .01);
+    }
+
+    @Test
+    public void dollarToJapaneseYenTest(){
+        DollarConversion dollarConversion = new DollarConversion();
+
+        double expected = 9267.20;
+        double actual = dollarConversion.dollarToJapaneseYen(80);
+
+        Assert.assertEquals("This should return 9267.20", expected, actual, .01);
     }
 }

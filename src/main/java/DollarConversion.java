@@ -42,4 +42,9 @@ public class DollarConversion {
         double finalConversion = input * 4.47;
         return finalConversion;
     }
+
+    public double dollarToJapaneseYen(double input){
+        double finalConversion = input * 115.84;
+        return finalConversion;
+    }
 }
