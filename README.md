@@ -17,13 +17,13 @@ Now that he is an INTERNATIONAL rock star making crazy loot, he must make sure t
 
 | Currency | Rate |
 |----------|------|
-| Us Dollar| 1.00 |
+| Us USDollar| 1.00 |
 | Euro                  | 0.94 |
 | British Pound         | 0.82  |
 | Indian Rupee          | 68.32 |
-| Australian Dollar	    |	1.35|
-| Canadian Dollar       | 1.32 |
-| Singapore Dollar      | 1.43 |
+| Australian USDollar	    |	1.35|
+| Canadian USDollar       | 1.32 |
+| Singapore USDollar      | 1.43 |
 | Swiss Franc           | 1.01 |
 | Malaysian Ringgit     | 4.47  |
 | Japanese Yen          | 115.84 |
@@ -35,13 +35,13 @@ Create a program that can convert any currency into the requested type.
 
 There MUST be Unit test testing the following scenarios 
 
-1. Convert Dollar to Euro
-2. Convert Euro to Dollar
+1. Convert USDollar to Euro
+2. Convert Euro to USDollar
 3. Convert Euro to British Pound
 4. Convert British Pound to Indian Rupee
-5. Convert Rupee to Canadian Dollar
-6. Convert Canadian Dollar to Singapore Dollar
-7. Convert Singapore Dollar to Swiss Franc
+5. Convert Rupee to Canadian USDollar
+6. Convert Canadian USDollar to Singapore USDollar
+7. Convert Singapore USDollar to Swiss Franc
 8. Convert Swiss Franc to Malaysian Ringgit
 9. Convert Malaysian Ringgit to Japanese Yen
 10. Convert Japanese Yen to Chinese Yuan Renminbi
