@@ -14,18 +14,18 @@ public enum Currency {
     JPY(8633, 115840000),
     CNY(144509, 6920000);
 
-    private final int toDollar;
-    private final int fromDollar;
+    private final long toDollar;
+    private final long fromDollar;
 
-    public int toDollar(){
+    public long toDollar(){
         return toDollar;
     }
 
-    public int fromDollar(){
+    public long fromDollar(){
         return fromDollar;
     }
 
-    Currency(int toDollar, int fromDollar) {
+    Currency(long toDollar, long fromDollar) {
         this.toDollar = toDollar;
         this.fromDollar = fromDollar;
     }

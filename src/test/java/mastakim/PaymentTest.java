@@ -39,10 +39,10 @@ public class PaymentTest {
     public void constructorWithStringTest(){
         //Given
         Payment usdString = new Payment("10.00", USD);
-        int expected = 1000;
+        long expected = 1000;
 
         //When
-        int actual = usdString.getAmount();
+        long actual = usdString.getAmount();
 
         //Then
         assertEquals("\"10.00\" should be recorded as a value of 1000", expected, actual);
@@ -53,11 +53,11 @@ public class PaymentTest {
     @Test
     public void convertUSDtoEURTest(){
         //Given
-        int expected = 940;
+        long expected = 940;
 
         //When
         Payment result = usd.convertTo(EUR);
-        int actual = result.getAmount();
+        long actual = result.getAmount();
 
         //Then
         assertEquals("Using a conversion of 0.94 EUR per USD, $10.00 USD = 9.40 EUR", expected, actual);
@@ -67,95 +67,125 @@ public class PaymentTest {
     @Test
     public void convertEURtoUSDTest(){
         //Given
-        int expected = 1063;
+        long expected = 1064;
 
         //When
         Payment result = eur.convertTo(USD);
-        int actual = result.getAmount();
+        long actual = result.getAmount();
 
         //Then
-        assertEquals("Using a conversion of 1.06383 EUR per USD, 10.00 EUR = 10.63 USD", expected, actual);
+        assertEquals("Using a conversion of 1.06383 EUR per USD, 10.00 EUR = 10.64 USD", expected, actual);
     }
 
     //Convert EUR to GBP
     @Test
     public void convertEURtoGBPTest(){
         //Given
-        int expected = 872;
+        long expected = 872;
 
         //When
+        Payment result = eur.convertTo(GBP);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 EUR = 8.72 GBP", expected, actual);
     }
 
     //Convert GBP to INR
     @Test
     public void convertGBPtoINRTest(){
         //Given
-        int expected = 83317;
+        long expected = 83317;
 
         //When
+        Payment result = gbp.convertTo(INR);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 GBP = 833.17 INR", expected, actual);
     }
 
     //Convert INR to CAD
     @Test
     public void convertINRtoCADTest(){
         //Given
+        long expected = 19;
 
         //When
+        Payment result = inr.convertTo(CAD);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 INR = 0.19 CAD", expected, actual);
     }
 
     //Convert CAD to SGD
     @Test
     public void convertCADtoSGDTest(){
         //Given
+        long expected = 1083;
 
         //When
+        Payment result = cad.convertTo(SGD);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 CAD = 10.83 SGD", expected, actual);
     }
 
     //Convert SGD to CHF
     @Test
     public void convertSGDtoCHFTest(){
         //Given
+        long expected = 706;
 
         //When
+        Payment result = sgd.convertTo(CHF);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 SGD = 7.06 CHF", expected, actual);
     }
 
     //Convert CHF to MYR
     @Test
     public void convertCHFtoMYRTest(){
         //Given
+        long expected = 4426;
 
         //When
+        Payment result = chf.convertTo(MYR);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 CHF = 44.26 MYR", expected, actual);
     }
 
     //Convert MYR to JPY
     @Test
     public void convertMYRtoJPYTest(){
         //Given
+        long expected = 25727;
 
         //When
+        Payment result = myr.convertTo(JPY);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 MYR = 257.27 JPY", expected, actual);
     }
 
     //Convert JPY to CNY
     @Test
     public void convertJPYtoCNYTest(){
         //Given
+        long expected = 60;
 
         //When
+        Payment result = jpy.convertTo(CNY);
+        long actual = result.getAmount();
 
         //Then
+        assertEquals("10.00 JPY = 0.60 CNY", expected, actual);
     }
 }
