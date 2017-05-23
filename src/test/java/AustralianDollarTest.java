@@ -99,7 +99,7 @@ public class AustralianDollarTest {
     @Test
     public void australianDollarToRupeeTest(){
         AustralianDollar australianDollar =  new AustralianDollar();
-        
+
         double expected = 2175.80;
         double actual = australianDollar.australianDollarToRupee(43);
 
