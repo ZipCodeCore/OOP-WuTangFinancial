@@ -27,7 +27,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDtoSwissFranc(usd);
         //Then
-        Assert.assertEquals("Dollars to SwissFranc equate to 1.01 Swiss Francs", expectedSum, actual, .0000008);
+        Assert.assertEquals("Dollars to SwissFranc equate to 415.08 Swiss Francs", expectedSum, actual, .0000008);
 
     }
 
@@ -53,7 +53,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToPound(usd);
         //Then
-        Assert.assertEquals("Dollars to Pound", expectedSum, actual, .0000008);
+        Assert.assertEquals("Dollars to Pounds", expectedSum, actual, .0000008);
 
     }
 
@@ -66,7 +66,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToRupee(usd);
         //Then
-        Assert.assertEquals("Dollars to Rupee", expectedSum, actual, .0000008);
+        Assert.assertEquals("Dollars to Rupees", expectedSum, actual, .0000008);
 
     }
 
@@ -178,11 +178,12 @@ public class testCalculate {
     public void testConvertEuroToPound() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double euro = 500;
         double pound = calculate.convertEurosToUSD(euro);
         double expectedSum = 436.17;
         //When
-        double actual = calculate.conversionMethod(pound, Currency.BRITISHPOUND);
+        double actual = converter.conversionMethod(pound, Currency.BRITISHPOUND);
         //Then
         Assert.assertEquals("Euros to Pound", expectedSum, actual, .0000008);
 
@@ -192,11 +193,12 @@ public class testCalculate {
     public void testConvertPoundToRupee() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double pound = 500;
         double rupee = calculate.convertPoundsToUSD(pound);
         double expectedSum = 41658.53;
         //When
-        double actual = calculate.conversionMethod(rupee, Currency.RUPEE);
+        double actual = converter.conversionMethod(rupee, Currency.RUPEE);
         //Then
         Assert.assertEquals("Pound to Rupee", expectedSum, actual, .000000006);
 
@@ -206,11 +208,12 @@ public class testCalculate {
     public void testConvertRupeeToCanadianDollar() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double rupee = 500;
         double canadianDollar = calculate.convertRupeeToUSD(rupee);
         double expectedSum = 9.66;
         //When
-        double actual = calculate.conversionMethod(canadianDollar, Currency.CANADIANDOLLAR);
+        double actual = converter.conversionMethod(canadianDollar, Currency.CANADIANDOLLAR);
         //Then
         Assert.assertEquals("Rupee to Canadian Dollar", expectedSum, actual, .0000008);
 
@@ -220,11 +223,12 @@ public class testCalculate {
     public void testConvertCanadianDollarToSingaporeanDollar() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double canadianDollar = 500;
         double singaporeanDollar = calculate.convertCanadianDollarToUSD(canadianDollar);
         double expectedSum = 541.67;
         //When
-        double actual = calculate.conversionMethod(singaporeanDollar, Currency.SINGAPORIANDOLLAR);
+        double actual = converter.conversionMethod(singaporeanDollar, Currency.SINGAPORIANDOLLAR);
         //Then
         Assert.assertEquals("Canadian Dollar to Singaporean Dollar", expectedSum, actual, .0000008);
 
@@ -234,11 +238,12 @@ public class testCalculate {
     public void testConvertSingaporeanDollarToSwissFranc() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double singaporeanDollar = 500;
         double swissFranc = calculate.convertSingaporeanDollarToUSD(singaporeanDollar);
         double expectedSum = 353.15;
         //When
-        double actual = calculate.conversionMethod(swissFranc, Currency.SWISSFRANC);
+        double actual = converter.conversionMethod(swissFranc, Currency.SWISSFRANC);
         //Then
         Assert.assertEquals("Singaporean Dollar to Swiss Franc", expectedSum, actual, .000000000000005d);
 
@@ -248,11 +253,12 @@ public class testCalculate {
     public void testConvertSwissFrancToMalaysianRinggit() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double swissFranc = 500;
         double ringgit = calculate.convertSwissFrancToUSD(swissFranc);
         double expectedSum = 2212.87;
         //When
-        double actual = calculate.conversionMethod(ringgit, Currency.RINGGIT);
+        double actual = converter.conversionMethod(ringgit, Currency.RINGGIT);
         //Then
         Assert.assertEquals("Swiss Franc to Ringgit ", expectedSum, actual, .0000008);
 
@@ -262,11 +268,12 @@ public class testCalculate {
     public void testConvertMalaysianRinggitToYen() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double ringgit = 500;
         double yen = calculate.convertRinggitToUSD(ringgit);
         double expectedSum = 12957.86;
         //When
-        double actual = calculate.conversionMethod(yen, Currency.YEN);
+        double actual = converter.conversionMethod(yen, Currency.YEN);
         //Then
         Assert.assertEquals("Ringgit to Yen", expectedSum, actual, .0000008);
 
@@ -276,11 +283,12 @@ public class testCalculate {
     public void testConvertYenToYuan() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double yen = 500;
         double yuan = calculate.convertYenToUSD(yen);
         double expectedSum = 29.89;
         //When
-        double actual = calculate.conversionMethod(yuan, Currency.YUAN);
+        double actual = converter.conversionMethod(yuan, Currency.YUAN);
         //Then
         Assert.assertEquals("Yen to Yuan", expectedSum, actual, .0000008);
 
@@ -298,11 +306,12 @@ public class testCalculate {
     public void testConvertRinggitToUSDIfZero() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double ringgit = 0;
         double usd = calculate.convertRinggitToUSD(ringgit);
         double expectedSum = 0;
         //When
-        double actual = calculate.conversionMethod(usd, Currency.USD);
+        double actual = converter.conversionMethod(usd, Currency.USD);
         //Then
         Assert.assertEquals("Throws an IllegalArgumentException exception, because amount is less than 0"
                 , expectedSum, actual, .0000008);
@@ -312,9 +321,10 @@ public class testCalculate {
     public void testConvertYuanToUSD() {
         //Given
         Calculate calculate = new Calculate();
+        Converter converter = new Converter();
         double yuan = 0;
         double usd = calculate.convertYuanToUSD(yuan);
         //When
-        double actual = calculate.conversionMethod(usd, Currency.USD);
+        double actual = converter.conversionMethod(usd, Currency.USD);
     }
 }
