@@ -17,4 +17,10 @@ public class AustralianDollar {
         double finalConversion = input * 1.33;
         return finalConversion;
     }
+
+    public double australianDollarToMalaysianRinggit(double input){
+        double finalConversion = input * 3.31;
+        return finalConversion;
+    }
+
 }

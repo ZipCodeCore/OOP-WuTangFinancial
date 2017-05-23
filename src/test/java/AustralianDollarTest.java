@@ -35,4 +35,15 @@ public class AustralianDollarTest {
 
         Assert.assertEquals("This should return 90.44", expected, actual, .01);
     }
+
+    @Test
+    public void australianDollarToMalaysianRinggitTest(){
+        AustralianDollar australianDollar = new AustralianDollar();
+
+        double expected = 165.50;
+        double actual = australianDollar.australianDollarToMalaysianRinggit(50);
+
+        Assert.assertEquals("This should return 165.50", expected, actual, .01);
+    }
+    
 }
