@@ -8,15 +8,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class testCurrencyConverter
 {
-	public AustralianDollar aud;
-	public GreatBritainPound gbp;
-	public CanadianDollar cad;
-	public ChineseYuanRenminbi cnyrmb;
-	public IndianRupee inr;
-	public JapaneseYen jpy;
-	public MalaysianRinggit myr;
-	public SingaporeDollar sgd;
-	public SwissFranc chf;
 	public CurrencyConverter conversionEngine;
 
 	@Before
@@ -141,6 +132,86 @@ public class testCurrencyConverter
 		conversionEngine.convertCurrency();
 		Currency newSGD = conversionEngine.convertedCurrency;
 		double actual = newSGD.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencySGDToCHF()
+	{
+		//: Given
+		SingaporeDollar sgd = new SingaporeDollar();
+		SwissFranc chf = new SwissFranc();
+		conversionEngine.convertTo(chf);
+		conversionEngine.convertFrom(sgd);
+
+		double expected = 1.01;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newCHF = conversionEngine.convertedCurrency;
+		double actual = newCHF.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencyCHFToMYR()
+	{
+		//: Given
+		SwissFranc chf = new SwissFranc();
+		MalaysianRinggit myr = new MalaysianRinggit();
+		conversionEngine.convertTo(myr);
+		conversionEngine.convertFrom(chf);
+
+		double expected = 4.47;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newMYR = conversionEngine.convertedCurrency;
+		double actual = newMYR.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencyMYRToJYP()
+	{
+		//: Given
+		MalaysianRinggit myr = new MalaysianRinggit();
+		JapaneseYen jyp = new JapaneseYen();
+		conversionEngine.convertTo(jyp);
+		conversionEngine.convertFrom(myr);
+
+		double expected = 115.84;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newJYP = conversionEngine.convertedCurrency;
+		double actual = newJYP.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencyJYPToCNYRMB()
+	{
+		//: Given
+		ChineseYuanRenminbi cnyrmb = new ChineseYuanRenminbi();
+		JapaneseYen jyp = new JapaneseYen();
+		conversionEngine.convertTo(cnyrmb);
+		conversionEngine.convertFrom(jyp);
+
+		double expected = 6.92;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newCNYRMB = conversionEngine.convertedCurrency;
+		double actual = newCNYRMB.getAmount();
 
 		//: Then
 		assertEquals("These values should be equal", expected, actual, 2);
