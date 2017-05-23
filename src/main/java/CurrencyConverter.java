@@ -3,17 +3,20 @@
  * Created by rahmirford on 5/22/17.
  */
 public class CurrencyConverter {
-    public double usDollarConvertedValue;
-    public double convertedForeignValue;
+    public double usDollarConvertedValue = 0;
+    public double convertedForeignValue = 0;
 
 
     // Switch statement takes a string and double returns double(usDollar)
     // another switch statment is called which takes a string(exchange currency and a double(usDollar)
 
     public double foreignCurrencyToUsDollar(String currentCurrency, double loot){
-        double usDollarConvertedValue = 0;
 
         switch(currentCurrency){
+
+            case "dollar":
+                usDollarConvertedValue = USDollar.convertToUSDollar(loot);
+                break;
             case "euro":
                 usDollarConvertedValue = Euro.convertToUSDollar(loot);
             break;
@@ -53,9 +56,11 @@ public class CurrencyConverter {
 
 
     public  double usDollarToForeignCurrency(String exchangeCurrency, double dollar){
-        double convertedForeignValue = 0;
 
         switch (exchangeCurrency) {
+            case "dollar":
+                convertedForeignValue = USDollar.convertToUSDollar(dollar);
+                break;
             case "euro":
                 convertedForeignValue = Euro.convertToEuro(dollar);
                 break;
@@ -97,6 +102,10 @@ public class CurrencyConverter {
     public double converter(String currentCurrency, double loot, String exchangeCurrency){
         foreignCurrencyToUsDollar(currentCurrency,loot);
         convertedForeignValue = usDollarToForeignCurrency(exchangeCurrency,usDollarConvertedValue);
+
+
+
+
         System.out.printf("You have %.2f worth of diversified bonds.", convertedForeignValue);
         return convertedForeignValue;
     }

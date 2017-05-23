@@ -32,6 +32,6 @@ public class TestRupee {
 
         double actualConversion = rupee.convertToUSDollar(amountToConvert);
 
-        Assert.assertEquals("The expected conversion from Rupees to US Dollars is: 67.55", expectedUSDollarAmount,actualConversion,0.001);
+        Assert.assertEquals("The expected conversion from Rupees to US Dollars is: 19.75", expectedUSDollarAmount,actualConversion,0.001);
     }
 }

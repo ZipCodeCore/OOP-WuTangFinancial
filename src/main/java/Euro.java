@@ -7,7 +7,7 @@ public class Euro {
     public static double euroValue;
 
     public static double convertToUSDollar(double amount){
-        usDollarConvertedValue = Math.round(amount * Euro.getRate()*100);
+        usDollarConvertedValue = Math.round(amount / Euro.getRate()*100);
         usDollarConvertedValue = usDollarConvertedValue/100;
         return usDollarConvertedValue;
     }
