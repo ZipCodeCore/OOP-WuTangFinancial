@@ -42,4 +42,11 @@ public class EuroConversion {
         double finalConversion = input * 4.75;
         return finalConversion;
     }
+
+    public double euroToJapaneseYen(double input){
+        double finalConversion = input * 123.23;
+        return finalConversion;
+    }
+
+    
 }

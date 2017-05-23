@@ -85,4 +85,14 @@ public class EuroConversionTest {
 
         Assert.assertEquals("This should return 23.75", expected, actual, .01);
     }
+
+    @Test
+    public void euroToJapaneseYenTest(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected = 7640.26;
+        double actual = euroConversion.euroToJapaneseYen(62);
+
+        Assert.assertEquals("This should return 7640.26", expected,actual,.01);
+    }
 }
