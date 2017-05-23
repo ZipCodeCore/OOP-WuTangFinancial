@@ -9,7 +9,7 @@ public class InputCheckerTest {
 
     @Test
     public void testCheckForValidCurrencyInput() {
-        boolean expectedResult = InputChecker.checkForValidCurrency("US_Dollars");
+        boolean expectedResult = InputChecker.checkForValidCurrency("US_Dollar");
         Assert.assertTrue(expectedResult);
     }
 
@@ -21,8 +21,8 @@ public class InputCheckerTest {
 
     @Test
     public void testCheckForValidMoneyInput() {
-        boolean expectedResult = InputChecker.checkForValidMoneyInput("1000.00");
-        Assert.assertTrue(expectedResult);
+        boolean result = InputChecker.checkForValidMoneyInput("1000.00");
+        Assert.assertTrue(result);
     }
 
     @Test

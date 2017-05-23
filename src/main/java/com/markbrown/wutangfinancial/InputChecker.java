@@ -21,7 +21,7 @@ public class InputChecker {
             Print.printInvalidInput(input);
             return false;
         }
-        if (Long.parseLong(input) < 0) {
+        if (Double.parseDouble(input) < 0) {
             Print.printInvalidInput(input);
             return false;
         }
