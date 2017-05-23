@@ -27,4 +27,9 @@ public class SingaporeDollar {
         double finalConverion = input * 1.43;
         return finalConverion;
     }
+
+    public double singaporeDollarToEuro(double input){
+        double finalConversion = input * 1.52;
+        return finalConversion;
+    }
 }
