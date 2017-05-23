@@ -97,7 +97,7 @@ public class CurrencyConverter {
     public double converter(String currentCurrency, double loot, String exchangeCurrency){
         foreignCurrencyToUsDollar(currentCurrency,loot);
         convertedForeignValue = usDollarToForeignCurrency(exchangeCurrency,usDollarConvertedValue);
-        System.out.printf("Your have %.2f worth of diversified bonds.", convertedForeignValue);
+        System.out.printf("You have %.2f worth of diversified bonds.", convertedForeignValue);
         return convertedForeignValue;
     }
 

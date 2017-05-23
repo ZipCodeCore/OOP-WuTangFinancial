@@ -23,4 +23,15 @@ public class TestJapaneseYen {
         Assert.assertEquals("The expected conversion from US Dollar to Japanese Yen is: 25660.88",expectedConversion,actualConversion,0.001);
 
     }
+
+    @Test
+    public void testConvertToUSDollar(){
+        double amountToConvert = 78.25;
+        double expectedUSDollarAmount = 67.55;
+
+        double actualConversion = japaneseYen.convertToUSDollar(amountToConvert);
+
+        Assert.assertEquals("The expected conversion from Yen to US Dollars is: 67.55", expectedUSDollarAmount,actualConversion,0.001);
+    }
+
 }

@@ -3,11 +3,13 @@
  */
 public class CanadianDollar {
     private static double rate =1.32;
-    private double usDollarConvertedValue;
+    private static double usDollarConvertedValue;
     private static double canadianDollarValue;
 
     public static double convertToUSDollar(double amount){
-        return 0;
+        usDollarConvertedValue = Math.round( amount / CanadianDollar.getRate()*100.0);
+        usDollarConvertedValue = usDollarConvertedValue/100;
+        return usDollarConvertedValue;
     }
 
     public double getUsDollarConvertedValue() {
@@ -20,7 +22,8 @@ public class CanadianDollar {
     }
 
     public static double convertToCanadianDollar(double usDollarValue){
-        canadianDollarValue = usDollarValue * CanadianDollar.getRate();
+        canadianDollarValue = Math.round((usDollarValue * CanadianDollar.getRate()*100));
+        canadianDollarValue = canadianDollarValue/100;
         return canadianDollarValue;
     }
 }

@@ -17,11 +17,11 @@ public class TestAustralianDollar {
     public void testConvertToAustralianDollar(){
         //: Given
         double usDollarAmountToConvert = 92.15;
-        double expectedConversion = 124.41;
+        double expectedConversion = 124.40;
         //: When
         double actualConversion =   astralianDollar.convertToAustralianDollar(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Australian Dollar is: 124.41",expectedConversion,actualConversion,0.001);
+        Assert.assertEquals("The expected conversion from US Dollar to Australian Dollar is: 124.40",expectedConversion,actualConversion,0.001);
 
     }
 }

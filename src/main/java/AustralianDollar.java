@@ -18,8 +18,9 @@ public class AustralianDollar {
         return rate;
     }
 
-    public static double convertToAustralianDollar(double usDollaValue){
-        australianDollarValue = usDollaValue * AustralianDollar.getRate();
+    public static double convertToAustralianDollar(double usDollarValue){
+        australianDollarValue = (Math.round((usDollarValue * AustralianDollar.getRate()*100)));
+        australianDollarValue = australianDollarValue/100;
         return australianDollarValue;
     }
 

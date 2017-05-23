@@ -3,11 +3,12 @@
  */
 public class JapaneseYen {
     private static double rate = 115.84;
-    private double usDollarConvertedValue;
+    private static double usDollarConvertedValue;
     private static double japaneseYenValue;
 
     public static double convertToUSDollar(double amount){
-        return 0;
+        usDollarConvertedValue = ( amount / JapaneseYen.getRate()*100.0);
+        return usDollarConvertedValue;
     }
 
     public double getUsDollarConvertedValue() {
@@ -20,7 +21,8 @@ public class JapaneseYen {
     }
 
     public static double convertToJapaneseYen(double usDollarValue){
-        japaneseYenValue= usDollarValue * JapaneseYen.getRate();
+        japaneseYenValue= Math.round((usDollarValue * JapaneseYen.getRate()*100));
+        japaneseYenValue = japaneseYenValue/100;
         return japaneseYenValue;
     }
 }

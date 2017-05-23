@@ -3,10 +3,13 @@
  */
 public class MalaysianRinggit {
     private static double rate = 4.47;
-    private double usDollarConvertedValue;
+    private static double usDollarConvertedValue;
     private static double malaysianRinggitValue;
+
     public static double convertToUSDollar(double amount){
-        return 0;
+        usDollarConvertedValue = Math.round( amount / MalaysianRinggit.getRate()*100.0);
+        usDollarConvertedValue = usDollarConvertedValue/100;
+        return usDollarConvertedValue;
     }
 
     public double getUsDollarConvertedValue() {
@@ -19,7 +22,8 @@ public class MalaysianRinggit {
     }
 
     public static double convertToMalaysianRinggit(double usDollarValue){
-        malaysianRinggitValue = usDollarValue * MalaysianRinggit.getRate();
+        malaysianRinggitValue = Math.round((usDollarValue * MalaysianRinggit.getRate()*100));
+        malaysianRinggitValue = malaysianRinggitValue/100;
         return malaysianRinggitValue;
     }
 }

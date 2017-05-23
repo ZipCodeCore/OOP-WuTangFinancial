@@ -3,11 +3,13 @@
  */
 public class ChineseYuanRenminbi {
     private static double rate = 6.92;
-    private double usDollarConvertedValue;
+    private static double usDollarConvertedValue;
     private static double chineseYuanRenminbiValue;
 
     public static double convertToUSDollar(double amount){
-        return 0;
+        usDollarConvertedValue = Math.round( amount / ChineseYuanRenminbi.getRate()*100.0);
+        usDollarConvertedValue = usDollarConvertedValue/100;
+        return usDollarConvertedValue;
     }
 
     public double getUsDollarConvertedValue() {
@@ -19,7 +21,8 @@ public class ChineseYuanRenminbi {
     }
 
     public static double convertToChineseYuanRenminbi(double usDollarValue){
-        chineseYuanRenminbiValue = usDollarValue * ChineseYuanRenminbi.getRate();
+        chineseYuanRenminbiValue = Math.round((usDollarValue * ChineseYuanRenminbi.getRate()*100));
+        chineseYuanRenminbiValue = chineseYuanRenminbiValue/100;
         return chineseYuanRenminbiValue;
     }
 

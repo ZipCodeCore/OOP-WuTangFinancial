@@ -18,7 +18,8 @@ public class SwissFranc {
         return rate;
     }
     public static double convertToSwissFranc(double usDollarValue){
-        swissFrancValue = usDollarValue * SwissFranc.getRate();
+        swissFrancValue = Math.round((usDollarValue * SwissFranc.getRate()*100));
+        swissFrancValue = swissFrancValue/100;
         return swissFrancValue;
     }
 }

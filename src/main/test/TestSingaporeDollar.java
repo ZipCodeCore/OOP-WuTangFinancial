@@ -23,4 +23,15 @@ public class TestSingaporeDollar {
         //: Then
         Assert.assertEquals("The expected conversion from US Dollar to Singapore Dollar is: 74.52",expectedConversion,actualConversion,0.001);
     }
+
+    @Test
+    public void testConvertToUSDollar(){
+        double amountToConvert = 99.99;
+        double expectedUSDollarAmount = 69.92;
+
+        double actualConversion = singaporeDollar.convertToUSDollar(amountToConvert);
+
+        Assert.assertEquals("The expected conversion from Singapore Dollars to US Dollars is: 69.92", expectedUSDollarAmount,actualConversion,0.001);
+    }
+
 }
