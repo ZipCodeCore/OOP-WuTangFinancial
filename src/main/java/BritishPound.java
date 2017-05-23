@@ -12,5 +12,11 @@ public class BritishPound {
         double finalConversion = input * 141.26;
         return finalConversion;
     }
+
+    public double britishPoundToAmericanDollar(double input){
+        double finalConversion = input * .82;
+        return finalConversion;
+    }
+
 }
 
