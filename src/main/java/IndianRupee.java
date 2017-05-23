@@ -41,5 +41,8 @@ public class IndianRupee {
         return finalConversion;
     }
 
-
+    public double indianRupeeToAmericanDollar(double input){
+        double finalConversion = input * 68.32;
+        return finalConversion;
+    }
 }
