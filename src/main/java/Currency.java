@@ -1,5 +1,4 @@
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
+
 
 /**
  * Created by cameronsima on 5/22/17.
@@ -24,23 +23,13 @@ public enum Currency {
         this.toUSRate = toUSRate;
     }
 
-
-    private BigDecimal round(double sum) {
-        BigDecimal dec = new BigDecimal(sum);
-        return dec.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+    public double getToUSRate() {
+        return toUSRate;
     }
 
-    public double getToUSRate(double amount) {
-        double sum = amount / toUSRate;
-        return round(sum).doubleValue();
-
+    public double getFromUSRate() {
+        return 1 / toUSRate;
     }
-
-    public double getToUSD(double amount) {
-        double sum = amount * toUSRate;
-        return round(sum).doubleValue();
-    }
-
 }
 
 

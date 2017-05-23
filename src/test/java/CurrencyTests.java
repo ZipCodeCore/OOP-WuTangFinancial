@@ -11,16 +11,16 @@ public class CurrencyTests {
     @Test
     public void testCurrency() {
 
-        double inUSD = Currency.BRITISH_POUND.getToUSRate(500);
-        double inRupees = Currency.INDIAN_RUPEE.getToUSD(inUSD);
-        System.out.printf("500 pounds is worth %s US dollars \n", inUSD);
+        double amount = 500.0;
+        double rupeesInDollars = amount * Currency.INDIAN_RUPEE.getToUSRate();
+        double rupeesInPounds = rupeesInDollars * Currency.BRITISH_POUND.getFromUSRate();
+        System.out.printf("%s dollars is worth %s rupees \n", amount, rupeesInDollars);
 
-        System.out.printf("%s dollars is worth %s rupees", inUSD, inRupees);
+        System.out.printf("%s rupees is worth %s in pounds", rupeesInDollars, rupeesInPounds);
 
+        double expectedValue = 41658.53658536585;
 
-        double expectedValue = 410.0;
-
-        Assert.assertEquals(expectedValue, Currency.BRITISH_POUND.getToUSD(500), 0.001);
+        Assert.assertEquals(expectedValue, rupeesInPounds, 0.001);
 
     }
 }
