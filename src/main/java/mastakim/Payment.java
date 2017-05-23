@@ -4,7 +4,7 @@ public class Payment {
 
     private long amount;
     private Currency currency;
-    private final long BIG = 10000000000000L;
+
 
     public Payment(long amount, Currency currency){
         this.amount = amount;
@@ -17,7 +17,7 @@ public class Payment {
     }
 
     private long toLong(String amount){
-        return (int)(Double.parseDouble(amount) * 100);
+        return (long)(Double.parseDouble(amount) * 100);
     }
 
     public long getAmount() {
@@ -29,9 +29,13 @@ public class Payment {
     }
 
     public Payment convertTo(Currency currency){
-        long amountTimesTen = amount*this.currency.toDollar()*currency.fromDollar()/BIG;
-        long remainder = amountTimesTen % 10;
-        if(remainder >= 5) return new Payment(amountTimesTen/10 + 1, currency);
-        else return new Payment(amountTimesTen/10, currency);
+        long dollarAmt10 = amount*this.currency.toDollar()/1000000000L;
+        long newAmount100 = dollarAmt10 * currency.fromDollar() / 10;
+
+        long remainder = newAmount100 % 10;
+        if(remainder < 5) return new Payment(newAmount100/10 + 1, currency);
+        else return new Payment(newAmount100/10, currency);
     }
+
+
 }
