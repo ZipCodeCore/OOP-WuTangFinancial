@@ -1,33 +1,33 @@
 package mastakim;
 
-import java.math.BigInteger;
+import java.math.BigDecimal;
 
 public enum Currency {
 
-    USD(new BigInteger("1000000000000000"), new BigInteger("100")),
-    EUR(new BigInteger("1063829787234042"), new BigInteger("94")),
-    GBP(new BigInteger("1219512195121951"), new BigInteger("82")),
-    INR(new BigInteger("14637002341920"), new BigInteger("6832")),
-    AUD(new BigInteger("740740740740741"), new BigInteger("135")),
-    CAD(new BigInteger("757575757575758"), new BigInteger("132")),
-    SGD(new BigInteger("699300699300699"), new BigInteger("143")),
-    CHF(new BigInteger("990099009900990"), new BigInteger("101")),
-    MYR(new BigInteger("223713646532438"), new BigInteger("447")),
-    JPY(new BigInteger("8632596685083"), new BigInteger("11584")),
-    CNY(new BigInteger("144508670520231"), new BigInteger("692"));
+    USD(new BigDecimal("1.00"), new BigDecimal("1.00")),
+    EUR(new BigDecimal("1.063829787234043"), new BigDecimal("0.94")),
+    GBP(new BigDecimal("1.219512195121951"), new BigDecimal("0.82")),
+    INR(new BigDecimal("0.01463700234192"), new BigDecimal("68.32")),
+    AUD(new BigDecimal("0.740740740740741"), new BigDecimal("1.35")),
+    CAD(new BigDecimal("0.757575757575758"), new BigDecimal("1.32")),
+    SGD(new BigDecimal("0.699300699300699"), new BigDecimal("1.43")),
+    CHF(new BigDecimal("0.99009900990099"), new BigDecimal("1.01")),
+    MYR(new BigDecimal("0.223713646532438"), new BigDecimal("4.47")),
+    JPY(new BigDecimal("0.008632596685083"), new BigDecimal("115.84")),
+    CNY(new BigDecimal("0.144508670520231"), new BigDecimal("6.92"));
 
-    private final BigInteger toDollar;
-    private final BigInteger fromDollar;
+    private final BigDecimal toDollar;
+    private final BigDecimal fromDollar;
 
-    public BigInteger toDollar(){
+    public BigDecimal toDollar(){
         return toDollar;
     }
 
-    public BigInteger fromDollar(){
+    public BigDecimal fromDollar(){
         return fromDollar;
     }
 
-    Currency(BigInteger toDollar, BigInteger fromDollar) {
+    Currency(BigDecimal toDollar, BigDecimal fromDollar) {
         this.toDollar = toDollar;
         this.fromDollar = fromDollar;
     }
