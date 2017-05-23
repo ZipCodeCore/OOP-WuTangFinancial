@@ -14,7 +14,9 @@ public class App {
             fromRate = IOHandler.getCurrencyType("What sort of currency you starting with?");
             toRate = IOHandler.getCurrencyType("What sort of currency you leaving with?");
             CurrencyConverter converter = new CurrencyConverter(fromRate, toRate);
-            long initialAmount = IOHandler.getMoneyInput("How much " + fromRate.toString() + " are you looking to exchange?");
+            long initialAmount = IOHandler.getMoneyInput("How much " + fromRate.toString() + " are you looking to exchange?\n" +
+                                                            "Any increments past the second decimal place get sliced off\n" +
+                                                            "by our liquid swords.");
             long finalAmount = converter.convert(initialAmount);
             IOHandler.printMoney(finalAmount,toRate);
             finished = IOHandler.promptContinue();
