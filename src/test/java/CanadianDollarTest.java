@@ -14,4 +14,14 @@ public class CanadianDollarTest {
 
         Assert.assertEquals("This should return 82.08", expected, actual, .01);
     }
+
+    @Test
+    public void canadianDollarToSwissFrancTest(){
+        CanadianDollar canadianDollar = new CanadianDollar();
+
+        double expected = 87.10;
+        double actual = canadianDollar.canadianDollarToSwillFranc(67);
+
+        Assert.assertEquals("This should return 87.10", expected, actual, .01);
+    }
 }

@@ -8,5 +8,8 @@ public class CanadianDollar {
         return finalConversion;
     }
 
-
+    public double canadianDollarToSwillFranc(double input){
+        double finalConversion = input * 1.30;
+        return finalConversion;
+    }
 }
