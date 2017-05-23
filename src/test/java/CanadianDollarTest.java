@@ -66,4 +66,14 @@ public class CanadianDollarTest {
         Assert.assertEquals("This should return 14.52", expceted, acutal, .01);
     }
 
+    @Test
+    public void canadianDollarToEuroTest(){
+        CanadianDollar canadianDollar = new CanadianDollar();
+
+        double expected = 51.80;
+        double actual = canadianDollar.canadianDollarToEuro(37);
+
+        Assert.assertEquals("This should return 51.80", expected, actual, .01);
+    }
+
 }
