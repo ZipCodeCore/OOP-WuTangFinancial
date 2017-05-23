@@ -111,7 +111,7 @@ public class ConversionCalculator {
             return result;
     }
 
-    public double convertAnythingToAnything(int country1, int country2, double amount){
+    public double convertOldCurrencyToNewCurrency(int country1, int country2, double amount){
         double result= convertAmountToNewCurrency(country2, convertAmountToDollar(country1, amount));
         return result;
     }

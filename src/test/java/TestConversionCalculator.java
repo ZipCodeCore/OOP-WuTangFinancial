@@ -18,7 +18,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(1,2, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(1,2, amountToConvert);
 
         //then
         Assert.assertEquals("should return dollars converted to euros", 9.39, actual, 0.01);
@@ -29,7 +29,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(2,1, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(2,1, amountToConvert);
 
         //then
         Assert.assertEquals("should return euros converted to dollars", 10.64, actual, 0.01);
@@ -40,7 +40,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(2,3, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(2,3, amountToConvert);
 
         //then
         Assert.assertEquals("should return euros converted to pounds", 8.72, actual, 0.01);
@@ -51,7 +51,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(3,4, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(3,4, amountToConvert);
 
         //then
         Assert.assertEquals("should return pounds converted to rupees", 833.17, actual, 0.01);
@@ -62,7 +62,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 1000.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(4,6, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(4,6, amountToConvert);
 
         //then
         Assert.assertEquals("should return rupees converted to canadian dollars", 19.32, actual, 0.01);
@@ -73,7 +73,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(6,7, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(6,7, amountToConvert);
 
         //then
         Assert.assertEquals("should return canadian dollars to singapore dollars", 10.83, actual, 0.01);
@@ -84,7 +84,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(7,8, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(7,8, amountToConvert);
 
         //then
         Assert.assertEquals("should return singapore dollars to francs", 7.06, actual, 0.01);
@@ -95,7 +95,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(8,9, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(8,9, amountToConvert);
 
         //then
         Assert.assertEquals("should return francs converted to ringgit", 44.25, actual, 0.01);
@@ -106,7 +106,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(9,10, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(9,10, amountToConvert);
 
         //then
         Assert.assertEquals("should return ringgit converted to yen", 259.15, actual, 0.01);
@@ -117,7 +117,7 @@ public class TestConversionCalculator {
         //given
         double amountToConvert = 100.00;
         //when
-        double actual = conversionCalculator.convertAnythingToAnything(10,11, amountToConvert);
+        double actual = conversionCalculator.convertOldCurrencyToNewCurrency(10,11, amountToConvert);
 
         //then
         Assert.assertEquals("should return yen converted to yuan", 5.97, actual, 0.01);
