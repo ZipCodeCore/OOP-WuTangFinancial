@@ -22,4 +22,9 @@ public class SingaporeDollar {
         double finalConversion = input * 4.83;
         return finalConversion;
     }
+
+    public double singaporeDollarToAmericanDollar(double input){
+        double finalConverion = input * 1.43;
+        return finalConverion;
+    }
 }
