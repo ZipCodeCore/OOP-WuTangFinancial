@@ -6,7 +6,7 @@ public class SwissFranc {
     private double usDollarConvertedValue;
     private double swissFrancValue;
 
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 

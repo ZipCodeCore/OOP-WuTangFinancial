@@ -6,7 +6,7 @@ public class ChineseYuanRenminbi {
     private double usDollarConvertedValue;
     private double chineseYuanRenminbiValue;
 
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 

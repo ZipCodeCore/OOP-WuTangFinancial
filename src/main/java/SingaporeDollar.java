@@ -6,7 +6,7 @@ public class SingaporeDollar {
     private double usDollarConvertedValue;
     private double singaporeDollarValue;
 
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 

@@ -6,7 +6,7 @@ public class AustralianDollar {
     private double usDollarConvertedValue;
     private double australianDollarValue;
 
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 

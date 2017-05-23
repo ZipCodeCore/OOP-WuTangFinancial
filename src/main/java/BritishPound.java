@@ -5,7 +5,7 @@ public class BritishPound {
     private static double rate = 0.82;
     private double usDollarConvertedValue;
     private double britishPoundValue;
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 

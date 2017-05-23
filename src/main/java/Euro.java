@@ -6,7 +6,7 @@ public class Euro {
     private double usDollarConvertedValue;
     public double euroValue;
 
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 
