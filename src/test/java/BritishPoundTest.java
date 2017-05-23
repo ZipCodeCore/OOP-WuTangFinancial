@@ -75,4 +75,14 @@ public class BritishPoundTest {
 
         Assert.assertEquals("This should return 71.34", expected, actual, .01);
     }
+    
+    @Test
+    public void britishPoundToMalaysianRinggitTest(){
+        BritishPound britishPound = new BritishPound();
+
+        double expected = 299.75;
+        double actual = britishPound.britishPoundToMalaysianRinggit(55);
+
+        Assert.assertEquals("This should return 299.75", expected, actual, .01);
+    }
 }

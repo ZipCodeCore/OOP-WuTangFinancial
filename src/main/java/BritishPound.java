@@ -34,8 +34,13 @@ public class BritishPound {
     }
 
     public double britishPoundToSwissFranc(double input){
-        double finalConveriosn = input * 1.23;
-        return finalConveriosn;
+        double finalConversion = input * 1.23;
+        return finalConversion;
+    }
+
+    public double britishPoundToMalaysianRinggit(double input){
+        double finalConversion = input * 5.45;
+        return  finalConversion;
     }
 }
 
