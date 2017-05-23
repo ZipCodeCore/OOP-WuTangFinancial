@@ -37,4 +37,9 @@ public class SingaporeDollar {
         double finalConversion = input * 1.74;
         return finalConversion;
     }
+
+    public double singaporeDollarToRupee(double input){
+        double finalConversion = input * 47.77;
+        return finalConversion;
+    }
 }
