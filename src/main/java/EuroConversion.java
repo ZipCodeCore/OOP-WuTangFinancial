@@ -27,4 +27,14 @@ public class EuroConversion {
         double finalConversion = input * 1.40;
         return finalConversion;
     }
+
+    public double euroToSingaporeDollar(double input){
+        double finalConversion = input * 1.52;
+        return finalConversion;
+    }
+
+    public double euroToSwissFranc(double input){
+        double finalConversion = input * 1.07;
+        return finalConversion;
+    }
 }

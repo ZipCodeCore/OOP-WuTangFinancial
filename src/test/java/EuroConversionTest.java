@@ -55,4 +55,24 @@ public class EuroConversionTest {
 
         Assert.assertEquals("This should return 25.67", expected, actual, .01);
     }
+
+    @Test
+    public void euroToSingaporeDollar(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected = 68.78;
+        double actual = euroConversion.euroToSingaporeDollar(45.25);
+
+        Assert.assertEquals("This should return 68.78", expected , actual , .01);
+    }
+
+    @Test
+    public void euroToSwissFrancTest(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected =105.93;
+        double actual = euroConversion.euroToSwissFranc(99);
+
+        Assert.assertEquals("This should return 105.93", expected, actual, .01);
+    }
 }
