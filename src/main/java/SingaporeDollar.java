@@ -7,4 +7,9 @@ public class SingaporeDollar {
         double finalConversion = input * 1.41;
         return finalConversion;
     }
+
+    public double singaporeDollarToMalaysianRinggit(double input){
+        double finalConversion = input * 3.12;
+        return finalConversion;
+    }
 }
