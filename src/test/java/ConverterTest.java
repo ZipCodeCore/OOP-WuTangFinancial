@@ -174,4 +174,48 @@ public class ConverterTest {
         //Then
         assertEquals("Amounts should equal", expected, actual);
     }
+
+    @Test
+    public void testToUsRate(){
+    //Given
+        String currency = "Euro";
+        String expected = new Money<>(1,0).toString();
+
+    //When
+        String actual = exchanger.toUsRate(currency, 94).toString();
+
+    //Then
+        assertEquals("Should be converted to $1.00", expected, actual);
+
+    }
+
+
+    @Test
+    public void testToDesiredRate(){
+    //Given
+        String currency = "US Dollar" ;
+        String expected = new Money<>(4,47).toString();
+
+    //When
+        String actual = exchanger.toDesiredRate("Malaysian Ringgit", new Money<>(1, 0)).toString();
+
+    //Then
+        assertEquals("Should be converted to $4.47", expected, actual);
+
+    }
+
+    @Test
+    public void testToCents(){
+    //Given
+        String currency = "Malaysian Ringgit";
+        int expected = 447;
+
+    //When
+        int actual = exchanger.toCents(currency);
+
+    //Then
+        assertEquals("Should equal 447 cents", expected, actual);
+    }
+
+
 }
