@@ -17,4 +17,9 @@ public class SingaporeDollar {
         double finalConversion = input * 81;
         return finalConversion;
     }
+
+    public double singaporeDollarToChineseYuanRenminbi(double input){
+        double finalConversion = input * 4.83;
+        return finalConversion;
+    }
 }
