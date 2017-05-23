@@ -43,7 +43,7 @@ public class testCurrencyConverter
 		double actual = newEuros.getAmount();
 
 		//: Then
-		assertEquals("These values should be equal", expected, actual, 0);
+		assertEquals("These values should be equal", expected, actual, 2);
 	}
 
 	@Test
@@ -56,7 +56,94 @@ public class testCurrencyConverter
 		conversionEngine.convertFrom(eur);
 
 		double expected = 1.06;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newUSD = conversionEngine.convertedCurrency;
+		double actual = newUSD.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
 	}
 
+	@Test
+	public void testConvertCurrencyEuroToGBP()
+	{
+		//: Given
+		Euro eur = new Euro();
+		GreatBritainPound gbp = new GreatBritainPound();
+		conversionEngine.convertTo(gbp);
+		conversionEngine.convertFrom(eur);
+
+		double expected = 0.84;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newGBP = conversionEngine.convertedCurrency;
+		double actual = newGBP.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencyGBPToINR()
+	{
+		//: Given
+		IndianRupee inr = new IndianRupee();
+		GreatBritainPound gbp = new GreatBritainPound();
+		conversionEngine.convertTo(inr);
+		conversionEngine.convertFrom(gbp);
+
+		double expected = 68.32;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newINR = conversionEngine.convertedCurrency;
+		double actual = newINR.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencyINRToCAD()
+	{
+		//: Given
+		IndianRupee inr = new IndianRupee();
+		CanadianDollar cad = new CanadianDollar();
+		conversionEngine.convertTo(cad);
+		conversionEngine.convertFrom(inr);
+
+		double expected = 1.32;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newINR = conversionEngine.convertedCurrency;
+		double actual = newINR.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
+
+	@Test
+	public void testConvertCurrencyCADToSGD()
+	{
+		//: Given
+		SingaporeDollar sgd = new SingaporeDollar();
+		CanadianDollar cad = new CanadianDollar();
+		conversionEngine.convertTo(sgd);
+		conversionEngine.convertFrom(cad);
+
+		double expected = 1.43;
+
+		//: When
+		conversionEngine.convertCurrency();
+		Currency newSGD = conversionEngine.convertedCurrency;
+		double actual = newSGD.getAmount();
+
+		//: Then
+		assertEquals("These values should be equal", expected, actual, 2);
+	}
 
 }
