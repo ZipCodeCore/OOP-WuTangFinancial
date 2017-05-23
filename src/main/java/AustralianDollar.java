@@ -13,5 +13,8 @@ public class AustralianDollar {
         return finalConversion;
     }
 
-
+    public double australianDollarToSwissFranc(double input){
+        double finalConversion = input * 1.33;
+        return finalConversion;
+    }
 }
