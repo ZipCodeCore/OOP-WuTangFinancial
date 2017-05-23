@@ -27,4 +27,9 @@ public class CanadianDollar {
         double finalConversion = input * 5.24;
         return finalConversion;
     }
+
+    public double canadianDollarToAmericanDollar(double input){
+        double finalConversion = input * 1.32;
+        return finalConversion;
+    }
 }
