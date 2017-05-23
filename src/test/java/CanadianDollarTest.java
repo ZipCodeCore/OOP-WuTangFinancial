@@ -87,4 +87,23 @@ public class CanadianDollarTest {
         Assert.assertEquals("This should return 150.40", expected, actual, .01);
     }
 
+    @Test
+    public void canadianDollarToRupeeTest(){
+        CanadianDollar canadianDollar = new CanadianDollar();
+
+        double expected =3744.40;
+        double actual = canadianDollar.canadianDollarToRupee(74);
+
+        Assert.assertEquals("This should return 3744.40", expected, actual, .01);
+    }
+
+    @Test
+    public void canadianDollarToAustralianDollarTest(){
+        CanadianDollar canadianDollar = new CanadianDollar();
+
+        double expected = 69.36;
+        double acutal = canadianDollar.canadianDollarToAustralianDollar(68);
+
+        Assert.assertEquals("This should return 69.36", expected, acutal, .01);
+    }
 }

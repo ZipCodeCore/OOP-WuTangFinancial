@@ -42,4 +42,14 @@ public class CanadianDollar {
         double finalConversion = input * 1.60;
         return finalConversion;
     }
+
+    public double canadianDollarToRupee(double input){
+        double finalConversion = input * 50.60;
+        return  finalConversion;
+    }
+
+    public double canadianDollarToAustralianDollar(double input){
+        double finalConversion = input * 1.02;
+        return finalConversion;
+    }
 }
