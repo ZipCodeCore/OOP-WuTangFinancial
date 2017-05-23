@@ -34,6 +34,6 @@ public class CurrencyConverter {
 
     long convert(long initialAmount) {
         double unrounded = ratio * initialAmount;
-        return (long) Math.round(unrounded);
+        return Math.round(unrounded);
     }
 }

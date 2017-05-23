@@ -29,8 +29,8 @@ public class IOHandler {
                 "Raekwon the Chef, U-God, Ghostface Killah and the Method Man\n");
         printDashes();
         println("Welcome to the 36 chambers of Wu-Tang Financial, Inc.\n\n" +
-                    "International business is a crazy game, and we're here to\n" +
-                    "protect ya neck.\n");
+                "International business is a crazy game, and we're here to\n" +
+                "protect ya neck.\n");
     }
 
     public static CurrencyConverter.ConversionRate getCurrencyType(String prompt) {

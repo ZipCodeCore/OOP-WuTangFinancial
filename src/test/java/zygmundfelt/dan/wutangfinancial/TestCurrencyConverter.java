@@ -144,4 +144,54 @@ public class TestCurrencyConverter {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void BritishPoundToIndianRupeeZeroTest() {
+        CurrencyConverter converter = new CurrencyConverter(CurrencyConverter.ConversionRate.BRITISH_POUND, CurrencyConverter.ConversionRate.INDIAN_RUPEE);
+        long expected = 0;
+
+        long actual = converter.convert(0);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void AustralianDollarToChineseYuanRenminbiNegativeTest() {
+        CurrencyConverter converter = new CurrencyConverter(CurrencyConverter.ConversionRate.AUSTRALIAN_DOLLAR, CurrencyConverter.ConversionRate.CHINESE_YUAN_RENMINBI);
+        long expected = -513;
+
+        long actual = converter.convert(-100);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void ChineseYuanRenminbiToJapaneseYenTest() {
+        CurrencyConverter converter = new CurrencyConverter(CurrencyConverter.ConversionRate.CHINESE_YUAN_RENMINBI, CurrencyConverter.ConversionRate.JAPANESE_YEN);
+        long expected = -1674;
+
+        long actual = converter.convert(-100);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void USDollarToAustralianDollarNegativeTest() {
+        CurrencyConverter converter = new CurrencyConverter(CurrencyConverter.ConversionRate.US_DOLLAR, CurrencyConverter.ConversionRate.AUSTRALIAN_DOLLAR);
+        long expected = -135;
+
+        long actual = converter.convert(-100);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void IndianRupeeToMalaysianRinggitNegativeTest() {
+        CurrencyConverter converter = new CurrencyConverter(CurrencyConverter.ConversionRate.INDIAN_RUPEE, CurrencyConverter.ConversionRate.MALAYSIAN_RINGGIT);
+        long expected = -7;
+
+        long actual = converter.convert(-100);
+
+        Assert.assertEquals(expected, actual);
+    }
+
 }

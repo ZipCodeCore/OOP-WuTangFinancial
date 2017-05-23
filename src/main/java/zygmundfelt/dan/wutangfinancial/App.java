@@ -27,7 +27,7 @@ public class App {
         IOHandler.printCurrencyMenu(name);
     }
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         introduction();
         try {
             appEngine();
