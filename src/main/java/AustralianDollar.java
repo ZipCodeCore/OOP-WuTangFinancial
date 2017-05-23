@@ -8,4 +8,10 @@ public class AustralianDollar {
         return finalConversion;
     }
 
+    public double australianDollarToSingaporeDollar(double input){
+        double finalConversion = input * 1.05;
+        return finalConversion;
+    }
+
+
 }
