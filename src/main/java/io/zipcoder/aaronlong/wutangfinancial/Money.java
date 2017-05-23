@@ -43,7 +43,7 @@ public class Money {
     if (exchangeRate > 1000) {
       exchange = (downHandleDoubles(usDollars) * downHandleDoubles(exchangeRate));
     } else if (exchangeRate < 1000) {
-      exchange = (downHandleDoubles(usDollars) / downHandleDoubles(exchangeRate));
+      exchange = (downHandleDoubles(usDollars) * downHandleDoubles(exchangeRate));
     } else {
       exchange = usDollars;
     }
