@@ -9,7 +9,7 @@ public class SwissFrancTest {
     @Test
     public void swissFrancToMalaysianRinggitTest(){
         SwissFranc swissFranc = new SwissFranc();
-        
+
         double expected = 163.54;
         double actual = swissFranc.swissFrancToMalaysianRinggit(37);
 
