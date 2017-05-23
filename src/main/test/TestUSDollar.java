@@ -13,5 +13,5 @@ public class TestUSDollar {
     }
 
     @Test
-    public void testConvertToUSDollar()
+    public void testConvertToUSDollar(){}
 }
