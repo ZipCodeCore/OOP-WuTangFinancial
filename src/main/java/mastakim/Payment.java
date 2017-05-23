@@ -31,13 +31,10 @@ public class Payment {
     }
 
     public Payment convertTo(Currency currency){
-        BigInteger dollarAmt10 = amount.multiply(this.currency.toDollar()).divide(new BigInteger("1000000000"));
-
-        BigInteger newAmount100 = dollarAmt10.multiply(currency.fromDollar()).divide(BigInteger.TEN);
-
-        BigInteger remainder = newAmount100.remainder(new BigInteger("5"));
-        if(remainder.compareTo(new BigInteger("5")) < 0) return new Payment(newAmount100.divide(BigInteger.TEN).add(BigInteger.ONE), currency);
-        else return new Payment(newAmount100.divide(BigInteger.TEN), currency);
+        BigInteger dollarAmt10 = amount.multiply(this.currency.toDollar()).multiply(currency.fromDollar()).divide(new BigInteger("10000000000000000"));
+        BigInteger remainder = dollarAmt10.remainder(new BigInteger("10"));
+        if(remainder.compareTo(new BigInteger("5")) < 0) return new Payment(dollarAmt10.divide(BigInteger.TEN).add(BigInteger.ONE), currency);
+        else return new Payment(dollarAmt10.divide(BigInteger.TEN), currency);
     }
 
 
