@@ -2,4 +2,10 @@
  * Created by jennifermcginty on 5/22/17.
  */
 public class AustralianDollar {
+
+    public double australianDollarToCanadianDollar(double input){
+        double finalConversion = input * 1.02;
+        return finalConversion;
+    }
+
 }
