@@ -20,4 +20,8 @@ public class IndianRupee {
         return finalConversion;
     }
 
+    public double indianRupeeToSwissFranc(double input){
+        double finalConversion = input * 67.70;
+        return finalConversion;
+    }
 }
