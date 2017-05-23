@@ -51,13 +51,20 @@ public class Converter {
 
     //Helper to Step 2, returns a $Dollar.Cents amount
     public Money<Integer> toUsDollar(int centsAmountFromCheckNum, int divisor){
-        return new Money<>(centsAmountFromCheckNum / divisor,centsAmountFromCheckNum % divisor);
+        return new Money<>(centsAmountFromCheckNum / divisor,calculateChange(centsAmountFromCheckNum, divisor));
+    }
+
+    //Helper to helper of Step 2, finds proper left over change of a given amount
+    public int calculateChange(int centsAmountFromCheckNum, int divisor){
+        int leftOver = centsAmountFromCheckNum % divisor;
+        double change = (double) leftOver/divisor;
+        if(change > 1){change -= 1;}
+        return (int) (change * 100);
     }
 
 
     //Step 3, takes desired currency and $Dollar.Cents amount and calls method to convert amount to reflect the desired rate
     public Money<Integer> toDesiredRate(String desiredCurrency, Money<Integer> UsBaseAmount){
-        int scalar = toCents(desiredCurrency);
         return toDesiredDollars(desiredCurrency, UsBaseAmount);
     }
 

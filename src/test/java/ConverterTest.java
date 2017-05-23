@@ -38,7 +38,7 @@ public class ConverterTest {
         String startingCurrency = "Euro";
         String endingCurrency = "US Dollar";
         double amount = 150.00;
-        String expected = new Money<>(159,54).toString();
+        String expected = new Money<>(159,57).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -54,7 +54,7 @@ public class ConverterTest {
         String startingCurrency = "Euro";
         String endingCurrency = "British Pound";
         double amount = 150.00;
-        String expected = new Money<>(130,82).toString();
+        String expected = new Money<>(130,85).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -70,7 +70,7 @@ public class ConverterTest {
         String startingCurrency = "British Pound";
         String endingCurrency = "Indian Rupee";
         double amount = 150.00;
-        String expected = new Money<>(12486,16).toString();
+        String expected = new Money<>(12497,94).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -86,7 +86,7 @@ public class ConverterTest {
         String startingCurrency = "Indian Rupee";
         String endingCurrency = "Canadian Dollar";
         double amount = 150.00;
-        String expected = new Money<>(20,28).toString();
+        String expected = new Money<>(2,89).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -102,7 +102,7 @@ public class ConverterTest {
         String startingCurrency = "Canadian Dollar";
         String endingCurrency = "Singapore Dollar";
         double amount = 150.00;
-        String expected = new Money<>(162,79).toString();
+        String expected = new Money<>(162,49).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -118,7 +118,7 @@ public class ConverterTest {
         String startingCurrency = "Singapore Dollar";
         String endingCurrency = "Swiss Franc";
         double amount = 150.00;
-        String expected = new Money<>(106,33).toString();
+        String expected = new Money<>(105,94).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -134,7 +134,7 @@ public class ConverterTest {
         String startingCurrency = "Swiss Franc";
         String endingCurrency = "Malaysian Ringgit";
         double amount = 150.00;
-        String expected = new Money<>(663,88).toString();
+        String expected = new Money<>(663,84).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -150,7 +150,7 @@ public class ConverterTest {
         String startingCurrency = "Malaysian Ringgit";
         String endingCurrency = "Japanese Yen";
         double amount = 150.00;
-        String expected = new Money<>(4111,16).toString();
+        String expected = new Money<>(3886,43).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
@@ -166,7 +166,7 @@ public class ConverterTest {
         String startingCurrency = "Japanese Yen";
         String endingCurrency = "Chinese Yuan Renminbi";
         double amount = 150.00;
-        String expected = new Money<>(243,31).toString();
+        String expected = new Money<>(8,93).toString();
 
         //When
         String actual = exchanger.convert(startingCurrency, endingCurrency, amount).toString();
