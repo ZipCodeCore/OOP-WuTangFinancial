@@ -3,16 +3,17 @@
  * Created by rahmirford on 5/22/17.
  */
 public class CurrencyConverter {
-
+    public double usDollarConvertedValue;
+    public double convertedForeignValue;
 
 
     // Switch statement takes a string and double returns double(usDollar)
     // another switch statment is called which takes a string(exchange currency and a double(usDollar)
 
-    public double foreignCurrencyToUsDollar(String currency, double loot){
+    public double foreignCurrencyToUsDollar(String currentCurrency, double loot){
         double usDollarConvertedValue = 0;
 
-        switch(currency){
+        switch(currentCurrency){
             case "euro":
                 usDollarConvertedValue = Euro.convertToUSDollar(loot);
             break;
@@ -51,13 +52,53 @@ public class CurrencyConverter {
     }
 
 
-    public  double usDollarToForeignCurrency(String exchangeCurrency,)
+    public  double usDollarToForeignCurrency(String exchangeCurrency, double dollar){
+        double convertedForeignValue = 0;
+
+        switch (exchangeCurrency) {
+            case "euro":
+                convertedForeignValue = Euro.convertToEuro(dollar);
+                break;
+            case "pound":
+                convertedForeignValue = BritishPound.convertToBritishPound(dollar);
+                break;
+            case "rupee":
+                convertedForeignValue = Rupee.convertToIndianRupee(dollar);
+                break;
+            case "australianDollar":
+                convertedForeignValue = AustralianDollar.convertToAustralianDollar(dollar);
+                break;
+            case "canadianDollar":
+                convertedForeignValue = CanadianDollar.convertToCanadianDollar(dollar);
+                break;
+            case "singaporeDollar":
+                convertedForeignValue = SingaporeDollar.convertToSingaporeDollar(dollar);
+                break;
+            case "franc":
+                convertedForeignValue = SwissFranc.convertToSwissFranc(dollar);
+                break;
+            case "ringgit":
+                convertedForeignValue = MalaysianRinggit.convertToMalaysianRinggit(dollar);
+                break;
+            case "yen":
+                convertedForeignValue = JapaneseYen.convertToJapaneseYen(dollar);
+                break;
+            case "renminbi":
+                convertedForeignValue = ChineseYuanRenminbi.convertToChineseYuanRenminbi(dollar);
+                break;
+        }
+            return convertedForeignValue;
+
+    }
 
 
 
 
-    public String converter(String currentCurrency, double loot, String exchangeCurrency){
-
+    public double converter(String currentCurrency, double loot, String exchangeCurrency){
+        foreignCurrencyToUsDollar(currentCurrency,loot);
+        convertedForeignValue = usDollarToForeignCurrency(exchangeCurrency,usDollarConvertedValue);
+        System.out.printf("Your have %.2f worth of diversified bonds.", convertedForeignValue);
+        return convertedForeignValue;
     }
 
 

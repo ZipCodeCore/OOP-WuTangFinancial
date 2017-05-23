@@ -4,7 +4,7 @@
 public class SingaporeDollar {
     private static double rate = 1.43;
     private double usDollarConvertedValue;
-    private double singaporeDollarValue;
+    private static double singaporeDollarValue;
 
     public static double convertToUSDollar(double amount){
         return 0;
@@ -17,7 +17,7 @@ public class SingaporeDollar {
     public static double getRate() {
         return rate;
     }
-    public double convertToSingaporeDollar(double usDollarValue){
+    public static double convertToSingaporeDollar(double usDollarValue){
         singaporeDollarValue = usDollarValue * SingaporeDollar.getRate();
         return singaporeDollarValue;
     }

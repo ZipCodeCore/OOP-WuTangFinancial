@@ -4,7 +4,7 @@
 public class CanadianDollar {
     private static double rate =1.32;
     private double usDollarConvertedValue;
-    private double canadianDollarValue;
+    private static double canadianDollarValue;
 
     public static double convertToUSDollar(double amount){
         return 0;
@@ -19,7 +19,7 @@ public class CanadianDollar {
         return rate;
     }
 
-    public double convertToCanadianDollar(double usDollarValue){
+    public static double convertToCanadianDollar(double usDollarValue){
         canadianDollarValue = usDollarValue * CanadianDollar.getRate();
         return canadianDollarValue;
     }

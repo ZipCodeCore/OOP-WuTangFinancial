@@ -4,7 +4,7 @@
 public class JapaneseYen {
     private static double rate = 115.84;
     private double usDollarConvertedValue;
-    private double japaneseYenValue;
+    private static double japaneseYenValue;
 
     public static double convertToUSDollar(double amount){
         return 0;
@@ -19,7 +19,7 @@ public class JapaneseYen {
         return rate;
     }
 
-    public double convertToJapaneseYen(double usDollarValue){
+    public static double convertToJapaneseYen(double usDollarValue){
         japaneseYenValue= usDollarValue * JapaneseYen.getRate();
         return japaneseYenValue;
     }

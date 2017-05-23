@@ -4,7 +4,7 @@
 public class ChineseYuanRenminbi {
     private static double rate = 6.92;
     private double usDollarConvertedValue;
-    private double chineseYuanRenminbiValue;
+    private static double chineseYuanRenminbiValue;
 
     public static double convertToUSDollar(double amount){
         return 0;
@@ -18,7 +18,7 @@ public class ChineseYuanRenminbi {
         return rate;
     }
 
-    public double convertToChineseYuanRenminbi(double usDollarValue){
+    public static double convertToChineseYuanRenminbi(double usDollarValue){
         chineseYuanRenminbiValue = usDollarValue * ChineseYuanRenminbi.getRate();
         return chineseYuanRenminbiValue;
     }

@@ -4,7 +4,7 @@
 public class MalaysianRinggit {
     private static double rate = 4.47;
     private double usDollarConvertedValue;
-    private double malaysianRinggitValue;
+    private static double malaysianRinggitValue;
     public static double convertToUSDollar(double amount){
         return 0;
     }
@@ -18,7 +18,7 @@ public class MalaysianRinggit {
         return rate;
     }
 
-    public double convertToMalaysianRinggit(double usDollarValue){
+    public static double convertToMalaysianRinggit(double usDollarValue){
         malaysianRinggitValue = usDollarValue * MalaysianRinggit.getRate();
         return malaysianRinggitValue;
     }

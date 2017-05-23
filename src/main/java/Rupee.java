@@ -3,10 +3,10 @@
  */
 public class Rupee {
     private static double rate = 68.32;
+    private double usDollarConvertedValue;
+    private static double rupeeValue;
 
-    private double rupeeValue;
-
-    public double convertToUSDollar(){
+    public static double convertToUSDollar(double amount){
         return 0;
     }
 
@@ -14,11 +14,9 @@ public class Rupee {
         return rate;
     }
 
-    public double convertToIndianRupee(double usDollarValue){
+    public static double convertToIndianRupee(double usDollarValue){
         rupeeValue = usDollarValue * Rupee.getRate();
         return rupeeValue;
     }
 
-    public static double convertToUSDollar(double loot) {
-    }
 }

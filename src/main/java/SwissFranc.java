@@ -4,7 +4,7 @@
 public class SwissFranc {
     private static double rate = 1.01;
     private double usDollarConvertedValue;
-    private double swissFrancValue;
+    private static double swissFrancValue;
 
     public static double convertToUSDollar(double amount){
         return 0;
@@ -17,7 +17,7 @@ public class SwissFranc {
     public static double getRate() {
         return rate;
     }
-    public double convertToSwissFranc(double usDollarValue){
+    public static double convertToSwissFranc(double usDollarValue){
         swissFrancValue = usDollarValue * SwissFranc.getRate();
         return swissFrancValue;
     }
