@@ -15,7 +15,7 @@ public class CurrencyConverterEngine {
             Print.printAvailableCurrencies();
             obtainStartingCurrency();
             obtainMoney();
-            obtainMoneyInTargetCurrency();
+            obtainTargetCurrency();
 
         }
 
@@ -42,5 +42,14 @@ public class CurrencyConverterEngine {
         Print.printCurrentMonetaryAmount();
     }
 
-    private static void obtainMoneyInTargetCurrency() {}
+    private static void obtainTargetCurrency() {
+        InputSetup asker = new InputSetup(System.in, System.out);
+        String currencyInput = Input.askForInitialCurrencyType(asker);
+        while (!InputChecker.checkForValidCurrency(currencyInput)) {
+            currencyInput = Input.askForInitialCurrencyType(asker);
+        }
+        CurrentCurrencyInformation.setTargetCurrencyType(currencyInput);
+
+
+    }
 }

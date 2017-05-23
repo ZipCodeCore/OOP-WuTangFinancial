@@ -30,4 +30,10 @@ public class InputCheckerTest {
         boolean expectedResult = InputChecker.checkForValidMoneyInput("Money");
         Assert.assertTrue(!expectedResult);
     }
+
+    @Test
+    public void testCheckForInvalidNegativeMoneyInput() {
+        boolean expectedResult = InputChecker.checkForValidMoneyInput("-10");
+        Assert.assertTrue(!expectedResult);
+    }
 }

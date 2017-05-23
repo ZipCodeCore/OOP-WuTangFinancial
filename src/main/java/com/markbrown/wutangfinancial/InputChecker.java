@@ -20,7 +20,12 @@ public class InputChecker {
         if (!NumberUtils.isParsable(input)) {
             Print.printInvalidInput(input);
             return false;
-        } else {
+        }
+        if (Long.parseLong(input) < 0) {
+            Print.printInvalidInput(input);
+            return false;
+        }
+        else {
             return true;
         }
     }
