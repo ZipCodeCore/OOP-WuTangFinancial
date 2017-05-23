@@ -1,8 +1,6 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.logging.Logger;
 
 /**
  * Created by anthonyjones on 5/22/17.
@@ -10,14 +8,14 @@ import java.util.TreeMap;
 public class Calculate {
 
     double currentRate;
-//    double money;
+        double money;
+    public static final Logger logger = Logger.getLogger("*");
 
 
     public double conversionMethod(double money, Currency currency) {
-
         switch (currency) {
             case USD:
-                return convertUSDToEuros(money);
+                return money;
             case EURO:
                 return convertUSDToEuros(money);
             case SWISSFRANC:
@@ -116,18 +114,30 @@ public class Calculate {
     }
 
     public double convertYuanToUSD(double money) {
+        if (money <= 0) {
+            logger.warning("You must supply a number greater than 0!");
+            throw new IllegalArgumentException();
+        }
         currentRate = 6.92;
         money = money / currentRate;
         return round(money, 2);
     }
 
     public double convertYenToUSD(double money) {
+        if (money <= 0) {
+            logger.warning("You must supply a number greater than 0!");
+            throw new IllegalArgumentException();
+        }
         currentRate = 115.84;
         money = money / currentRate;
         return round(money, 2);
     }
 
-    public double convertRingittToUSD(double money) {
+    public double convertRinggitToUSD(double money) {
+        if (money <= 0) {
+            logger.warning("You must supply a number greater than 0!");
+            throw new IllegalArgumentException();
+        }
         currentRate = 4.47;
         money = money / currentRate;
         return round(money, 2);
@@ -164,6 +174,10 @@ public class Calculate {
         BigDecimal bigDecimal = new BigDecimal(val);
         bigDecimal = bigDecimal.setScale(decimalPlace, RoundingMode.HALF_DOWN);
         return bigDecimal.doubleValue();
+    }
+
+    public void setNumber1(double number1) {
+        this.money = number1;
     }
 
 }

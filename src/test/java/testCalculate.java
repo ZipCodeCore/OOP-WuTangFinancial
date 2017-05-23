@@ -10,10 +10,10 @@ public class testCalculate {
     public void testConvertToUSDollar() {
         //Given
         Calculate calculate = new Calculate();
-        double britishPound  = 300;
-        double expected = 365.85;
+        double australianDollar = 500;
+        double expected = 370.37;
         //When
-        double actual = Math.round(calculate.convertPoundsToUSD(britishPound));
+        double actual = calculate.convertAustralianDollarToUSD(australianDollar);
         //Then
         Assert.assertEquals("300 pounds to dollars is $365.85", expected, actual, .000000005);
     }
@@ -193,10 +193,7 @@ public class testCalculate {
         //Given
         Calculate calculate = new Calculate();
         double pound = 500;
-        //convert to usd...take usd  convert to rupee
         double rupee = calculate.convertPoundsToUSD(pound);
-        //System.out.println(rupee2);
-        //double rupee = calculate.conversionMethod(pound);
         double expectedSum = 41658.53;
         //When
         double actual = calculate.conversionMethod(rupee, Currency.RUPEE);
@@ -204,7 +201,6 @@ public class testCalculate {
         Assert.assertEquals("Pound to Rupee", expectedSum, actual, .000000006);
 
     }
-
 
     @Test
     public void testConvertRupeeToCanadianDollar() {
@@ -267,7 +263,7 @@ public class testCalculate {
         //Given
         Calculate calculate = new Calculate();
         double ringgit = 500;
-        double yen = calculate.convertRingittToUSD(ringgit);
+        double yen = calculate.convertRinggitToUSD(ringgit);
         double expectedSum = 12957.86;
         //When
         double actual = calculate.conversionMethod(yen, Currency.YEN);
@@ -290,5 +286,35 @@ public class testCalculate {
 
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvertYenToYuanIfZero() {
+        //Given
+        Calculate calculate = new Calculate();
+        double yen = 0;
+        double yuan = calculate.convertYenToUSD(yen);
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvertRinggitToUSDIfZero() {
+        //Given
+        Calculate calculate = new Calculate();
+        double ringgit = 0;
+        double usd = calculate.convertRinggitToUSD(ringgit);
+        double expectedSum = 0;
+        //When
+        double actual = calculate.conversionMethod(usd, Currency.USD);
+        //Then
+        Assert.assertEquals("Throws an IllegalArgumentException exception, because amount is less than 0"
+                , expectedSum, actual, .0000008);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvertYuanToUSD() {
+        //Given
+        Calculate calculate = new Calculate();
+        double yuan = 0;
+        double usd = calculate.convertYuanToUSD(yuan);
+        //When
+        double actual = calculate.conversionMethod(usd, Currency.USD);
+    }
 }
