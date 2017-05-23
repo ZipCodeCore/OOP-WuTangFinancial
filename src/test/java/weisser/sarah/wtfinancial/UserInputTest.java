@@ -29,7 +29,7 @@ public class UserInputTest {
                 "(8) Swiss Franc\n" +
                 "(9) Malaysian Ringgit\n" +
                 "(10) Japanese Yen\n" +
-                "(11) Chinese Yuan Renminbi\n";
+                "(11) Chinese Yuan Renminbi";
 
         //when
         String actual = input.printChoice();

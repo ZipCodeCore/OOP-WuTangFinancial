@@ -12,7 +12,8 @@ public class Main {
         input.setAmountToConvert();
         System.out.println("Converting " + input.getAmountToConvert() + " in "
                 + input.getConvertFrom().toString() + " to " + input.getConvertTo() + ".");
-
+        CurrencyConverter converter = new CurrencyConverter(input.getConvertFrom(), input.getConvertTo(), input.getAmountToConvert());
+        System.out.println("You will receive: " + converter.convertCurrency() + " in " + input.getConvertTo());
 
     }
 }

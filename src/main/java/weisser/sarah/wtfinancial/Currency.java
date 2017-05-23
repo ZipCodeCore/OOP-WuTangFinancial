@@ -16,13 +16,13 @@ public enum Currency {
     JAPANESE_YEN (11584),
     CHINESE_YUAN_RENMINBI (692);
 
-    long rate;
+    double rate;
 
-    Currency(long rate) {
+    Currency(double rate) {
         this.rate = rate;
     }
 
-    public long getRate() {
+    public double getRate() {
         return this.rate;
     }
 }

@@ -163,131 +163,131 @@ public class CurrencyCreatorTest {
     @Test
     public void creatorGetCurrencyRateTestEuro() {
         //given
-        long expected = 94;
+        double expected = .94;
 
         //when
         Currency euro = creator.setCurrency(1);
-        long actual = euro.getRate();
+        double actual = euro.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestPound() {
         //given
-        long expected = 82;
+        double expected = .82;
 
         //when
         Currency pound = creator.setCurrency(2);
-        long actual = pound.getRate();
+        double actual = pound.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestRupee() {
         //given
-        long expected = 6832;
+        double expected = 68.32;
 
         //when
         Currency rupee = creator.setCurrency(3);
-        long actual = rupee.getRate();
+        double actual = rupee.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestAustralian() {
         //given
-        long expected = 135;
+        double expected = 1.35;
 
         //when
         Currency aust = creator.setCurrency(4);
-        long actual = aust.getRate();
+        double actual = aust.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestCanadian() {
         //given
-        long expected = 132;
+        double expected = 1.32;
 
         //when
         Currency canadian = creator.setCurrency(5);
-        long actual = canadian.getRate();
+        double actual = canadian.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestSingapore() {
         //given
-        long expected = 143;
+        double expected = 1.43;
 
         //when
         Currency sing = creator.setCurrency(6);
-        long actual = sing.getRate();
+        double actual = sing.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestSwiss() {
         //given
-        long expected = 101;
+        double expected = 1.01;
 
         //when
         Currency swiss = creator.setCurrency(7);
-        long actual = swiss.getRate();
+        double actual = swiss.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestMalay() {
         //given
-        long expected = 447;
+        double expected = 4.47;
 
         //when
         Currency malay = creator.setCurrency(8);
-        long actual = malay.getRate();
+        double actual = malay.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestYen() {
         //given
-        long expected = 11584;
+        double expected = 115.84;
 
         //when
         Currency yen = creator.setCurrency(9);
-        long actual = yen.getRate();
+        double actual = yen.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
     public void creatorGetCurrencyRateTestYuan() {
         //given
-        long expected = 692;
+        double expected = 6.92;
 
         //when
         Currency yuan = creator.setCurrency(10);
-        long actual = yuan.getRate();
+        double actual = yuan.getRate();
 
         //then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0);
     }
 
 }

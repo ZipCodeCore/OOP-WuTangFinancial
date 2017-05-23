@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UserInput {
     private Currency convertFrom;
     private Currency convertTo;
-    private long amountToConvert;
+    private double amountToConvert;
     private int choice;
     private int convertFromChoice;
     private int convertToChoice;
@@ -89,10 +89,10 @@ public class UserInput {
         return choiceString;
     }
 
-    public long setAmountToConvert() {
+    public double setAmountToConvert() {
         System.out.println("How many units of the " + convertFrom + " would you like to exchange?");
         Scanner scanner = new Scanner(System.in);
-        amountToConvert = scanner.nextLong();
+        amountToConvert = scanner.nextDouble();
         if (amountToConvert <= 0) {
             System.out.println("Don't waste my time if you don't have any money.");
             amountToConvert = 0;
@@ -100,7 +100,7 @@ public class UserInput {
         return amountToConvert;
     }
 
-    public long getAmountToConvert() {
+    public double getAmountToConvert() {
         return amountToConvert;
     }
 }
