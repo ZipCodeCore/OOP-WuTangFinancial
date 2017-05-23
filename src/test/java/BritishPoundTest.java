@@ -16,5 +16,13 @@ public class BritishPoundTest {
         Assert.assertEquals("This should return 39.90", expected, actual, .01);
     }
 
-    
+    @Test
+    public void britishPoundToRupeeTest(){
+        BritishPound britishPound = new BritishPound();
+
+        double expected = 840.49;
+        double actual = britishPound.britishPoundToRupee(5.95);
+
+        Assert.assertEquals("This should return 840.49", expected, actual, .01);
+    }
 }

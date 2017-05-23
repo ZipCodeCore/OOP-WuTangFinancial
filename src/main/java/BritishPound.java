@@ -8,6 +8,9 @@ public class BritishPound {
         return finalConversion;
     }
 
-
+    public double britishPoundToRupee(double input){
+        double finalConversion = input * 141.26;
+        return finalConversion;
+    }
 }
 
