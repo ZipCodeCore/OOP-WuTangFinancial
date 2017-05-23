@@ -37,5 +37,10 @@ public class AustralianDollar {
         double finalConversion = input * 1.35;
         return finalConversion;
     }
+
+    public double australianDollarToEuro(double input){
+        double finalConversion = input * 1.46;
+        return finalConversion;
+    }
 }
 

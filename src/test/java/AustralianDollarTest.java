@@ -76,4 +76,14 @@ public class AustralianDollarTest {
         Assert.assertEquals("This should return 39.15", expected, actual, .01);
     }
 
+    @Test
+    public void australianDollarToEuroTest(){
+        AustralianDollar australianDollar = new AustralianDollar();
+
+        double expected = 128.48;
+        double actual = australianDollar.australianDollarToEuro(88);
+
+        Assert.assertEquals("This should return 128.48", expected, actual, .01);
+    }
+
 }
