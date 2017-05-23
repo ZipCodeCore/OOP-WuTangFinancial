@@ -245,4 +245,17 @@ public class ConverterTest {
         assertEquals("Should be 7", expected, actual);
     }
 
+    @Test
+    public void testChopToDesiredDigits(){
+    //Given
+        int num = 12349678;
+        int expected = 12349;
+
+    //When
+        int actual = exchanger.chopToDesiredDigits(num, 8, 5);
+
+    //Then
+        assertEquals("Should be chopped to 1234", expected, actual);
+    }
+
 }
