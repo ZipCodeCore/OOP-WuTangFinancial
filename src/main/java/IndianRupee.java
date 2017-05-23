@@ -51,5 +51,8 @@ public class IndianRupee {
         return finalConversion;
     }
 
-
+    public double indianRupeeToBritishPound(double input){
+        double finalConversion = input * 83.31;
+        return finalConversion;
+    }
 }
