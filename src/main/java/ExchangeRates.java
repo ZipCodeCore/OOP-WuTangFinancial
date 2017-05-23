@@ -59,4 +59,33 @@ public class ExchangeRates {
     public static BigDecimal getCNY() {
         return CNY;
     }
+
+    public BigDecimal selectMenuOption(String s) throws InvalidMenuSelection{
+        switch(s){
+            case "1":
+                return USD;
+            case "2":
+                return EUR;
+            case "3":
+                return GBP;
+            case "4":
+                return INR;
+            case "5":
+                return AUD;
+            case "6":
+                return CAD;
+            case "7":
+                return SGD;
+            case "8":
+                return CHF;
+            case "9":
+                return MYR;
+            case "10":
+                return JPY;
+            case "11":
+                return CNY;
+            default:
+                throw new InvalidMenuSelection();
+        }
+    }
 }
