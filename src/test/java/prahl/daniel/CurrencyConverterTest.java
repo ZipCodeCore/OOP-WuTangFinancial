@@ -1,13 +1,12 @@
 package prahl.daniel;
 
 import org.junit.*;
-//import static prahl.daniel.CurrencyConverter.*;
 
 /**
  * Created by danielprahl on 5/22/17.
  */
 public class CurrencyConverterTest {
-    /* Instructions:
+    /* Minimum Testing Instructions:
     *Convert Dollar to Euro
     *Convert Euro to Dollar
     *Convert Euro to British Pound
@@ -20,8 +19,14 @@ public class CurrencyConverterTest {
     *Convert Japanese Yen to Chinese Yuan Renminbi
     */
 
-    public CurrencyConverter converter = new CurrencyConverter();
-    public double delta = 0.0001;
+    public static CurrencyConverter converter;
+    public static double delta;
+
+    @BeforeClass
+    public static void initForTesting(){
+        converter = new CurrencyConverter();
+        delta = 0.0001;
+    }
 
     @Test
     public void getConversionRateTest(){
@@ -67,9 +72,9 @@ public class CurrencyConverterTest {
         Assert.assertEquals(expected, actual, delta);
     }
 
-    /*
-     *  full conversion tests from source to target
-     */
+  /*
+  *  full conversion tests from source to target
+  */
     @Test
     public void convertDollarToEuroTest() {
         //given;
