@@ -3,7 +3,12 @@
  */
 public class Currency
 {
+<<<<<<< HEAD
     protected double rate;
+=======
+    public double rate;
+    //public char symbol;
+>>>>>>> 554391f429c39dc06bd4eb68ef16880beb3085c4
 
     public Currency()
     {
@@ -20,4 +25,8 @@ public class Currency
         char symbol = '$';
         return symbol;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 554391f429c39dc06bd4eb68ef16880beb3085c4

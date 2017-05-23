@@ -10,4 +10,5 @@ public class CanadianDollar extends Currency
         return rate;
     }
 
+
 }

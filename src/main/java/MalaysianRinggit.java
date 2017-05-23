@@ -10,3 +10,5 @@ public class MalaysianRinggit extends Currency
         return rate;
     }
 }
+
+

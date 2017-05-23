@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
          import java.util.ArrayList;
+=======
+import java.util.ArrayList;
+>>>>>>> 554391f429c39dc06bd4eb68ef16880beb3085c4
 
 /**
  * Created by paco on 5/22/17.
@@ -43,4 +47,8 @@ public class App
 
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 554391f429c39dc06bd4eb68ef16880beb3085c4

@@ -16,6 +16,9 @@ public class Rupee extends Currency
         return symbol;
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 554391f429c39dc06bd4eb68ef16880beb3085c4
 }
