@@ -18,5 +18,10 @@ public class BritishPound {
         return finalConversion;
     }
 
+    public double britishPoundToAustralianDollar(double input){
+        double finalConversion = input * 1.64;
+        return finalConversion;
+    }
+
 }
 
