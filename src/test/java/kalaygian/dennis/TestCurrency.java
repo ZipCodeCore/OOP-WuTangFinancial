@@ -21,6 +21,17 @@ public class TestCurrency {
     }
 
     @Test
+    public void testFormatCurrency_obnoxiousNumberOfDecimals() {
+        // Given
+        Currency dollars = CurrencyFactory.createCurrency("Dollar", 3.23453267546732547326476);
+        String expected = "3.23";
+        // When
+        String answer = dollars.formatCurrency(dollars.getAmount());
+        // Then
+        Assert.assertEquals("Checking to see if the currency was correctly formatted", expected, answer);
+    }
+
+    @Test
     public void testConvertTo_Euro_fromDollar() throws ClassNotFoundException {
         // Given
         Currency dollars = CurrencyFactory.createCurrency("Dollar", 2);
@@ -28,7 +39,7 @@ public class TestCurrency {
         // When
         String converted = dollars.convertTo("Euro");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Dollar to Euro", expected, converted);
     }
 
     @Test
@@ -39,7 +50,7 @@ public class TestCurrency {
         // When
         String converted = euros.convertTo("Dollar");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Euro to Dollar", expected, converted);
     }
 
     @Test
@@ -50,7 +61,7 @@ public class TestCurrency {
         // When
         String converted = euros.convertTo("British Pound");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Euro to BritishPound", expected, converted);
     }
 
     @Test
@@ -61,7 +72,7 @@ public class TestCurrency {
         // When
         String converted = britishPounds.convertTo("Indian Rupee");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from BritishPound to Indian Rupee", expected, converted);
     }
 
     @Test
@@ -72,7 +83,7 @@ public class TestCurrency {
         // When
         String converted = indianRupee.convertTo("canadian dollar");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Indian Rupee to Canadian Dollar", expected, converted);
     }
 
     @Test
@@ -83,18 +94,18 @@ public class TestCurrency {
         // When
         String converted = canadianDollar.convertTo("Singapore Dollar");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Canadian Dollar to Singapore Dollar", expected, converted);
     }
 
     @Test
-    public void testConvertTo_SwissFrank_fromSingaporeDollar() throws ClassNotFoundException {
+    public void testConvertTo_SwissFranc_fromSingaporeDollar() throws ClassNotFoundException {
         // Given
         Currency singaporeDollar = CurrencyFactory.createCurrency("Singapore Dollar", 10);
         String expected = "7.06";
         // When
         String converted = singaporeDollar.convertTo("Swiss Franc");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Singapore Dollar to Swiss Franc", expected, converted);
     }
 
     @Test
@@ -105,7 +116,7 @@ public class TestCurrency {
         // When
         String converted = swissFranc.convertTo("Malaysian Ringgit");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Swiss Franc to Malaysian Ringgit", expected, converted);
     }
 
     @Test
@@ -116,7 +127,7 @@ public class TestCurrency {
         // When
         String converted = malaysianRinggit.convertTo("Japanese Yen");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Malaysian Ringgit to Japanese Yen", expected, converted);
     }
 
     @Test
@@ -127,7 +138,7 @@ public class TestCurrency {
         // When
         String converted = japaneseYen.convertTo("Chinese Yuan Renminbi");
         // Then
-        Assert.assertEquals("Checking conversion", expected, converted);
+        Assert.assertEquals("Checking conversion from Japanese Yen to Chinese Yuan Renminbi", expected, converted);
     }
 
 }

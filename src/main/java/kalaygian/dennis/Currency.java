@@ -28,7 +28,7 @@ public abstract class Currency {
         return rate;
     }
 
-    public String convertTo(String newCurrency) throws ClassNotFoundException {
+    public String convertTo(String newCurrency) {
         Currency theNewCurrency = CurrencyFactory.createCurrency(newCurrency, 0);
         return formatCurrency(((theNewCurrency.getRate() / getRate())) * getAmount());
     }
