@@ -15,4 +15,14 @@ public class IndianRupeeTest {
 
         Assert.assertEquals("This should return 4260.52", expected, actual,.01);
     }
+
+    @Test
+    public void indianRupeeToCanadianDollarTest(){
+        IndianRupee indianRupee = new IndianRupee();
+
+        double expected = 2225.25;
+        double actual =  indianRupee.indianRupeeToCanadianDollar(43);
+
+        Assert.assertEquals("This sould return 2225.25", expected, actual, .01);
+    }
 }

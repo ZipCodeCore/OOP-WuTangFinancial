@@ -10,5 +10,9 @@ public class IndianRupee {
         return finalConversion;
     }
 
+    public double indianRupeeToCanadianDollar(double input){
+        double finalConversion = input * 51.75;
+        return finalConversion;
+    }
 
 }
