@@ -45,4 +45,11 @@ public class IndianRupee {
         double finalConversion = input * 68.32;
         return finalConversion;
     }
+
+    public double indianRupeeToEuro(double input){
+        double finalConversion = input * 72.68;
+        return finalConversion;
+    }
+
+
 }
