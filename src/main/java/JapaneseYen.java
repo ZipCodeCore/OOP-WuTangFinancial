@@ -8,6 +8,7 @@ public class JapaneseYen {
 
     public static double convertToUSDollar(double amount){
         usDollarConvertedValue = ( amount / JapaneseYen.getRate()*100.0);
+        usDollarConvertedValue = usDollarConvertedValue/100;
         return usDollarConvertedValue;
     }
 

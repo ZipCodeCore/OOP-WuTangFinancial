@@ -82,7 +82,158 @@ public class TestCurrencyConverter {
     }
 
 
+    // Convert Dollar to Euro
+    @Test
+    public void testConverterDollarToEuro(){
+        //:Given
+        String currentCurrency = "dollar";
+        double loot = 150;
+        String exchangeCurrency = "euro";
+        double expectedExchangeValue = 141.0;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
 
+        //: Then
+        Assert.assertEquals("150 Dollars should return 141.00 Euros", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+
+    // Convert Euro to Dollar
+    @Test
+    public void testConverterEuroToDollar(){
+        //:Given
+        String currentCurrency = "euro";
+        double loot = 150;
+        String exchangeCurrency = "dollar";
+        double expectedExchangeValue = 159.57;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("150 Euros should return 159.57 Dollars", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert Euro to British Pound
+    @Test
+    public void testConverterEuroToPound(){
+        //:Given
+        String currentCurrency = "euro";
+        double loot = 317.15;
+        String exchangeCurrency = "pound";
+        double expectedExchangeValue = 276.66;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("317.15 Euros should return 276.66 Pounds", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert British Pound to Indian Rupee
+    @Test
+    public void testConverterPoundToRupee(){
+        //:Given
+        String currentCurrency = "pound";
+        double loot = 77.13;
+        String exchangeCurrency = "rupee";
+        double expectedExchangeValue = 6426.18;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("77.13 Pounds should return 6426.18 Rupees", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert Rupee to Canadian Dollar
+    @Test
+    public void testConverterRupeeToCanadianDollar(){
+        //:Given
+        String currentCurrency = "rupee";
+        double loot = 98.45;
+        String exchangeCurrency = "canadianDollar";
+        double expectedExchangeValue = 1.90;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("98.45 Rupees should return 1.90 Maple Leafs", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+
+    // Convert Canadian Dollar to Singapore Dollar
+    @Test
+    public void testConverterCanadianDollarToSingaporeDollar(){
+        //:Given
+        String currentCurrency = "canadianDollar";
+        double loot = 2004.50;
+        String exchangeCurrency = "singaporeDollar";
+        double expectedExchangeValue = 2171.54;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("2004.50 Maple Leafs should return 2171.54 Singapore Dollars", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert Singapore Dollar to Swiss Franc
+    @Test
+    public void testConverterSingaporeDollarToSwissFranc(){
+        //:Given
+        String currentCurrency = "singaporeDollar";
+        double loot = 81.43;
+        String exchangeCurrency = "franc";
+        double expectedExchangeValue = 57.51;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("81.43 Singapore Dollars should return 57.51 Francs", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert Swiss Franc to Malaysian Ringgit
+    @Test
+    public void testConverterFrancToRinggit(){
+        //:Given
+        String currentCurrency = "franc";
+        double loot = 850;
+        String exchangeCurrency = "ringgit";
+        double expectedExchangeValue = 3761.86;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("850 Francs should return 3761.86 Ringgits", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert Malaysian Ringgit to Japanese Yen
+    @Test
+    public void testConverterRinggittToYen(){
+        //:Given
+        String currentCurrency = "ringgit";
+        double loot = 78.22;
+        String exchangeCurrency = "yen";
+        double expectedExchangeValue = 2027.20;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("78.22 Ringgits should return 2027.20 Yen", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
+    // Convert Japanese Yen to Chinese Yuan Renminbi
+    @Test
+    public void testConverterYenToRenminbi(){
+        //:Given
+        String currentCurrency = "yen";
+        double loot = 155.13;
+        String exchangeCurrency = "renminbi";
+        double expectedExchangeValue = 9.27;
+        //: When
+        double actualExchangeValue = currencyConverter.converter(currentCurrency,loot,exchangeCurrency);
+
+        //: Then
+        Assert.assertEquals("155.13 Yen should return 9.27 Renminbi", expectedExchangeValue,actualExchangeValue,0.001);
+
+    }
 
 
 
