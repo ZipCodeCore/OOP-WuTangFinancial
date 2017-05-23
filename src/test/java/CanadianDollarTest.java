@@ -46,5 +46,14 @@ public class CanadianDollarTest {
         Assert.assertEquals("This should return 7107.75", expected, actual, .01);
     }
 
+    @Test
+    public void canadianDollarToChineseYuanRenminbiTest(){
+        CanadianDollar canadianDollar = new CanadianDollar();
+
+        double expected = 351.08;
+        double actual = canadianDollar.canadianDollarToChineseYaunRenminbi(67);
+
+        Assert.assertEquals("This should return 351.08", expected, actual, .01);
+    }
 
 }

@@ -22,4 +22,9 @@ public class CanadianDollar {
         double finalConversion = input * 87.75;
         return finalConversion;
     }
+
+    public double canadianDollarToChineseYaunRenminbi(double input){
+        double finalConversion = input * 5.24;
+        return finalConversion;
+    }
 }
