@@ -9,4 +9,10 @@ public class JapaneseYen extends Currency
     {
         return rate;
     }
+
+    public char symbol()
+    {
+        char symbol = '\u00A5';
+        return symbol;
+    }
 }

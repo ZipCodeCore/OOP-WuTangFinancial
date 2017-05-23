@@ -14,4 +14,10 @@ public class Currency
     {
         return rate;
     }
+
+    public char symbol()
+    {
+        char symbol = '$';
+        return symbol;
+    }
 }

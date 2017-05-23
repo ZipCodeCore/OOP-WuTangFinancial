@@ -10,4 +10,10 @@ public class Pound extends Currency
         return rate;
     }
 
+    public char symbol()
+    {
+        char symbol = '\u00A3';
+        return symbol;
+    }
+
 }
