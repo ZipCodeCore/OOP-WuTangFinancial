@@ -37,4 +37,9 @@ public class CanadianDollar {
         double finalConversion = input * 1.40;
         return finalConversion;
     }
+
+    public double canadianDollarToBritishPound(double input){
+        double finalConversion = input * 1.60;
+        return finalConversion;
+    }
 }

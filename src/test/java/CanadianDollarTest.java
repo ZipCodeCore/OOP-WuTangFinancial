@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.runner.notification.RunListener;
 
 /**
@@ -74,6 +75,16 @@ public class CanadianDollarTest {
         double actual = canadianDollar.canadianDollarToEuro(37);
 
         Assert.assertEquals("This should return 51.80", expected, actual, .01);
+    }
+
+    @Test
+    public void canadianDollarToBritishPoundTest(){
+        CanadianDollar canadianDollar = new CanadianDollar();
+
+        double expected = 150.40;
+        double actual = canadianDollar.canadianDollarToBritishPound(94);
+
+        Assert.assertEquals("This should return 150.40", expected, actual, .01);
     }
 
 }
