@@ -29,8 +29,8 @@
       <file leaf-file-name="CurrencyConverter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CurrencyConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="390">
+              <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -57,7 +57,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Currency.java" />
         <option value="$PROJECT_DIR$/src/main/java/Euro.java" />
         <option value="$PROJECT_DIR$/src/main/java/USDollar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CurrencyConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/IndianRupee.java" />
         <option value="$PROJECT_DIR$/src/main/java/AustralianDollar.java" />
         <option value="$PROJECT_DIR$/src/main/java/CanadianDollar.java" />
@@ -70,6 +69,7 @@
         <option value="$PROJECT_DIR$/src/main/java/GreatBritanPound.java" />
         <option value="$PROJECT_DIR$/src/main/java/GreatBritainPound.java" />
         <option value="$PROJECT_DIR$/src/test/java/testCurrencyConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CurrencyConverter.java" />
       </list>
     </option>
   </component>
@@ -621,7 +621,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495488402539</updated>
-      <workItem from="1495488405648" duration="11746000" />
+      <workItem from="1495488405648" duration="12189000" />
     </task>
     <servers />
   </component>
@@ -658,7 +658,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11746000" />
+    <option name="totallyTimeSpent" value="12189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -891,8 +891,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CurrencyConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state relative-caret-position="390">
+          <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
           <folding />
         </state>
       </provider>

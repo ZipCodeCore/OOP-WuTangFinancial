@@ -55,7 +55,7 @@ public class testCurrencyConverter
 		conversionEngine.convertTo(usd);
 		conversionEngine.convertFrom(eur);
 
-		double expected = 0.94;
+		double expected = 1.06;
 	}
 
 

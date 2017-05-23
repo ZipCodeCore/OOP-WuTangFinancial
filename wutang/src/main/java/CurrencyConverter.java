@@ -21,9 +21,17 @@ public class CurrencyConverter
 	{
 		convertedCurrency = conversionType;
 		double conversionRate = conversionType.getRate();
+		double rateComparator = unconvertedCurrency.getRate();
 		double amountToConvert = unconvertedCurrency.getAmount();
-		double convertedAmount = amountToConvert * conversionRate;
-
+		double convertedAmount;
+		if (conversionRate > rateComparator)
+		{
+			convertedAmount = amountToConvert * conversionRate;
+		}
+		else
+		{
+			convertedAmount = amountToConvert / conversionRate;
+		}
 		convertedCurrency.setAmount(convertedAmount);
 	}
 
