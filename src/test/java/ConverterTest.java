@@ -218,4 +218,31 @@ public class ConverterTest {
     }
 
 
+    @Test
+    public void testToLength(){
+    //Given
+        int num = 438743;
+        int expected = 6;
+
+    //When
+        int actual = exchanger.lengthOfInt(num);
+
+    //Then
+        assertEquals("Length should be 6", expected, actual);
+    }
+
+
+    @Test
+    public void testFindRoundingThreshHoldNum(){
+    //Given
+        int num = 387943;
+        int expected = 7;
+
+    //When
+        int actual = exchanger.findRoundingThreshholdNum(num, 6);
+
+    //Then
+        assertEquals("Should be 7", expected, actual);
+    }
+
 }
