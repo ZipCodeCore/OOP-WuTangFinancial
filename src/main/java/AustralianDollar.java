@@ -27,4 +27,10 @@ public class AustralianDollar {
         double finalConversion = input * 85.50;
         return finalConversion;
     }
+
+    public double australianDollarToChineseYuanRenminbi(double input){
+        double finalConversion = input * 5.12;
+        return finalConversion;
+    }
 }
+
