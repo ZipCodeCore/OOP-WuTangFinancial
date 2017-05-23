@@ -29,4 +29,9 @@ public class IndianRupee {
         double finalConversion = input * 15.28;
         return finalConversion;
     }
+
+    public double indianRupeeToJapaneseYen(double input){
+        double finalConversion = input * 141.26;
+        return finalConversion;
+    }
 }

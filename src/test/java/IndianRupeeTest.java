@@ -55,5 +55,15 @@ public class IndianRupeeTest {
 
         Assert.assertEquals("This should return 901.52", expected, actual, .01);
     }
-    
+
+    @Test
+    public void indianRupeeToJapaneseYenTest(){
+        IndianRupee indianRupee = new IndianRupee();
+        
+        double expected = 706.30;
+        double actual = indianRupee.indianRupeeToJapaneseYen(5);
+
+        Assert.assertEquals("This should return 706.30", expected, actual, .01);
+    }
+
 }
