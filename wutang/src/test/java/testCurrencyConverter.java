@@ -199,7 +199,7 @@ public class testCurrencyConverter
 
 	@Test
 	public void testConvertCurrencyJYPToCNYRMB()
-	{
+	 {
 		//: Given
 		ChineseYuanRenminbi cnyrmb = new ChineseYuanRenminbi();
 		JapaneseYen jyp = new JapaneseYen();
