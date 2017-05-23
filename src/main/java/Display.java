@@ -5,14 +5,13 @@ import java.util.Scanner;
  * Created by anthonyjones on 5/22/17.
  */
 public class Display {
-    Calculate calculate = new Calculate();
-    Currency currency;
-    int enumLoopCounter;
+    private Calculate calculate = new Calculate();
+    private Currency currency;
+    private int enumLoopCounter;
     private boolean isConverterRunning = true;
-    String givenNumber;
+    private String givenNumber;
     private String operationOfChoice;
     private Scanner input = new Scanner(System.in);
-
 
     Display() {
         System.out.println("Welcome to Anthony's Money Converter.");
@@ -24,11 +23,12 @@ public class Display {
         System.out.println("Please choose the currency you have below:");
         for (Currency enumLoop : currency.values()) {
             enumLoopCounter++;
-            System.out.print(enumLoop + " : " + enumLoopCounter + "  " + "|" + " ");
+            System.out.printf("%s : %s | ",enumLoop,enumLoopCounter);
             if (enumLoopCounter % 4 == 0) {
                 System.out.println();
             }
         }
+        System.out.print("Or press q to quit");
         enumLoopCounter = 0;
         System.out.println();
     }
@@ -39,6 +39,12 @@ public class Display {
     }
 
     private void methodOfOperation() {
+        switch (operationOfChoice) {
+            case "q":
+                isConverterRunning = false;
+                continuouslyRunCalculator();
+                break;
+            default:
         for (Currency enumLoop : currency.values()) {
             int enumPosition = Currency.valueOf(enumLoop.toString()).ordinal();
             try {
@@ -51,7 +57,7 @@ public class Display {
                 operationChoice();
             }
         }
-    }
+    }}
 
     private void setCurrentNumber() {
         String money = input.nextLine().trim();
@@ -59,14 +65,12 @@ public class Display {
     }
 
     private void calculateAndSendAllNumbers() {
-
         calculate.setNumber1(Double.parseDouble(givenNumber));
         String number = givenNumber;
         double amount = calculate.conversionMethod(Double.parseDouble(number), currency);
         DecimalFormat formatter = new DecimalFormat("#,###.00");
         System.out.println("You have $" + formatter.format(amount) + "\n");
     }
-
 
     private void continuouslyRunCalculator() {
         while (isConverterRunning) {
@@ -76,7 +80,6 @@ public class Display {
             calculateAndSendAllNumbers();
             displayChoices();
         }
-
         System.exit(0);
     }
 

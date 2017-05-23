@@ -8,9 +8,8 @@ import java.util.logging.Logger;
 public class Calculate {
 
     double currentRate;
-        double money;
+    double money;
     public static final Logger logger = Logger.getLogger("*");
-
 
     public double conversionMethod(double money, Currency currency) {
         switch (currency) {
