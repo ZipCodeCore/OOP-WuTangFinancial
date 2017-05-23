@@ -38,5 +38,8 @@ public class testCurrencyConverter
 		assertEquals("These values should be equal", expected, actual, 0);
 	}
 
+	@Test
+	public void test
+
 
 }
