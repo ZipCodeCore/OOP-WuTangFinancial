@@ -2,9 +2,9 @@
  * Created by rahmirford on 5/22/17.
  */
 public class MalaysianRinggit {
-    private double rate = 4.47;
+    private static double rate = 4.47;
     private double usDollarConvertedValue;
-
+    private double malaysianRinggitValue;
     public double convertToUSDollar(){
         return 0;
     }
@@ -14,7 +14,12 @@ public class MalaysianRinggit {
     }
 
 
-    public double getRate() {
+    public static double getRate() {
         return rate;
+    }
+
+    public double convertToMalaysianRinggit(double usDollarValue){
+        malaysianRinggitValue = usDollarValue * MalaysianRinggit.getRate();
+        return malaysianRinggitValue;
     }
 }

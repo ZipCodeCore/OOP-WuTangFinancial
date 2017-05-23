@@ -2,8 +2,9 @@
  * Created by rahmirford on 5/22/17.
  */
 public class Rupee {
-    private double rate = 68.32;
+    private static double rate = 68.32;
     private double usDollarConvertedValue;
+    private double rupeeValue;
 
     public double convertToUSDollar(){
         return 0;
@@ -14,9 +15,13 @@ public class Rupee {
     }
 
 
-    public double getRate() {
+    public static double getRate() {
         return rate;
     }
 
+    public double convertToIndianRupee(double usDollarValue){
+        rupeeValue = usDollarValue * Rupee.getRate();
+        return rupeeValue;
+    }
 
 }

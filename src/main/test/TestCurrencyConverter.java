@@ -19,11 +19,11 @@ public class TestCurrencyConverter {
     public void testConvertToEuro(){
         //: Given
         double usDollarAmountToConvert = 14.82;
-        double expectedConversion = 12.15;
+        double expectedConversion = 13.93;
         //: When
         double actualConversion = currencyConverter.convertToEuro(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Euro is: 12.15",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Euro is: 12.15",expectedConversion,actualConversion,0.001);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToBritishPound(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to British Pound is: 16.02",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to British Pound is: 16.02",expectedConversion,actualConversion,0.001);
 
     }
 
@@ -46,7 +46,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToIndianRupee(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Indian Rupee Pound is: 1366.40",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Indian Rupee Pound is: 1366.40",expectedConversion,actualConversion,0.001);
 
     }
 
@@ -58,7 +58,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToAustralianDollar(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Australian Dollar is: 124.41",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Australian Dollar is: 124.41",expectedConversion,actualConversion,0.001);
 
     }
 
@@ -70,7 +70,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToCanadianDollar(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Canadian Dollar is: 254.32",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Canadian Dollar is: 254.32",expectedConversion,actualConversion,0.001);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToSingaporeDollar(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Singapore Dollar is: 74.52",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Singapore Dollar is: 74.52",expectedConversion,actualConversion,0.001);
     }
 
     @Test
@@ -92,7 +92,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToSwissFranc(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Swiss Franc is: 82.03",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Swiss Franc is: 82.03",expectedConversion,actualConversion,0.001);
 
     }
 
@@ -104,7 +104,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToMalaysianRinggit(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Malaysian Ringgit is: 192.75",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Malaysian Ringgit is: 192.75",expectedConversion,actualConversion,0.001);
 
     }
 
@@ -116,7 +116,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToJapaneseYen(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Japanese Yen is: 25660.88",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Japanese Yen is: 25660.88",expectedConversion,actualConversion,0.001);
 
     }
 
@@ -128,7 +128,7 @@ public class TestCurrencyConverter {
         //: When
         double actualConversion = currencyConverter.convertToChineseYuanRenminbi(usDollarAmountToConvert);
         //: Then
-        Assert.assertEquals("The expected conversion from US Dollar to Chinese Yuan Renminbi is: 473.81",expectedConversion,actualConversion,0);
+        Assert.assertEquals("The expected conversion from US Dollar to Chinese Yuan Renminbi is: 473.81",expectedConversion,actualConversion,0.001);
     }
 
 }

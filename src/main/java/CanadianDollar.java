@@ -2,8 +2,9 @@
  * Created by rahmirford on 5/22/17.
  */
 public class CanadianDollar {
-    private double rate =1.32;
+    private static double rate =1.32;
     private double usDollarConvertedValue;
+    private double canadianDollarValue;
 
     public double convertToUSDollar(){
         return 0;
@@ -14,7 +15,12 @@ public class CanadianDollar {
     }
 
 
-    public double getRate() {
+    public static double getRate() {
         return rate;
+    }
+
+    public double convertToCanadianDollar(double usDollarValue){
+        canadianDollarValue = usDollarValue * CanadianDollar.getRate();
+        return canadianDollarValue;
     }
 }
