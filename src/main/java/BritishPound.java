@@ -28,5 +28,10 @@ public class BritishPound {
         return finalConversion;
     }
 
+    public double britishPoundToSinagporeDollar(double input){
+        double finalConveriosn = input * 1.74;
+        return finalConveriosn;
+    }
+
 }
 
