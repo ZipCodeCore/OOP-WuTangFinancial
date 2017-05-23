@@ -42,5 +42,10 @@ public class BritishPound {
         double finalConversion = input * 5.45;
         return  finalConversion;
     }
+
+    public double britishPoundToJapaneseYen(double input){
+        double finalConversion = input * 141.26;
+        return finalConversion;
+    }
 }
 
