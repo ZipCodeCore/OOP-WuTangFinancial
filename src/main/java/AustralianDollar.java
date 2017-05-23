@@ -3,11 +3,13 @@
  */
 public class AustralianDollar {
     private static double rate = 1.35;
-    private double usDollarConvertedValue;
+    private static double usDollarConvertedValue;
     private static double australianDollarValue;
 
-    public static double convertToUSDollar(double amount){
-        return 0;
+    public static double convertToUSDollar(double amount) {
+        usDollarConvertedValue = Math.round(amount / AustralianDollar.getRate() * 100.0);
+        usDollarConvertedValue = usDollarConvertedValue / 100;
+        return usDollarConvertedValue;
     }
 
     public double getUsDollarConvertedValue() {

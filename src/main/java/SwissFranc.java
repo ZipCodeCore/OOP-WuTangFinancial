@@ -3,11 +3,13 @@
  */
 public class SwissFranc {
     private static double rate = 1.01;
-    private double usDollarConvertedValue;
+    private static double usDollarConvertedValue;
     private static double swissFrancValue;
 
     public static double convertToUSDollar(double amount){
-        return 0;
+        usDollarConvertedValue = Math.round( amount / SwissFranc.getRate()*100.0);
+        usDollarConvertedValue = usDollarConvertedValue/100;
+        return usDollarConvertedValue;
     }
 
     public double getUsDollarConvertedValue() {

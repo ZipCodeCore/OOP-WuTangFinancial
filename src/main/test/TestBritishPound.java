@@ -32,7 +32,7 @@ public class TestBritishPound {
 
         double actualConversion = britishPound.convertToUSDollar(amountToConvert);
 
-        Assert.assertEquals("The expected conversion from the pound to US Dollars is: 79.66", expectedUSDollarAmount,actualConversion,0.001);
+        Assert.assertEquals("The expected conversion from the Pound to US Dollars is: 79.66", expectedUSDollarAmount,actualConversion,0.001);
     }
 
 }

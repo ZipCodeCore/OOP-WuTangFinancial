@@ -24,4 +24,14 @@ public class TestRupee {
         Assert.assertEquals("The expected conversion from US Dollar to Indian Rupee Pound is: 1366.40",expectedConversion,actualConversion,0.001);
 
     }
+
+    @Test
+    public void testConvertToUSDollar(){
+        double amountToConvert = 1349.44;
+        double expectedUSDollarAmount = 19.75;
+
+        double actualConversion = rupee.convertToUSDollar(amountToConvert);
+
+        Assert.assertEquals("The expected conversion from Rupees to US Dollars is: 67.55", expectedUSDollarAmount,actualConversion,0.001);
+    }
 }

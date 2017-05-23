@@ -24,4 +24,13 @@ public class testSwissFranc {
         Assert.assertEquals("The expected conversion from US Dollar to Swiss Franc is: 82.03",expectedConversion,actualConversion,0.001);
 
     }
+    @Test
+    public void testConvertToUSDollar(){
+        double amountToConvert = 3317.15;
+        double expectedUSDollarAmount = 3284.31;
+
+        double actualConversion = swissFranc.convertToUSDollar(amountToConvert);
+
+        Assert.assertEquals("The expected conversion from Francs to US Dollars is: 3284.31", expectedUSDollarAmount,actualConversion,0.001);
+    }
 }
