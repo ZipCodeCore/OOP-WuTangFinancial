@@ -12,4 +12,11 @@ public class CanadianDollar {
         double finalConversion = input * 1.30;
         return finalConversion;
     }
+
+    public double canadianDollarToMalaysianRinggit(double input){
+        double finalConversion = input * 3.38;
+        return finalConversion;
+    }
+
+
 }
