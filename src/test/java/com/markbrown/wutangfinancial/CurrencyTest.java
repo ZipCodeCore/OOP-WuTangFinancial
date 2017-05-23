@@ -3,9 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.*;
 
-import java.io.InvalidObjectException;
-
-public class CurrentCurrencyInformationTest {
+public class CurrencyTest {
 
     @Test
     public void testSetAndGetCurrentCurrencyType() {
@@ -13,9 +11,9 @@ public class CurrentCurrencyInformationTest {
         InputSetup inputSetup = Mockito.mock(InputSetup.class);
         //When:
         Mockito.when(inputSetup.askForInput("Please enter an initial currency type from the menu")).thenReturn("US_Dollars");
-        CurrentCurrencyInformation.setCurrentCurrencyType("US_Dollars");
+        Currency.setCurrentCurrencyType("US_Dollars");
         //Then:
-        Assert.assertTrue(Input.askForInitialCurrencyType(inputSetup).equals(CurrentCurrencyInformation.getCurrentCurrencyType()));
+        Assert.assertTrue(Input.askForInitialCurrencyType(inputSetup).equals(Currency.getCurrentCurrencyType()));
     }
 
     @Test
@@ -24,9 +22,9 @@ public class CurrentCurrencyInformationTest {
         InputSetup inputSetup = Mockito.mock(InputSetup.class);
         //When:
         Mockito.when(inputSetup.askForInput("Please enter a target currency type from the menu")).thenReturn("Euro");
-        CurrentCurrencyInformation.setTargetCurrencyType("Euro");
+        Currency.setTargetCurrencyType("Euro");
         //Then:
-        Assert.assertTrue(Input.askForCurrencyTargetType(inputSetup).equals(CurrentCurrencyInformation.getTargetCurrencyType()));
+        Assert.assertTrue(Input.askForCurrencyTargetType(inputSetup).equals(Currency.getTargetCurrencyType()));
     }
 
 

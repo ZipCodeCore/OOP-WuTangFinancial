@@ -3,12 +3,12 @@ package com.markbrown.wutangfinancial;
 /**
  * Created by markbrown on 5/22/17.
  */
-public class CurrentCurrencyInformation {
+public class Currency {
 
     private static String currentCurrencyType;
     private static String targetCurrencyType;
 
-    private CurrentCurrencyInformation() {}
+    private Currency() {}
 
     public static void setCurrentCurrencyType(String currencyType) {
         currentCurrencyType = currencyType;

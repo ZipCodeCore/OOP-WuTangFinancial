@@ -1,6 +1,6 @@
 package com.markbrown.wutangfinancial;
 
-import java.io.InputStream;
+import java.util.Map;
 
 /**
  * Created by markbrown on 5/22/17.
@@ -9,6 +9,7 @@ public class CurrencyConverterEngine {
 
     public static void runEngine() {
         InputSetup asker = new InputSetup(System.in, System.out);
+        Map<String,Double> currencyMap = CurrencyConversions.createCurrencyMap();
         Print.printWelcomeMessage();
         while (true) {
             if (Input.askForExit(asker).equalsIgnoreCase("Exit")) {break;}
@@ -16,9 +17,11 @@ public class CurrencyConverterEngine {
             obtainStartingCurrency();
             obtainMoney();
             obtainTargetCurrency();
+            CurrencyConversions.performConversion(currencyMap, Currency.getCurrentCurrencyType(), Currency.getTargetCurrencyType());
+            Currency.setCurrentCurrencyType(Currency.getTargetCurrencyType());
+            Print.printCurrentMonetaryAmount();
 
         }
-
     }
 
     private static void obtainStartingCurrency() {
@@ -27,7 +30,7 @@ public class CurrencyConverterEngine {
         while (!InputChecker.checkForValidCurrency(currencyInput)) {
             currencyInput = Input.askForInitialCurrencyType(asker);
         }
-        CurrentCurrencyInformation.setCurrentCurrencyType(currencyInput);
+        Currency.setCurrentCurrencyType(currencyInput);
         Print.printCurrentCurrency();
     }
 
@@ -38,18 +41,16 @@ public class CurrencyConverterEngine {
             money = Input.askForInitialCurrencyType(asker);
         }
         long moneyAsLong = Input.convertMoneyToLongType(money);
-        CurrentMoneyInformation.setMoneyInOneHundredths(moneyAsLong);
+        Money.setMoneyInOneHundredths(moneyAsLong);
         Print.printCurrentMonetaryAmount();
     }
 
     private static void obtainTargetCurrency() {
         InputSetup asker = new InputSetup(System.in, System.out);
-        String currencyInput = Input.askForInitialCurrencyType(asker);
+        String currencyInput = Input.askForCurrencyTargetType(asker);
         while (!InputChecker.checkForValidCurrency(currencyInput)) {
-            currencyInput = Input.askForInitialCurrencyType(asker);
+            currencyInput = Input.askForCurrencyTargetType(asker);
         }
-        CurrentCurrencyInformation.setTargetCurrencyType(currencyInput);
-
-
+        Currency.setTargetCurrencyType(currencyInput);
     }
 }

@@ -37,7 +37,7 @@ public class InputTest {
     }
 
     @Test
-    public void testAskForMonetaryAmountAsLone() {
+    public void testAskForMonetaryAmountAsLong() {
         Assert.assertTrue(Input.convertMoneyToLongType("100.00") == 10000);
     }
 

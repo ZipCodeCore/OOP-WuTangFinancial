@@ -3,11 +3,11 @@ package com.markbrown.wutangfinancial;
 /**
  * Created by markbrown on 5/22/17.
  */
-public class CurrentMoneyInformation {
+public class Money {
 
     private static long moneyInOneHundredths;
 
-    private CurrentMoneyInformation() {}
+    private Money() {}
 
     public static void setMoneyInOneHundredths(long money) {
         moneyInOneHundredths = money;

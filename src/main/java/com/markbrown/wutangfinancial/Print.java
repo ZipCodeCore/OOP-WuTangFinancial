@@ -31,15 +31,15 @@ public class Print {
 
     public static void printCurrentCurrency() {
         System.out.println();
-        System.out.println("Currency is " + CurrentCurrencyInformation.getCurrentCurrencyType());
+        System.out.println("Currency is " + Currency.getCurrentCurrencyType());
         System.out.println();
     }
 
     public static void printCurrentMonetaryAmount() {
         System.out.println();
         System.out.print("Currency amount: ");
-        System.out.printf("%,.2f", CurrentMoneyInformation.getMoneyInCurrency());
-        System.out.print(" " + CurrentCurrencyInformation.getCurrentCurrencyType());
+        System.out.printf("%,.2f", Money.getMoneyInCurrency());
+        System.out.print(" " + Currency.getCurrentCurrencyType());
         System.out.println();
     }
 
