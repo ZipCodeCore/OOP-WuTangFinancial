@@ -12,4 +12,9 @@ public class SingaporeDollar {
         double finalConversion = input * 3.12;
         return finalConversion;
     }
+
+    public double singaporeDollarToJapaneseYen(double input){
+        double finalConversion = input * 81;
+        return finalConversion;
+    }
 }
