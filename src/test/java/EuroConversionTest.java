@@ -25,4 +25,14 @@ public class EuroConversionTest {
 
         Assert.assertEquals("This should return 14.10", expected, actual, .01);
     }
+
+    @Test
+    public void euroToRupeeTest(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected = 3661.61;
+        double actual = euroConversion.euroToRupee(50.38);
+
+        Assert.assertEquals("This should return 3661.61", expected, actual, .01);
+    }
 }

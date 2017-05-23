@@ -12,4 +12,10 @@ public class EuroConversion {
         double finalConversion = input * .94;
         return finalConversion;
     }
+
+    public double euroToRupee(double input){
+        double finalConversion = input * 72.68;
+        return finalConversion;
+    }
+
 }
