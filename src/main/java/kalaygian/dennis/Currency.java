@@ -33,11 +33,11 @@ public abstract class Currency {
         return formatCurrency(convertAt(exchangeRate(theNewCurrency)));
     }
 
-    public double convertAt(double rate){
+    private double convertAt(double rate){
         return getAmount() * rate;
     }
 
-    public double exchangeRate(Currency theNewCurrency){
+    private double exchangeRate(Currency theNewCurrency){
         return theNewCurrency.getRate() / getRate();
     }
 
