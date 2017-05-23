@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Map;
 import java.util.TreeMap;
@@ -41,119 +43,127 @@ public class Calculate {
                 break;
         }
 
-        return money;
+        return round(money, 2);
     }
 
 
     public double convertUSDToEuros(double money) {
         currentRate = 0.94;
         money = money * currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToPound(double money) {
         currentRate = 0.82;
         money = money * currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToRupee(double money) {
         currentRate = 68.32;
         money = money * currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToAustralianDollar(double money) {
         money = money * 1.35;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToCanadianDollar(double money) {
         money = money * 1.32;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToSingaporeanDollar(double money) {
         money = money * 1.43;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDtoSwissFranc(double money) {
         money = money * 1.01;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToRinggit(double money) {
         money = money * 4.47;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToYen(double money) {
         money = money * 115.84;
-        return money;
+        return round(money, 2);
     }
 
     public double convertUSDToYuan(double money) {
         money = money * 6.92;
-        return money;
+        return round(money, 2);
     }
 
     public double convertEurosToUSD(double money) {
         money = money / 0.94;
-        return money;
+        return round(money, 2);
     }
 
     public double convertPoundsToUSD(double money) {
         currentRate = 0.82;
         money = money / currentRate;
-        return money;
+        return round(money, 3);
     }
 
     public double convertRupeeToUSD(double money) {
         currentRate = 68.32;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertYuanToUSD(double money) {
         currentRate = 6.92;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertYenToUSD(double money) {
         currentRate = 115.84;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertRingittToUSD(double money) {
         currentRate = 4.47;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertSwissFrancToUSD(double money) {
         currentRate = 1.01;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertAustralianDollarToUSD(double money) {
         currentRate = 1.35;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertCanadianDollarToUSD(double money) {
         currentRate = 1.32;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
 
     public double convertSingaporeanDollarToUSD(double money) {
         currentRate = 1.43;
         money = money / currentRate;
-        return money;
+        return round(money, 2);
     }
+
+    public static double round(double val, int decimalPlace) {
+        if (decimalPlace < 0) throw new IllegalArgumentException();
+        BigDecimal bd = new BigDecimal(val);
+        bd = bd.setScale(decimalPlace, RoundingMode.HALF_DOWN);
+        return bd.doubleValue();
+    }
+
 }
