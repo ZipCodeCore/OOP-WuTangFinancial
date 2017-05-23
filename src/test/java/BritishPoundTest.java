@@ -105,6 +105,4 @@ public class BritishPoundTest {
 
         Assert.assertEquals("This should return 16.80", expected, actual, .01);
     }
-
-    
 }
