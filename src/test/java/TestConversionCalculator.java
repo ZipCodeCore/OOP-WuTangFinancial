@@ -14,104 +14,116 @@ public class TestConversionCalculator {
     }
 
     @Test
-    public void calculateCurrencyEuroToPound() {
+    public void calculateConvertDollarToEuro() {
         //given
         double amountToConvert = 10.00;
         //when
-        double actual = conversionCalculator.calculateCurrencyEuroToPound(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(1,2, amountToConvert);
 
         //then
-        Assert.assertEquals("should return euros converted to a pound", 8.72, actual, 0.01);
-    }
-
-    @Test
-    public void calculateCurrencyEuroToRupee(){
-        //given
-        double amountToConvert=10.00;
-        //when
-        double actual= conversionCalculator.calculateCurrencyEuroToRupee(amountToConvert);
-        //then
-        Assert.assertEquals("should return euros converted to rupees",726.80, actual, 0.01 );
+        Assert.assertEquals("should return dollars converted to euros", 9.39, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencyPoundToRupee(){
+    public void calculateConvertEuroToDollar() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 10.00;
         //when
-        double actual= conversionCalculator.calculateCurrencyPoundToRupee(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(2,1, amountToConvert);
+
         //then
-        Assert.assertEquals("should return pounds to rupees",833.17, actual, 0.01 );
+        Assert.assertEquals("should return euros converted to dollars", 10.64, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencyRupeetoCanadianDollar(){
+    public void calculateConvertEuroToPound() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 10.00;
         //when
-        double actual= conversionCalculator.calculateCurrencyRupeeToCanadianDollar(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(2,3, amountToConvert);
+
         //then
-        Assert.assertEquals("should return Rupees converted to canadian dollars",0.19, actual, 0.01 );
+        Assert.assertEquals("should return euros converted to pounds", 8.72, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencyCanadianToSingapore(){
+    public void calculateConvertPoundtoRupee() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 10.00;
         //when
-        double actual= conversionCalculator.calculateCurrencyCanadianDollarToSingaporeDollar(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(3,4, amountToConvert);
+
         //then
-        Assert.assertEquals("should return canadian dollars converted to Singapore dollars",10.833, actual, 0.01 );
+        Assert.assertEquals("should return pounds converted to rupees", 833.17, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencySingaporeToMalaysia(){
+    public void calculateConvertRupeetoCanadianDollar() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 1000.00;
         //when
-        double actual= conversionCalculator.calculateCurrencySingaporeDollarToMalaysianRinggit(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(4,6, amountToConvert);
+
         //then
-        Assert.assertEquals("should return euros converted to rupees",31.25, actual, 0.01 );
+        Assert.assertEquals("should return rupees converted to canadian dollars", 19.32, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencySingaporeToSwissFranc(){
+    public void calculateConvertCanadianDollartoSingaporeDollar() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 10.00;
         //when
-        double actual= conversionCalculator.calculateCurrencySingaporeDollarToSwissFranc(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(6,7, amountToConvert);
+
         //then
-        Assert.assertEquals("should return  singapore dollars to swiss franc",7.06, actual, 0.01 );
-    }
-    @Test
-    public void calculateCurrencySwissFrancToRinggit(){
-        //given
-        double amountToConvert=10.00;
-        //when
-        double actual= conversionCalculator.calculateCurrencySwissFranctoMalaysianRinggit(amountToConvert);
-        //then
-        Assert.assertEquals("should return  franc to ringgit",44.25, actual, 0.01 );
+        Assert.assertEquals("should return canadian dollars to singapore dollars", 10.83, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencyRinggitToYen(){
+    public void calculateConvertSingaporeDollarToSwissFranc() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 10.00;
         //when
-        double actual= conversionCalculator.calculateCurrencyRinggitToYen(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(7,8, amountToConvert);
+
         //then
-        Assert.assertEquals("should return Ringgit to Yen",259.15, actual, 0.01 );
+        Assert.assertEquals("should return singapore dollars to francs", 7.06, actual, 0.01);
     }
 
     @Test
-    public void calculateCurrencyYentoYuan(){
+    public void calculateConvertSwissFrancToRinggit() {
         //given
-        double amountToConvert=10.00;
+        double amountToConvert = 10.00;
         //when
-        double actual= conversionCalculator.calculateCurrencyYenToYuan(amountToConvert);
+        double actual = conversionCalculator.convertAnythingToAnything(8,9, amountToConvert);
+
         //then
-        Assert.assertEquals("should return yen to yuan",0.60, actual, 0.01 );
+        Assert.assertEquals("should return francs converted to ringgit", 44.25, actual, 0.01);
     }
+
+    @Test
+    public void calculateConvertRinggitToYen() {
+        //given
+        double amountToConvert = 10.00;
+        //when
+        double actual = conversionCalculator.convertAnythingToAnything(9,10, amountToConvert);
+
+        //then
+        Assert.assertEquals("should return ringgit converted to yen", 259.15, actual, 0.01);
+    }
+
+    @Test
+    public void calculateConvertYentoYuan() {
+        //given
+        double amountToConvert = 100.00;
+        //when
+        double actual = conversionCalculator.convertAnythingToAnything(10,11, amountToConvert);
+
+        //then
+        Assert.assertEquals("should return yen converted to yuan", 5.97, actual, 0.01);
+    }
+
+
 
 
 
