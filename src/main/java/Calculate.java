@@ -10,11 +10,10 @@ import java.util.TreeMap;
 public class Calculate {
 
     double currentRate;
+//    double money;
 
 
-    public double conversionMethod(double money, Currency currency) {//take an enum, and money amount, to do the calculations
-
-        //  money = money / currentRate;
+    public double conversionMethod(double money, Currency currency) {
 
         switch (currency) {
             case USD:
@@ -45,7 +44,6 @@ public class Calculate {
 
         return round(money, 2);
     }
-
 
     public double convertUSDToEuros(double money) {
         currentRate = 0.94;
@@ -160,10 +158,12 @@ public class Calculate {
     }
 
     public static double round(double val, int decimalPlace) {
-        if (decimalPlace < 0) throw new IllegalArgumentException();
-        BigDecimal bd = new BigDecimal(val);
-        bd = bd.setScale(decimalPlace, RoundingMode.HALF_DOWN);
-        return bd.doubleValue();
+        if (decimalPlace < 0) {
+            throw new IllegalArgumentException();
+        }
+        BigDecimal bigDecimal = new BigDecimal(val);
+        bigDecimal = bigDecimal.setScale(decimalPlace, RoundingMode.HALF_DOWN);
+        return bigDecimal.doubleValue();
     }
 
 }

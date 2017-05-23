@@ -1,5 +1,4 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,11 +10,12 @@ public class testCalculate {
     public void testConvertToUSDollar() {
         //Given
         Calculate calculate = new Calculate();
-        double expectedSwissFranc = 1.01;
+        double britishPound  = 300;
+        double expected = 365.85;
         //When
-        double actual = calculate.convertEurosToUSD(expectedSwissFranc);
+        double actual = Math.round(calculate.convertPoundsToUSD(britishPound));
         //Then
-        Assert.assertEquals("Dollars to SwissFranc equate to 1.01 Swiss Francs", expectedSwissFranc, actual, .000000005);
+        Assert.assertEquals("300 pounds to dollars is $365.85", expected, actual, .000000005);
     }
 
     @Test
@@ -27,7 +27,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDtoSwissFranc(usd);
         //Then
-        Assert.assertEquals("Dollars to SwissFranc equate to 1.01 Swiss Francs", expectedSum, actual, .0000000005);
+        Assert.assertEquals("Dollars to SwissFranc equate to 1.01 Swiss Francs", expectedSum, actual, .0000008);
 
     }
 
@@ -40,7 +40,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToEuros(usd);
         //Then
-        Assert.assertEquals("Dollars to Euros", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Euros", expectedSum, actual, .0000008);
 
     }
 
@@ -53,7 +53,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToPound(usd);
         //Then
-        Assert.assertEquals("Dollars to Pound", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Pound", expectedSum, actual, .0000008);
 
     }
 
@@ -66,7 +66,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToRupee(usd);
         //Then
-        Assert.assertEquals("Dollars to Rupee", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Rupee", expectedSum, actual, .0000008);
 
     }
 
@@ -79,7 +79,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToAustralianDollar(usd);
         //Then
-        Assert.assertEquals("Dollars to Australian Dollar", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Australian Dollar", expectedSum, actual, .0000008);
 
     }
 
@@ -92,7 +92,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToCanadianDollar(usd);
         //Then
-        Assert.assertEquals("Dollars to Canadian Dollar", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Canadian Dollar", expectedSum, actual, .0000008);
 
     }
 
@@ -105,7 +105,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToSingaporeanDollar(usd);
         //Then
-        Assert.assertEquals("Dollars to Singaporean Dollar", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Singaporean Dollar", expectedSum, actual, .0000008);
 
     }
 
@@ -118,7 +118,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToRinggit(usd);
         //Then
-        Assert.assertEquals("Dollars to Ringgit ", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Ringgit ", expectedSum, actual, .0000008);
 
     }
 
@@ -131,7 +131,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToYen(usd);
         //Then
-        Assert.assertEquals("Dollars to Yen", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Yen", expectedSum, actual, .0000008);
 
     }
 
@@ -144,7 +144,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertUSDToYuan(usd);
         //Then
-        Assert.assertEquals("Dollars to Ringgit ", expectedSum, actual, .0000d);
+        Assert.assertEquals("Dollars to Ringgit ", expectedSum, actual, .00008d);
 
     }
 
@@ -157,7 +157,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertEurosToUSD(euros);
         //Then
-        Assert.assertEquals("Euros to USD ", expectedSum, actual, .0000d);
+        Assert.assertEquals("Euros to USD ", expectedSum, actual, .00008d);
 
     }
 
@@ -170,7 +170,7 @@ public class testCalculate {
         //When
         double actual = calculate.convertEurosToUSD(euro);
         //Then
-        Assert.assertEquals("Euros to USD", expectedSum, actual, .0000d);
+        Assert.assertEquals("Euros to USD", expectedSum, actual, .0000008);
 
     }
 
@@ -184,7 +184,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(pound, Currency.BRITISHPOUND);
         //Then
-        Assert.assertEquals("Euros to Pound", expectedSum, actual, .0000d);
+        Assert.assertEquals("Euros to Pound", expectedSum, actual, .0000008);
 
     }
 
@@ -201,7 +201,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(rupee, Currency.RUPEE);
         //Then
-        Assert.assertEquals("Pound to Rupee", expectedSum, actual, .0000d);
+        Assert.assertEquals("Pound to Rupee", expectedSum, actual, .000000006);
 
     }
 
@@ -216,7 +216,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(canadianDollar, Currency.CANADIANDOLLAR);
         //Then
-        Assert.assertEquals("Rupee to Canadian Dollar", expectedSum, actual, .0000d);
+        Assert.assertEquals("Rupee to Canadian Dollar", expectedSum, actual, .0000008);
 
     }
 
@@ -230,7 +230,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(singaporeanDollar, Currency.SINGAPORIANDOLLAR);
         //Then
-        Assert.assertEquals("Canadian Dollar to Singaporean Dollar", expectedSum, actual, .0000d);
+        Assert.assertEquals("Canadian Dollar to Singaporean Dollar", expectedSum, actual, .0000008);
 
     }
 
@@ -258,7 +258,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(ringgit, Currency.RINGGIT);
         //Then
-        Assert.assertEquals("Swiss Franc to Ringgit ", expectedSum, actual, .0000d);
+        Assert.assertEquals("Swiss Franc to Ringgit ", expectedSum, actual, .0000008);
 
     }
 
@@ -272,7 +272,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(yen, Currency.YEN);
         //Then
-        Assert.assertEquals("Ringgit to Yen", expectedSum, actual, .0000d);
+        Assert.assertEquals("Ringgit to Yen", expectedSum, actual, .0000008);
 
     }
 
@@ -286,7 +286,7 @@ public class testCalculate {
         //When
         double actual = calculate.conversionMethod(yuan, Currency.YUAN);
         //Then
-        Assert.assertEquals("Yen to Yuan", expectedSum, actual, .0000d);
+        Assert.assertEquals("Yen to Yuan", expectedSum, actual, .0000008);
 
     }
 
