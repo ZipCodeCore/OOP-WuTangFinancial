@@ -18,5 +18,8 @@ public class CanadianDollar {
         return finalConversion;
     }
 
-
+    public double canadianDollarToJapaneseYen(double input){
+        double finalConversion = input * 87.75;
+        return finalConversion;
+    }
 }
