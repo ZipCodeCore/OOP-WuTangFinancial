@@ -22,4 +22,9 @@ public class EuroConversion {
         double finalConversion = input * 1.43;
         return finalConversion;
     }
+
+    public double euroToCanadianDollar(double input){
+        double finalConversion = input * 1.40;
+        return finalConversion;
+    }
 }
