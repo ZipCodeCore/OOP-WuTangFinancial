@@ -33,5 +33,9 @@ public class BritishPound {
         return finalConveriosn;
     }
 
+    public double britishPoundToSwissFranc(double input){
+        double finalConveriosn = input * 1.23;
+        return finalConveriosn;
+    }
 }
 
