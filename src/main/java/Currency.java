@@ -3,7 +3,7 @@
  */
 public class Currency
 {
-    public double rate;
+    protected double rate;
 
     public Currency()
     {
