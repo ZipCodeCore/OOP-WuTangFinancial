@@ -59,11 +59,22 @@ public class IndianRupeeTest {
     @Test
     public void indianRupeeToJapaneseYenTest(){
         IndianRupee indianRupee = new IndianRupee();
-        
-        double expected = 706.30;
+
+        double expected = 8.45;
         double actual = indianRupee.indianRupeeToJapaneseYen(5);
 
-        Assert.assertEquals("This should return 706.30", expected, actual, .01);
+        Assert.assertEquals("This should return 8.45", expected, actual, .01);
     }
+
+    @Test
+    public void indianRupeeToChineseYuanRenminbiTest(){
+        IndianRupee indianRupee = new IndianRupee();
+
+        double expected = 246.74;
+        double actual = indianRupee.indianRupeeToChineseYuanRenminbi(25);
+
+        Assert.assertEquals("This should return 246.74", expected, actual, .01);
+    }
+    
 
 }
