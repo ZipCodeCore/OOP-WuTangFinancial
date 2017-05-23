@@ -23,4 +23,8 @@ public class AustralianDollar {
         return finalConversion;
     }
 
+    public double australianDollarToJapaneseYen(double input){
+        double finalConversion = input * 85.50;
+        return finalConversion;
+    }
 }
