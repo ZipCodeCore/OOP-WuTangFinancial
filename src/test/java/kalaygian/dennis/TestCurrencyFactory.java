@@ -16,7 +16,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -26,7 +27,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Euro", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -36,7 +38,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("British Pound", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -46,7 +49,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Australian Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -56,7 +60,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Canadian Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -66,7 +71,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Singapore Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -76,7 +82,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Malaysian Ringgit", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -86,7 +93,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Japanese Yen", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -96,7 +104,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Chinese Yuan Renminbi", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected, currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
     @Test
@@ -106,8 +115,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Not a valid input", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class", expected,
-                currency.getClass());
+        Assert.assertEquals("Checking to see if the factory returned the correct class",
+                expected, currency.getClass());
     }
 
 }

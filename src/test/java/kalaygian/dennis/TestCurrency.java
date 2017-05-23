@@ -15,20 +15,22 @@ public class TestCurrency {
         Currency dollars = CurrencyFactory.createCurrency("Dollar", 9.999999999);
         String expected = "10";
         // When
-        String answer = dollars.formatCurrency(dollars.getAmount());
+        String returnValue = dollars.formatCurrency(dollars.getAmount());
         // Then
-        Assert.assertEquals("Checking to see if the currency was correctly formatted", expected, answer);
+        Assert.assertEquals("Checking to see if the currency was correctly formatted",
+                expected, expected);
     }
 
     @Test
     public void testFormatCurrency_obnoxiousNumberOfDecimals() {
         // Given
-        Currency dollars = CurrencyFactory.createCurrency("Dollar", 3.23453267546732547326476);
+        Currency dollars = CurrencyFactory.createCurrency("Dollar", 3.234532547326476);
         String expected = "3.23";
         // When
-        String answer = dollars.formatCurrency(dollars.getAmount());
+        String returnValue = dollars.formatCurrency(dollars.getAmount());
         // Then
-        Assert.assertEquals("Checking to see if the currency was correctly formatted", expected, answer);
+        Assert.assertEquals("Checking to see if the currency was correctly formatted",
+                expected, returnValue);
     }
 
     @Test
@@ -37,9 +39,10 @@ public class TestCurrency {
         Currency dollars = CurrencyFactory.createCurrency("Dollar", 2);
         String expected = "1.88";
         // When
-        String converted = dollars.convertTo("Euro");
+        String returnValue = dollars.convertTo("Euro");
         // Then
-        Assert.assertEquals("Checking conversion from Dollar to Euro", expected, converted);
+        Assert.assertEquals("Checking conversion from Dollar to Euro",
+                expected, returnValue);
     }
 
     @Test
@@ -48,9 +51,10 @@ public class TestCurrency {
         Currency euros = CurrencyFactory.createCurrency("Euro", 2);
         String expected = "2.13";
         // When
-        String converted = euros.convertTo("Dollar");
+        String returnValue = euros.convertTo("Dollar");
         // Then
-        Assert.assertEquals("Checking conversion from Euro to Dollar", expected, converted);
+        Assert.assertEquals("Checking conversion from Euro to Dollar",
+                expected, returnValue);
     }
 
     @Test
@@ -59,9 +63,10 @@ public class TestCurrency {
         Currency euros = CurrencyFactory.createCurrency("Euro", 10);
         String expected = "8.72";
         // When
-        String converted = euros.convertTo("British Pound");
+        String returnValue = euros.convertTo("British Pound");
         // Then
-        Assert.assertEquals("Checking conversion from Euro to BritishPound", expected, converted);
+        Assert.assertEquals("Checking conversion from Euro to BritishPound",
+                expected, returnValue);
     }
 
     @Test
@@ -70,9 +75,10 @@ public class TestCurrency {
         Currency britishPounds = CurrencyFactory.createCurrency("british pound", 100);
         String expected = "8331.71";
         // When
-        String converted = britishPounds.convertTo("Indian Rupee");
+        String returnValue = britishPounds.convertTo("Indian Rupee");
         // Then
-        Assert.assertEquals("Checking conversion from BritishPound to Indian Rupee", expected, converted);
+        Assert.assertEquals("Checking conversion from BritishPound to Indian Rupee",
+                expected, returnValue);
     }
 
     @Test
@@ -81,9 +87,10 @@ public class TestCurrency {
         Currency indianRupee = CurrencyFactory.createCurrency("Indian Rupee", 10);
         String expected = "0.19";
         // When
-        String converted = indianRupee.convertTo("canadian dollar");
+        String returnValue = indianRupee.convertTo("canadian dollar");
         // Then
-        Assert.assertEquals("Checking conversion from Indian Rupee to Canadian Dollar", expected, converted);
+        Assert.assertEquals("Checking conversion from Indian Rupee to Canadian Dollar",
+                expected, returnValue);
     }
 
     @Test
@@ -92,9 +99,10 @@ public class TestCurrency {
         Currency canadianDollar = CurrencyFactory.createCurrency("Canadian Dollar", 10);
         String expected = "10.83";
         // When
-        String converted = canadianDollar.convertTo("Singapore Dollar");
+        String returnValue = canadianDollar.convertTo("Singapore Dollar");
         // Then
-        Assert.assertEquals("Checking conversion from Canadian Dollar to Singapore Dollar", expected, converted);
+        Assert.assertEquals("Checking conversion from Canadian Dollar to Singapore Dollar",
+                expected, returnValue);
     }
 
     @Test
@@ -103,9 +111,10 @@ public class TestCurrency {
         Currency singaporeDollar = CurrencyFactory.createCurrency("Singapore Dollar", 10);
         String expected = "7.06";
         // When
-        String converted = singaporeDollar.convertTo("Swiss Franc");
+        String returnValue = singaporeDollar.convertTo("Swiss Franc");
         // Then
-        Assert.assertEquals("Checking conversion from Singapore Dollar to Swiss Franc", expected, converted);
+        Assert.assertEquals("Checking conversion from Singapore Dollar to Swiss Franc",
+                expected, returnValue);
     }
 
     @Test
@@ -114,9 +123,10 @@ public class TestCurrency {
         Currency swissFranc = CurrencyFactory.createCurrency("Swiss Franc", 10);
         String expected = "44.26";
         // When
-        String converted = swissFranc.convertTo("Malaysian Ringgit");
+        String returnValue = swissFranc.convertTo("Malaysian Ringgit");
         // Then
-        Assert.assertEquals("Checking conversion from Swiss Franc to Malaysian Ringgit", expected, converted);
+        Assert.assertEquals("Checking conversion from Swiss Franc to Malaysian Ringgit",
+                expected, returnValue);
     }
 
     @Test
@@ -125,9 +135,10 @@ public class TestCurrency {
         Currency malaysianRinggit = CurrencyFactory.createCurrency("Malaysian Ringgit", 10);
         String expected = "259.15";
         // When
-        String converted = malaysianRinggit.convertTo("Japanese Yen");
+        String returnValue = malaysianRinggit.convertTo("Japanese Yen");
         // Then
-        Assert.assertEquals("Checking conversion from Malaysian Ringgit to Japanese Yen", expected, converted);
+        Assert.assertEquals("Checking conversion from Malaysian Ringgit to Japanese Yen",
+                expected, returnValue);
     }
 
     @Test
@@ -136,9 +147,10 @@ public class TestCurrency {
         Currency japaneseYen = CurrencyFactory.createCurrency("Japanese Yen", 115.84);
         String expected = "6.92";
         // When
-        String converted = japaneseYen.convertTo("Chinese Yuan Renminbi");
+        String returnValue = japaneseYen.convertTo("Chinese Yuan Renminbi");
         // Then
-        Assert.assertEquals("Checking conversion from Japanese Yen to Chinese Yuan Renminbi", expected, converted);
+        Assert.assertEquals("Checking conversion from Japanese Yen to Chinese Yuan Renminbi",
+                expected, returnValue);
     }
 
 }

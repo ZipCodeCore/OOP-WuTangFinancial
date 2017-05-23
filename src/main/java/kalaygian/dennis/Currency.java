@@ -30,7 +30,15 @@ public abstract class Currency {
 
     public String convertTo(String newCurrency) {
         Currency theNewCurrency = CurrencyFactory.createCurrency(newCurrency, 0);
-        return formatCurrency(((theNewCurrency.getRate() / getRate())) * getAmount());
+        return formatCurrency(convertAt(exchangeRate(theNewCurrency)));
+    }
+
+    public double convertAt(double rate){
+        return getAmount() * rate;
+    }
+
+    public double exchangeRate(Currency theNewCurrency){
+        return theNewCurrency.getRate() / getRate();
     }
 
     public String formatCurrency(double value){
