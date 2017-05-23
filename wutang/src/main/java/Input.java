@@ -27,7 +27,7 @@ public class Input {
         Console.printDouble(wuTang.CurrencyConversion(Currency.AUSSIEDOLLAR, Currency.SWISSFRANC));
         Console.printDouble(wuTang.CurrencyConversion(Currency.CHINESEYUAN, Currency.USDOLLAR));
         Console.printDouble(wuTang.CurrencyConversion(Currency.SWISSFRANC, Currency.RINGGIT));
-
+        Console.printDouble(wuTang.CurrencyConversion(Currency.USDOLLAR, Currency.YEN));
 
     }
 

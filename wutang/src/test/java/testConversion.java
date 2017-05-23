@@ -97,6 +97,13 @@ public class testConversion {
         double expected = 0.23;
         Assert.assertEquals(expected,actual,0.01);
     }
+    @Test
+    public void testRinggitToUSDollar() {
+        Currency money = new Currency();
+        double actual = money.CurrencyConversion(Currency.USDOLLAR, Currency.RINGGIT);
+        double expected = 4.47;
+        Assert.assertEquals(expected,actual,0.000001);
+    }
 
     @Test
     public void testRinggitToYen(){
@@ -121,7 +128,7 @@ public class testConversion {
 
     }
     @Test
-    public void testYuanToYet(){
+    public void testYuanToYen(){
         Currency money = new Currency();
         double actual = money.CurrencyConversion(Currency.CHINESEYUAN, Currency.YEN);
         double expected = 16.73;
@@ -140,6 +147,13 @@ public class testConversion {
         double actual = money.CurrencyConversion(Currency.AUSSIEDOLLAR, Currency.USDOLLAR);
         double expected = 0.74;
         Assert.assertEquals(expected,actual,0.03);
+    }
+    @Test
+    public void testAussieDollarToSwissFranc(){
+        Currency money = new Currency();
+        double actual = money.CurrencyConversion(Currency.AUSSIEDOLLAR, Currency.SWISSFRANC);
+        double expected = 0.75;
+        Assert.assertEquals(expected,actual,0.00001);
     }
 
 
