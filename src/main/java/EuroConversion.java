@@ -8,4 +8,8 @@ public class EuroConversion {
         return finalConversion;
     }
 
+    public double euroToAmericanDollars(double input){
+        double finalConversion = input * .94;
+        return finalConversion;
+    }
 }

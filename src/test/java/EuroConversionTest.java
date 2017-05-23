@@ -15,4 +15,14 @@ public class EuroConversionTest {
 
         Assert.assertEquals("This should return 8.70", expected ,actual, .01);
     }
+
+    @Test
+    public void euroToAmericanDollarsTest(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected = 14.10;
+        double actual = euroConversion.euroToAmericanDollars(15);
+
+        Assert.assertEquals("This should return 14.10", expected, actual, .01);
+    }
 }
