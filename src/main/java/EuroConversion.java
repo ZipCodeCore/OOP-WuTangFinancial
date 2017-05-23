@@ -48,5 +48,8 @@ public class EuroConversion {
         return finalConversion;
     }
 
-    
+    public double euroToYuanRenminbi(double input){
+        double finalConversion = input * 7.36;
+        return finalConversion;
+    }
 }

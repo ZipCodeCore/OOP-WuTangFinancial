@@ -95,4 +95,15 @@ public class EuroConversionTest {
 
         Assert.assertEquals("This should return 7640.26", expected,actual,.01);
     }
+
+    @Test
+    public void euroToYuanRenminbiTest(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected = 390.08;
+        double actual = euroConversion.euroToYuanRenminbi(53);
+
+        Assert.assertEquals("This should rueturn 390.08", expected, actual, .01);
+    }
+
 }
