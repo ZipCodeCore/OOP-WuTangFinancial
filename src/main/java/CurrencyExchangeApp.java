@@ -21,15 +21,16 @@ public class CurrencyExchangeApp {
     public void run() {
         String menuSelection;
         Locale locale;
-
         BigDecimal rateIn;
         BigDecimal rateOut;
         BigDecimal amountIn;
         BigDecimal amountOut;
         String amountOutString;
+        String doMoreExchanges;
         //show menu and ask for in currency
         display.printToConsole(display.getMenu());
         display.printToConsole(display.getAskRateIn());
+        //TODO put do whiles in own methods
         do {
             menuSelection = userInput.queryStringInput();
             if (menuSelection == null) {
@@ -60,5 +61,15 @@ public class CurrencyExchangeApp {
         amountOutString = display.showAsCurrency(amountOut, locale);
         display.printToConsole(amountOutString);
         //ask if want to do another
+        display.printToConsole(display.getAskAnother());
+        userInput = new UserInput();
+        doMoreExchanges = UserInput.queryStringInput().toUpperCase();
+        if(doMoreExchanges.equals("Y")){
+            userInput = new UserInput();
+            run();
+        }
+        else{
+            return;
+        }
     }
 }

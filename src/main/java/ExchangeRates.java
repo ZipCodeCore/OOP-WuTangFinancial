@@ -18,7 +18,12 @@ public class ExchangeRates {
     private static final BigDecimal CNY = new BigDecimal(6.92);
     private Locale locale;
 
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+    }
+
     public Locale getLocale() {
+
         return locale;
     }
 
@@ -70,37 +75,38 @@ public class ExchangeRates {
     public BigDecimal selectMenuOption(String s) {
         switch (s) {
             case "1":
-                locale = Locale.US;
+                setLocale(Locale.US);
                 return USD;
             case "2":
-                locale = Locale.GERMANY;
+                setLocale(Locale.GERMANY);
                 return EUR;
             case "3":
-                locale = Locale.UK;
+                setLocale(Locale.UK);
                 return GBP;
             case "4":
-                locale = Locale.US;
+                setLocale(Locale.US);
                 return INR;
             case "5":
-                locale = Locale.US;
+                setLocale(Locale.US);
                 return AUD;
             case "6":
-                locale = Locale.CANADA;
+                setLocale(Locale.CANADA);
                 return CAD;
             case "7":
-                locale = Locale.US;
+                setLocale(Locale.US);
                 return SGD;
             case "8":
-                locale = Locale.US;
+                setLocale(Locale.US);
+
                 return CHF;
             case "9":
-                locale = Locale.US;
+                setLocale(Locale.US);
                 return MYR;
             case "10":
-                locale = Locale.JAPAN;
+                setLocale(Locale.JAPAN);
                 return JPY;
             case "11":
-                locale = Locale.CHINA;
+                setLocale(Locale.CHINA);
                 return CNY;
             default:
                 return null;
