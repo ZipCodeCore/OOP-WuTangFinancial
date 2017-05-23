@@ -1,17 +1,15 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
  * Created by anthonyjones on 5/22/17.
  */
 public class Display {
-//    Scanner in = new Scanner(System.in);
     Calculate calculate = new Calculate();
     Currency currency;
     int enumLoopCounter;
     private boolean isConverterRunning = true;
-//    String firstNumber;
     String givenNumber;
-//    double money;
     private String operationOfChoice;
     private Scanner input = new Scanner(System.in);
 
@@ -55,7 +53,6 @@ public class Display {
         }
     }
 
-
     private void setCurrentNumber() {
         String money = input.nextLine().trim();
         this.givenNumber = money;
@@ -64,9 +61,10 @@ public class Display {
     private void calculateAndSendAllNumbers() {
 
         calculate.setNumber1(Double.parseDouble(givenNumber));
-
-     double a =calculate.conversionMethod(Double.parseDouble(givenNumber), currency);
-        System.out.printf("You have $%.2f\n",a);
+        String number = givenNumber;
+        double amount = calculate.conversionMethod(Double.parseDouble(number), currency);
+        DecimalFormat formatter = new DecimalFormat("#,###.00");
+        System.out.println("You have $" + formatter.format(amount) + "\n");
     }
 
 
@@ -74,7 +72,6 @@ public class Display {
         while (isConverterRunning) {
             operationChoice();
             methodOfOperation();
-
             setCurrentNumber();
             calculateAndSendAllNumbers();
             displayChoices();
