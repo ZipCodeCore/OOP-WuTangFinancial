@@ -15,4 +15,9 @@ public class IndianRupee {
         return finalConversion;
     }
 
+    public double indianRupeeToSinaporeDollar(double input){
+        double finalConversion = input * 47.77;
+        return finalConversion;
+    }
+
 }
