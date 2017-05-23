@@ -7,15 +7,12 @@ import java.util.TreeMap;
  */
 public class Calculate {
 
-    double money;
-    double newSum;
-    static Map<String, Double> currentCurrency = new TreeMap<>();
     double currentRate;
 
 
     public double conversionMethod(double money, Currency currency) {//take an enum, and money amount, to do the calculations
 
-        money = money / currentRate;
+        //  money = money / currentRate;
 
         switch (currency) {
             case USD:
@@ -23,7 +20,7 @@ public class Calculate {
             case EURO:
                 return convertUSDToEuros(money);
             case SWISSFRANC:
-               return convertUSDtoSwissFranc(money);
+                return convertUSDtoSwissFranc(money);
             case AUSTRALIANDOLLAR:
                 return convertUSDToAustralianDollar(money);
             case CANADIANDOLLAR:
@@ -51,14 +48,12 @@ public class Calculate {
     public double convertUSDToEuros(double money) {
         currentRate = 0.94;
         money = money * currentRate;
-        currentCurrency.put("€", money);
         return money;
     }
 
     public double convertUSDToPound(double money) {
         currentRate = 0.82;
         money = money * currentRate;
-        currentCurrency.put("£", money);
         return money;
     }
 
@@ -105,6 +100,60 @@ public class Calculate {
 
     public double convertEurosToUSD(double money) {
         money = money / 0.94;
+        return money;
+    }
+
+    public double convertPoundsToUSD(double money) {
+        currentRate = 0.82;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertRupeeToUSD(double money) {
+        currentRate = 68.32;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertYuanToUSD(double money) {
+        currentRate = 6.92;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertYenToUSD(double money) {
+        currentRate = 115.84;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertRingittToUSD(double money) {
+        currentRate = 4.47;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertSwissFrancToUSD(double money) {
+        currentRate = 1.01;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertAustralianDollarToUSD(double money) {
+        currentRate = 1.35;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertCanadianDollarToUSD(double money) {
+        currentRate = 1.32;
+        money = money / currentRate;
+        return money;
+    }
+
+    public double convertSingaporeanDollarToUSD(double money) {
+        currentRate = 1.43;
+        money = money / currentRate;
         return money;
     }
 }
