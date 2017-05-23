@@ -40,9 +40,7 @@ public class Money {
   private long convertToCurrency(long usDollars) {
     double exchange;
     long exchangeRate = currency.getExchangeRate();
-    if (exchangeRate > 1000) {
-      exchange = (downHandleDoubles(usDollars) * downHandleDoubles(exchangeRate));
-    } else if (exchangeRate < 1000) {
+    if (exchangeRate > 1000 || exchangeRate < 1000) {
       exchange = (downHandleDoubles(usDollars) * downHandleDoubles(exchangeRate));
     } else {
       exchange = usDollars;
