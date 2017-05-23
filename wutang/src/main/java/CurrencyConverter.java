@@ -4,8 +4,8 @@
 public class CurrencyConverter
 {
 	public Currency convertedCurrency;
-	public Currency unconvertedCurrency;
-	public Currency conversionType;
+	private Currency unconvertedCurrency;
+	private Currency conversionType;
 
 	public void convertTo(Currency conversionType)
 	{
@@ -17,21 +17,13 @@ public class CurrencyConverter
 		this.unconvertedCurrency = unconvertedCurrency;
 	}
 
-	public void convertCurrency(Currency unconvertedCurrency)
+	public void convertCurrency()
 	{
-		conversionType = convertedCurrency;
+		convertedCurrency = conversionType;
 		double conversionRate = conversionType.getRate();
-		double conversionCheck = unconvertedCurrency.getRate();
 		double amountToConvert = unconvertedCurrency.getAmount();
-		double convertedAmount;
-		if (conversionRate > conversionCheck)
-		{
-			convertedAmount = amountToConvert * conversionRate;
-		}
-		else
-		{
-			convertedAmount = amountToConvert / conversionRate;
-		}
+		double convertedAmount = amountToConvert * conversionRate;
+
 		convertedCurrency.setAmount(convertedAmount);
 	}
 
