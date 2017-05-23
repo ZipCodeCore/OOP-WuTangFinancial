@@ -1,31 +1,33 @@
 package mastakim;
 
+import java.math.BigInteger;
+
 public enum Currency {
 
-    USD(1000000000, 100),
-    EUR(1063829787, 94),
-    GBP(1219512195, 82),
-    INR(14637002, 6832),
-    AUD(740740741, 135),
-    CAD(757575758, 132),
-    SGD(699300699, 143),
-    CHF(990099001, 101),
-    MYR(223713647, 447),
-    JPY(8632597, 11584),
-    CNY(144508671, 692);
+    USD(new BigInteger("1000000000"), new BigInteger("100")),
+    EUR(new BigInteger("1063829787"), new BigInteger("94")),
+    GBP(new BigInteger("1219512195"), new BigInteger("82")),
+    INR(new BigInteger("14637002"), new BigInteger("6832")),
+    AUD(new BigInteger("740740741"), new BigInteger("135")),
+    CAD(new BigInteger("757575758"), new BigInteger("132")),
+    SGD(new BigInteger("699300699"), new BigInteger("143")),
+    CHF(new BigInteger("990099001"), new BigInteger("101")),
+    MYR(new BigInteger("223713647"), new BigInteger("447")),
+    JPY(new BigInteger("8632597"), new BigInteger("11584")),
+    CNY(new BigInteger("144508671"), new BigInteger("692"));
 
-    private final long toDollar;
-    private final long fromDollar;
+    private final BigInteger toDollar;
+    private final BigInteger fromDollar;
 
-    public long toDollar(){
+    public BigInteger toDollar(){
         return toDollar;
     }
 
-    public long fromDollar(){
+    public BigInteger fromDollar(){
         return fromDollar;
     }
 
-    Currency(long toDollar, long fromDollar) {
+    Currency(BigInteger toDollar, BigInteger fromDollar) {
         this.toDollar = toDollar;
         this.fromDollar = fromDollar;
     }
