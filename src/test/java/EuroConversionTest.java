@@ -75,4 +75,14 @@ public class EuroConversionTest {
 
         Assert.assertEquals("This should return 105.93", expected, actual, .01);
     }
+
+    @Test
+    public void euroToMalaysianRinggitTest(){
+        EuroConversion euroConversion = new EuroConversion();
+
+        double expected = 23.75;
+        double actual = euroConversion.euroToMalaysianRinggit(5);
+
+        Assert.assertEquals("This should return 23.75", expected, actual, .01);
+    }
 }

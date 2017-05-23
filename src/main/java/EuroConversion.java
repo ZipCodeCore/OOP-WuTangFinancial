@@ -37,4 +37,9 @@ public class EuroConversion {
         double finalConversion = input * 1.07;
         return finalConversion;
     }
+
+    public double euroToMalaysianRinggit(double input){
+        double finalConversion = input * 4.75;
+        return finalConversion;
+    }
 }
