@@ -47,5 +47,10 @@ public class AustralianDollar {
         double finalConversion = input * 1.64;
         return  finalConversion;
     }
+
+    public double australianDollarToRupee(double input){
+        double finalConversion = input * 50.60;
+        return finalConversion;
+    }
 }
 
