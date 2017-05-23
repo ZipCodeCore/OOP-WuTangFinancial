@@ -82,7 +82,7 @@ public class TestCurrencyConverter {
     }
 
 
-    // Convert Dollar to Euro
+                                    // Convert Dollar to Euro
     @Test
     public void testConverterDollarToEuro(){
         //:Given
@@ -98,7 +98,7 @@ public class TestCurrencyConverter {
 
     }
 
-    // Convert Euro to Dollar
+                                    // Convert Euro to Dollar
     @Test
     public void testConverterEuroToDollar(){
         //:Given
@@ -113,7 +113,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("150 Euros should return 159.57 Dollars", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert Euro to British Pound
+                                // Convert Euro to British Pound
     @Test
     public void testConverterEuroToPound(){
         //:Given
@@ -128,7 +128,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("317.15 Euros should return 276.66 Pounds", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert British Pound to Indian Rupee
+                             // Convert British Pound to Indian Rupee
     @Test
     public void testConverterPoundToRupee(){
         //:Given
@@ -143,7 +143,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("77.13 Pounds should return 6426.18 Rupees", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert Rupee to Canadian Dollar
+                                // Convert Rupee to Canadian Dollar
     @Test
     public void testConverterRupeeToCanadianDollar(){
         //:Given
@@ -159,7 +159,7 @@ public class TestCurrencyConverter {
 
     }
 
-    // Convert Canadian Dollar to Singapore Dollar
+                            // Convert Canadian Dollar to Singapore Dollar
     @Test
     public void testConverterCanadianDollarToSingaporeDollar(){
         //:Given
@@ -174,7 +174,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("2004.50 Maple Leafs should return 2171.54 Singapore Dollars", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert Singapore Dollar to Swiss Franc
+                                // Convert Singapore Dollar to Swiss Franc
     @Test
     public void testConverterSingaporeDollarToSwissFranc(){
         //:Given
@@ -189,7 +189,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("81.43 Singapore Dollars should return 57.51 Francs", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert Swiss Franc to Malaysian Ringgit
+                                // Convert Swiss Franc to Malaysian Ringgit
     @Test
     public void testConverterFrancToRinggit(){
         //:Given
@@ -204,7 +204,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("850 Francs should return 3761.86 Ringgits", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert Malaysian Ringgit to Japanese Yen
+                            // Convert Malaysian Ringgit to Japanese Yen
     @Test
     public void testConverterRinggittToYen(){
         //:Given
@@ -219,7 +219,7 @@ public class TestCurrencyConverter {
         Assert.assertEquals("78.22 Ringgits should return 2027.20 Yen", expectedExchangeValue,actualExchangeValue,0.001);
 
     }
-    // Convert Japanese Yen to Chinese Yuan Renminbi
+                            // Convert Japanese Yen to Chinese Yuan Renminbi
     @Test
     public void testConverterYenToRenminbi(){
         //:Given

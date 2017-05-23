@@ -8,7 +8,7 @@ public class CurrencyConverter {
 
 
     // Switch statement takes a string and double returns double(usDollar)
-    // another switch statment is called which takes a string(exchange currency and a double(usDollar)
+    // another switch statement is called which takes a string(exchange currency and a double(usDollar)
 
     public double foreignCurrencyToUsDollar(String currentCurrency, double loot){
 

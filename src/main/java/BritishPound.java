@@ -5,11 +5,7 @@ public class BritishPound {
     private static double rate = 0.82;
     private static double usDollarConvertedValue;
     private static double britishPoundValue;
-    public static double convertToUSDollar(double amount){
-        usDollarConvertedValue = Math.round(amount / BritishPound.getRate()*100);
-        usDollarConvertedValue = usDollarConvertedValue/100;
-        return usDollarConvertedValue;
-    }
+
 
     public double getUsDollarConvertedValue() {
         return usDollarConvertedValue;
@@ -18,6 +14,12 @@ public class BritishPound {
 
     public static double getRate() {
         return rate;
+    }
+
+    public static double convertToUSDollar(double amount){
+        usDollarConvertedValue = Math.round(amount / BritishPound.getRate()*100);
+        usDollarConvertedValue = usDollarConvertedValue/100;
+        return usDollarConvertedValue;
     }
 
     public static double convertToBritishPound(double usDollarValue){
