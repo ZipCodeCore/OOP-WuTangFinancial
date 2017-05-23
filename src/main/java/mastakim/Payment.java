@@ -33,7 +33,7 @@ public class Payment {
 
     public Payment convertTo(Currency currency){
         BigDecimal dollarAmt = amount.multiply(this.currency.toDollar()).multiply(currency.fromDollar());
-        dollarAmt = dollarAmt.setScale(2, RoundingMode.HALF_UP);
+        dollarAmt = dollarAmt.setScale(0, RoundingMode.HALF_UP);
         return new Payment(dollarAmt, currency);
     }
 

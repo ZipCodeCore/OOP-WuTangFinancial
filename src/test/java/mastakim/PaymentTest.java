@@ -80,8 +80,8 @@ public class PaymentTest {
     @Test
     public void convertUSDtoEURTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("940.00");
-        BigDecimal expected2 = new BigDecimal("4700000.00");
+        BigDecimal expected1 = new BigDecimal("940");
+        BigDecimal expected2 = new BigDecimal("4700000");
 
         //When
         Payment result1 = usd1.convertTo(EUR);
@@ -91,16 +91,16 @@ public class PaymentTest {
 
 
         //Then
-        assertEquals("1000 USD = 940 EUR", expected1, actual1);
-        assertEquals("5000000 USD = 4700000 EUR", expected2, actual2);
+        assertEquals("10.00 USD = 9.40 EUR", expected1, actual1);
+        assertEquals("50000.00 USD = 47000.00 EUR", expected2, actual2);
     }
 
     //Convert EUR to USD
     @Test
     public void convertEURtoUSDTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("1063.83");
-        BigDecimal expected2 = new BigDecimal("5319148.94");
+        BigDecimal expected1 = new BigDecimal("1064");
+        BigDecimal expected2 = new BigDecimal("5319149");
 
         //When
         Payment result1 = eur1.convertTo(USD);
@@ -109,16 +109,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 EUR = 1063.83 USD", expected1, actual1);
-        assertEquals("5000000 EUR = 5319148.94 USD", expected2, actual2);
+        assertEquals("10.00 EUR = 10.64 USD", expected1, actual1);
+        assertEquals("50000.00 EUR = 53191.49 USD", expected2, actual2);
     }
 
     //Convert EUR to GBP
     @Test
     public void convertEURtoGBPTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("872.34");
-        BigDecimal expected2 = new BigDecimal("4361702.13");
+        BigDecimal expected1 = new BigDecimal("872");
+        BigDecimal expected2 = new BigDecimal("4361702");
 
         //When
         Payment result1 = eur1.convertTo(GBP);
@@ -127,16 +127,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 EUR = 872.34 GBP", expected1, actual1);
-        assertEquals("5000000 EUR = 4361702.13 GBP", expected2, actual2);
+        assertEquals("10.00 EUR = 872 GBP", expected1, actual1);
+        assertEquals("50000.00 EUR = 4361702 GBP", expected2, actual2);
     }
 
     //Convert GBP to INR
     @Test
     public void convertGBPtoINRTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("83317.07");
-        BigDecimal expected2 = new BigDecimal("416585365.85");
+        BigDecimal expected1 = new BigDecimal("83317");
+        BigDecimal expected2 = new BigDecimal("416585366");
 
         //When
         Payment result1 = gbp1.convertTo(INR);
@@ -145,16 +145,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 GBP = 83317.07 INR", expected1, actual1);
-        assertEquals("5000000 GBP = 416585365.85 INR", expected2, actual2);
+        assertEquals("10.00 GBP = 83317 INR", expected1, actual1);
+        assertEquals("50000.00 GBP = 416585366 INR", expected2, actual2);
     }
 
     //Convert INR to CAD
     @Test
     public void convertINRtoCADTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("19.32");
-        BigDecimal expected2 = new BigDecimal("96604.22");
+        BigDecimal expected1 = new BigDecimal("19");
+        BigDecimal expected2 = new BigDecimal("96604");
 
         //When
         Payment result1 = inr1.convertTo(CAD);
@@ -163,16 +163,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 INR = 19.32 CAD", expected1, actual1);
-        assertEquals("5000000 INR = 96604.22 CAD", expected2, actual2);
+        assertEquals("10.00 INR = 19 CAD", expected1, actual1);
+        assertEquals("50000.00 INR = 96604 CAD", expected2, actual2);
     }
 
     //Convert CAD to SGD
     @Test
     public void convertCADtoSGDTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("1083.33");
-        BigDecimal expected2 = new BigDecimal("5416666.67");
+        BigDecimal expected1 = new BigDecimal("1083");
+        BigDecimal expected2 = new BigDecimal("5416667");
 
                 //When
         Payment result1 = cad1.convertTo(SGD);
@@ -182,16 +182,16 @@ public class PaymentTest {
 
 
         //Then
-        assertEquals("1000 CAD = 1083.33 SGD", expected1, actual1);
-        assertEquals("5000000 CAD = 5416666.67 SGD", expected2, actual2);
+        assertEquals("10.00 CAD = 1083 SGD", expected1, actual1);
+        assertEquals("50000.00 CAD = 5416667 SGD", expected2, actual2);
     }
 
     //Convert SGD to CHF
     @Test
     public void convertSGDtoCHFTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("706.29");
-        BigDecimal expected2 = new BigDecimal("3531468.53");
+        BigDecimal expected1 = new BigDecimal("706");
+        BigDecimal expected2 = new BigDecimal("3531469");
 
         //When
         Payment result1 = sgd1.convertTo(CHF);
@@ -200,16 +200,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 SGD = 706.29 CHF", expected1, actual1);
-        assertEquals("5000000 SGD = 3531468.53", expected2, actual2);
+        assertEquals("10.00 SGD = 706.29 CHF", expected1, actual1);
+        assertEquals("50000.00 SGD = 3531468.53", expected2, actual2);
     }
 
     //Convert CHF to MYR
     @Test
     public void convertCHFtoMYRTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("4425.74");
-        BigDecimal expected2 = new BigDecimal("22128712.87");
+        BigDecimal expected1 = new BigDecimal("4426");
+        BigDecimal expected2 = new BigDecimal("22128713");
 
         //When
         Payment result1 = chf1.convertTo(MYR);
@@ -218,16 +218,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 CHF = 4425.74 MYR", expected1, actual1);
-        assertEquals("5000000 CHF = 22128712.87 MYR", expected2, actual2);
+        assertEquals("10.00 CHF = 4426 MYR", expected1, actual1);
+        assertEquals("50000.00 CHF = 22128713 MYR", expected2, actual2);
     }
 
     //Convert MYR to JPY
     @Test
     public void convertMYRtoJPYTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("25914.99");
-        BigDecimal expected2 = new BigDecimal("129574944.07");
+        BigDecimal expected1 = new BigDecimal("25915");
+        BigDecimal expected2 = new BigDecimal("129574944");
 
                 //When
         Payment result1 = myr1.convertTo(JPY);
@@ -236,16 +236,16 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 MYR = 25914.99 JPY", expected1, actual1);
-        assertEquals("5000000 MYR = 129574944.07 JPY", expected2, actual2);
+        assertEquals("10.00 MYR = 25915 JPY", expected1, actual1);
+        assertEquals("50000.00 MYR = 129574944 JPY", expected2, actual2);
     }
 
     //Convert JPY to CNY
     @Test
     public void convertJPYtoCNYTest(){
         //Given
-        BigDecimal expected1 = new BigDecimal("59.74");
-        BigDecimal expected2 = new BigDecimal("298687.85");
+        BigDecimal expected1 = new BigDecimal("60");
+        BigDecimal expected2 = new BigDecimal("298688");
 
                 //When
         Payment result1 = jpy1.convertTo(CNY);
@@ -254,8 +254,8 @@ public class PaymentTest {
         BigDecimal actual2 = result2.getAmount();
 
         //Then
-        assertEquals("1000 JPY = 59.74 CNY", expected1, actual1);
-        assertEquals("5000000 JPY = 298687.85 CNY", expected2, actual2);
+        assertEquals("10.00 JPY = 60 CNY", expected1, actual1);
+        assertEquals("50000.00 JPY = 298688 CNY", expected2, actual2);
     }
 
 }
