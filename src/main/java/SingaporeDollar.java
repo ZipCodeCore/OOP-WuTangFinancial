@@ -10,4 +10,5 @@ public class SingaporeDollar extends Currency
         return rate;
     }
 
+
 }

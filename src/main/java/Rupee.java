@@ -10,4 +10,10 @@ public class Rupee extends Currency
         return rate;
     }
 
+    public char symbol()
+    {
+        char symbol = '\u20A7';
+        return symbol;
+    }
+
 }

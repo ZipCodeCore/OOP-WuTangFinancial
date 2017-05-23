@@ -7,14 +7,14 @@ public class CurrencyConverter
 {
 
     double amount;
-    Currency currentType = new Currency();
-    Currency expectedType = new Currency();
+    Currency currencyOne = new Currency();
+    Currency currencyTwo = new Currency();
 
     CurrencyConverter(){};
 
-    public double convert(Currency currentType, Currency expectedType)
+    public double convert(Currency currencyOne, Currency currencyTwo)
     {
-       amount = currentType.getRate()/expectedType.getRate();
+       amount = currencyOne.getRate()/currencyTwo.getRate();
        amount = round(amount);
        return amount;
     }

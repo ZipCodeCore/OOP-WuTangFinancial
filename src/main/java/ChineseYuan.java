@@ -1,3 +1,7 @@
+import org.jcp.xml.dsig.internal.dom.Utils;
+
+import java.util.Locale;
+
 /**
  * Created by luisgarcia on 5/22/17.
  */
@@ -8,5 +12,11 @@ public class ChineseYuan extends Currency
     public double getRate()
     {
         return rate;
+    }
+
+    public char symbol()
+    {
+        char symbol = '\u00A5';
+        return symbol;
     }
 }

@@ -4,6 +4,7 @@
 public class Currency
 {
     public double rate;
+    //public char symbol;
 
     public Currency()
     {
@@ -13,5 +14,11 @@ public class Currency
     public double getRate()
     {
         return rate;
+    }
+
+    public char symbol()
+    {
+        char symbol = '$';
+        return symbol;
     }
 }

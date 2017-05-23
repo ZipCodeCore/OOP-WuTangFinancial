@@ -10,4 +10,10 @@ public class Euro extends Currency
         return rate;
     }
 
+    public char symbol()
+    {
+        char symbol = '\u20AC';
+        return symbol;
+    }
+
 }
