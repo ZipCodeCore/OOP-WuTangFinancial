@@ -32,4 +32,9 @@ public class SingaporeDollar {
         double finalConversion = input * 1.52;
         return finalConversion;
     }
+
+    public double singaporeDollarToBritishPound(double input){
+        double finalConversion = input * 1.74;
+        return finalConversion;
+    }
 }
