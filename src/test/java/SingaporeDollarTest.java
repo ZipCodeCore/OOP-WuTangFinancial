@@ -94,4 +94,14 @@ public class SingaporeDollarTest {
 
         Assert.assertEquals("This should return 79.05", expected, actual, .01);
     }
+
+    @Test
+    public void singaporeDollarToCanadianDollarTest(){
+        SingaporeDollar singaporeDollar = new SingaporeDollar();
+
+        double expected = 27.60;
+        double actual = singaporeDollar.singaporeDollarToCanadianDollar(30);
+
+        Assert.assertEquals("This should return 27.60", expected, actual, .01);
+    }
 }

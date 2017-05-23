@@ -47,4 +47,9 @@ public class SingaporeDollar {
         double finalConversion = input * .93;
         return finalConversion;
     }
+
+    public double singaporeDollarToCanadianDollar(double input){
+        double finalConversion = input * .92;
+        return finalConversion;
+    }
 }
