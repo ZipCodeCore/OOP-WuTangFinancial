@@ -18,7 +18,7 @@ public class TestCurrency {
         String returnValue = dollars.formatCurrency(dollars.getAmount());
         // Then
         Assert.assertEquals("Checking to see if the currency was correctly formatted",
-                expected, expected);
+                expected, returnValue);
     }
 
     @Test

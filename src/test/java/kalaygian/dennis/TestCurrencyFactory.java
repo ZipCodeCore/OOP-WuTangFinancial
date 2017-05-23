@@ -16,7 +16,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the Dollar class",
                 expected, currency.getClass());
     }
 
@@ -27,7 +27,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Euro", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the Euro class",
                 expected, currency.getClass());
     }
 
@@ -38,7 +38,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("British Pound", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the BritishPound class",
                 expected, currency.getClass());
     }
 
@@ -49,7 +49,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Australian Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the AustriallianDollar class",
                 expected, currency.getClass());
     }
 
@@ -60,7 +60,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Canadian Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the CanadianDollar class",
                 expected, currency.getClass());
     }
 
@@ -71,7 +71,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Singapore Dollar", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the SingaporeDollar class",
                 expected, currency.getClass());
     }
 
@@ -82,7 +82,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Malaysian Ringgit", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the MalaysianRinggit class",
                 expected, currency.getClass());
     }
 
@@ -93,7 +93,7 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Japanese Yen", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Checking to see if the factory returned an instance of the JapaneseYen class",
                 expected, currency.getClass());
     }
 
@@ -104,7 +104,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Chinese Yuan Renminbi", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the Chinese Yuan Renminbi"
+                        .concat(" class"),
                 expected, currency.getClass());
     }
 
@@ -115,7 +116,8 @@ public class TestCurrencyFactory {
         // When
         Currency currency = CurrencyFactory.createCurrency("Not a valid input", 20);
         // Then
-        Assert.assertEquals("Checking to see if the factory returned the correct class",
+        Assert.assertEquals("Factory is not returning an instance of the Dollar class for an irrelevant "
+                        .concat("string"),
                 expected, currency.getClass());
     }
 
