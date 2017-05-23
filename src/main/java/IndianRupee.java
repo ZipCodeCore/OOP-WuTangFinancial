@@ -24,4 +24,9 @@ public class IndianRupee {
         double finalConversion = input * 67.70;
         return finalConversion;
     }
+
+    public double indianRupeeToMalaysianRinggit(double input){
+        double finalConversion = input * 15.28;
+        return finalConversion;
+    }
 }
