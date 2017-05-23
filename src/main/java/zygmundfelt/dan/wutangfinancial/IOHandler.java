@@ -46,7 +46,7 @@ public class IOHandler {
 
     public static String moneyToString(long amount) {
         long whole = amount / 100;
-        long part = amount % 100;
+        long part = Math.abs(amount % 100);
         return String.format("%d.%02d", whole, part);
     }
 
