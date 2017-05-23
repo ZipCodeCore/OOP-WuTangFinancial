@@ -187,13 +187,24 @@ public class CurencyConverterTest
         double amount = 1500.40;
         double expected = 6706.79;
 
-        //exchange.printConvert();
-
         //when
         double actual = exchange.getAmount(amount,malaysianRinggit, usDollar);
 
         //then
         Assert.assertEquals("Get us dollar amount to ringgit", expected, actual,0);
+    }
+
+    @Test
+    public void getSymbolTest()
+    {
+        //given
+        char expected = (char) 165;
+
+        //when
+        char actual = chineseYuan.symbol();
+
+        //then
+        Assert.assertEquals("Get us chinese yaun symbol", expected, actual);
     }
 
 
