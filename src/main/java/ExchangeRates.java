@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.Locale;
 
 /**
  * Created by andrewwong on 5/22/17.
@@ -7,7 +8,7 @@ public class ExchangeRates {
     private static final BigDecimal USD = new BigDecimal(1.00);
     private static final BigDecimal EUR = new BigDecimal(0.94);
     private static final BigDecimal GBP = new BigDecimal(0.82);
-    private static final BigDecimal INR = new BigDecimal (68.32);
+    private static final BigDecimal INR = new BigDecimal(68.32);
     private static final BigDecimal AUD = new BigDecimal(1.35);
     private static final BigDecimal CAD = new BigDecimal(1.32);
     private static final BigDecimal SGD = new BigDecimal(1.43);
@@ -15,6 +16,11 @@ public class ExchangeRates {
     private static final BigDecimal MYR = new BigDecimal(4.47);
     private static final BigDecimal JPY = new BigDecimal(115.84);
     private static final BigDecimal CNY = new BigDecimal(6.92);
+    private Locale locale;
+
+    public Locale getLocale() {
+        return locale;
+    }
 
     public static BigDecimal getUSD() {
         return USD;
@@ -23,6 +29,7 @@ public class ExchangeRates {
     public static BigDecimal getEUR() {
         return EUR;
     }
+
 
     public static BigDecimal getGBP() {
         return GBP;
@@ -60,32 +67,43 @@ public class ExchangeRates {
         return CNY;
     }
 
-    public BigDecimal selectMenuOption(String s) throws InvalidMenuSelection{
-        switch(s){
+    public BigDecimal selectMenuOption(String s) {
+        switch (s) {
             case "1":
+                locale = Locale.US;
                 return USD;
             case "2":
+                locale = Locale.GERMANY;
                 return EUR;
             case "3":
+                locale = Locale.UK;
                 return GBP;
             case "4":
+                locale = Locale.US;
                 return INR;
             case "5":
+                locale = Locale.US;
                 return AUD;
             case "6":
+                locale = Locale.CANADA;
                 return CAD;
             case "7":
+                locale = Locale.US;
                 return SGD;
             case "8":
+                locale = Locale.US;
                 return CHF;
             case "9":
+                locale = Locale.US;
                 return MYR;
             case "10":
+                locale = Locale.JAPAN;
                 return JPY;
             case "11":
+                locale = Locale.CHINA;
                 return CNY;
             default:
-                throw new InvalidMenuSelection();
+                return null;
         }
     }
 }

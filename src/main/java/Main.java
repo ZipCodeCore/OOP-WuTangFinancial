@@ -6,6 +6,8 @@ public class Main {
         Display display = new Display();
         UserInput userInput = new UserInput();
         Converter converter = new Converter();
-
+        ExchangeRates rates = new ExchangeRates();
+        CurrencyExchangeApp app = new CurrencyExchangeApp(display, userInput, converter, rates);
+        app.run();
     }
 }
