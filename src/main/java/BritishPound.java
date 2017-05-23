@@ -47,5 +47,10 @@ public class BritishPound {
         double finalConversion = input * 141.26;
         return finalConversion;
     }
+
+    public double britishPoundToChineseYuanRenminbi(double input){
+        double finalConversion = input * 8.43;
+        return finalConversion;
+    }
 }
 
