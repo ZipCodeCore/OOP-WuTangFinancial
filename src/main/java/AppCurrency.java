@@ -10,7 +10,7 @@ public class AppCurrency {
 
         //Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to Wu Tang Financial's Official Currency Calculator powered by WorldStarHipHop's Java Engine");
+        System.out.println("Welcome to Wu Tang Financial's Official Currency Conversion Calculator powered by WorldStarHipHop's Java Engine");
 
         CurrencyConverter converter = new CurrencyConverter();
 

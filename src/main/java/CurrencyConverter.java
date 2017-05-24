@@ -3,7 +3,6 @@
  */
 import java.text.DecimalFormat;
 import java.util.Map;
-import java.util.Map;
 import java.util.TreeMap;
 import java.math.BigDecimal;
 
@@ -17,19 +16,19 @@ public class CurrencyConverter {
         put("ETHER", 0.00565547);}};
 
 
-    public String firstCountry;
-    public String secondCountry;
-    public double amount;
+    //public String firstCountry;
+    //public String secondCountry;
+    //public double amount;
 
 
     public CurrencyConverter(){}
-
+/*
     public CurrencyConverter(String firstCountry, String secondCountry, double amount){
 
         this.firstCountry = firstCountry;
         this.secondCountry = secondCountry;
         this.amount = amount;
-    }
+    }*/
 
     //Find a way to keep this as a double or BigDecimal instead of String
     public String convertTo(String firstCountry, String secondCountry, double amount){
@@ -45,7 +44,7 @@ public class CurrencyConverter {
 
     public double getFirstExchangeRate(String firstCountry){
 
-        return conversionMap.get(firstCountry);
+        return conversionMap.get(firstCountry);//try catch?
     }
 
 

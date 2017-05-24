@@ -177,7 +177,7 @@ public class CurrencyConverterTest {
     }
 
     @Test
-    public void testConvertJapanesYenToChineseYuanRenminbi(){  //Yen to Yuan
+    public void testConvertJapaneseYenToChineseYuanRenminbi(){  //Yen to Yuan
         //:Given
         String firstCountry = "YEN";
         String secondCountry = "YUAN";
