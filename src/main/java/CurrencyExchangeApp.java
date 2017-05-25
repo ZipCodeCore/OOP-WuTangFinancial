@@ -62,10 +62,8 @@ public class CurrencyExchangeApp {
         display.printToConsole(amountOutString);
         //ask if want to do another
         display.printToConsole(display.getAskAnother());
-        userInput = new UserInput();
-        doMoreExchanges = UserInput.queryStringInput().toUpperCase();
+        doMoreExchanges = userInput.queryStringInput().toUpperCase();
         if(doMoreExchanges.equals("Y")){
-            userInput = new UserInput();
             run();
         }
         else{

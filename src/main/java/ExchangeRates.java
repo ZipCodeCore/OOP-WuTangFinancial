@@ -97,7 +97,6 @@ public class ExchangeRates {
                 return SGD;
             case "8":
                 setLocale(Locale.US);
-
                 return CHF;
             case "9":
                 setLocale(Locale.US);
