@@ -22,22 +22,4 @@ public class UserInput {
     public BigDecimal queryAmount(){
         return scanner.nextBigDecimal();
     }
-
-
-
-
-//    UserInput(InputStream scannerIn){
-//        in = new Scanner(scannerIn);
-//    }
-//    UserInput(){
-//        in = new Scanner(System.in);
-//    }
-//    public static String queryStringInput() {
-//        String userInput = in.nextLine();
-//        return userInput;
-//    }
-//    public static BigDecimal queryAmount(){
-//        return in.nextBigDecimal();
-//    }
-
 }
