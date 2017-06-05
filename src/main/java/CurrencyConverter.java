@@ -35,20 +35,18 @@ public class CurrencyConverter {
 
         DecimalFormat df = new DecimalFormat("#.##");
 
-        String exchangeAmount = df.format((getSecondExchangeRate(secondCountry) / getFirstExchangeRate(firstCountry)) * amount);
-
-        return exchangeAmount;
+        return df.format((getSecondExchangeRate(secondCountry) / getFirstExchangeRate(firstCountry)) * amount);
 
     }
 
 
-    public double getFirstExchangeRate(String firstCountry){
+    private double getFirstExchangeRate(String firstCountry){
 
         return conversionMap.get(firstCountry);//try catch?
     }
 
 
-    public double getSecondExchangeRate(String secondCountry){
+    private double getSecondExchangeRate(String secondCountry){
 
         return conversionMap.get(secondCountry);
 
