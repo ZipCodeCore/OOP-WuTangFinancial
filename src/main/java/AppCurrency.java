@@ -14,7 +14,7 @@ public class AppCurrency {
 
         CurrencyConverter converter = new CurrencyConverter();
 
-        System.out.println(converter.convertTo("USD", "EURO", 100.00 ));
+        System.out.println(converter.convertTo("USD", "EUR", 100.1456 ));
 
 
     }
