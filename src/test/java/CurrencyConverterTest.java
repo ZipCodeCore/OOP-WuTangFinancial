@@ -5,26 +5,19 @@
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
+import java.math.BigDecimal;
 
 public class CurrencyConverterTest {
 
     CurrencyConverter converter;
-
+    //BigDecimal expectedAmount;
+    //BigDecimal actualAmount;
     @Before
 
     public void setUp() {
         converter = new CurrencyConverter();
-    }
-
-    @Test
-    public void testGetFirstExchangeRate(){
-
-
-    }
-
-    @Test
-    public void testGetSecondExchangeRate(){
-
+//        expectedAmount = new BigDecimal("");
+//        actualAmount = new BigDecimal("");
 
     }
 
@@ -116,10 +109,10 @@ public class CurrencyConverterTest {
         String firstCountry = "CAN";
         String secondCountry = "SING";
         double amount = 100.00;
-        String expectedAmount = "108.33";
+        BigDecimal expectedAmount = new BigDecimal("108.33");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from CAN to SING is ", expectedAmount, actualAmount);
@@ -133,10 +126,10 @@ public class CurrencyConverterTest {
         String firstCountry = "SING";
         String secondCountry = "FRANC";
         double amount = 100.00;
-        String expectedAmount = "70.63";
+        BigDecimal expectedAmount = new BigDecimal("70.63");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from SING to FRANC is ", expectedAmount, actualAmount);
@@ -150,10 +143,10 @@ public class CurrencyConverterTest {
         String firstCountry = "FRANC";
         String secondCountry = "RINGGIT";
         double amount = 100.00;
-        String expectedAmount = "442.57";
+        BigDecimal expectedAmount = new BigDecimal("442.57");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from FRANC to RINGGIT is ", expectedAmount, actualAmount);
@@ -166,10 +159,10 @@ public class CurrencyConverterTest {
         String firstCountry = "RINGGIT";
         String secondCountry = "YEN";
         double amount = 100.00;
-        String expectedAmount = "2591.5"; // fix this single decimal
+        BigDecimal expectedAmount = new BigDecimal("2591.5"); // fix this single decimal
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from RINGGIT to YEN is ", expectedAmount, actualAmount);
@@ -182,10 +175,10 @@ public class CurrencyConverterTest {
         String firstCountry = "YEN";
         String secondCountry = "YUAN";
         double amount = 100.00;
-        String expectedAmount = "5.97";
+        BigDecimal expectedAmount = new BigDecimal("5.97");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from YEN to YUAN is ", expectedAmount, actualAmount);
@@ -198,10 +191,10 @@ public class CurrencyConverterTest {
         String firstCountry = "YUAN";
         String secondCountry = "BITCOIN";
         double amount = 100.00;
-        String expectedAmount = "0.01"; //Probably not correct, will fix
+        BigDecimal expectedAmount = new BigDecimal("0.01"); //Probably not correct, will fix
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from YEN to YUAN is ", expectedAmount, actualAmount);
@@ -211,13 +204,13 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertBitcoinToEthereum(){  //Bitcoin to Ether
         //:Given
-        String firstCountry = "BITCOIN";
-        String secondCountry = "ETHER";
+        String firstCountry = "BTC";
+        String secondCountry = "ETH";
         double amount = 100.00;
-        String expectedAmount = "1257.86";
+        BigDecimal expectedAmount = new BigDecimal("1257.87");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from BITCOIN to ETHER is ", expectedAmount, actualAmount);
@@ -225,18 +218,18 @@ public class CurrencyConverterTest {
     }
 
     @Test
-    public void testConvertEtherToAustralianDollars(){  //Ether to AUS
+    public void testConvertEtherToAustralianDollars(){  //ETH to AUD
         //:Given
-        String firstCountry = "ETHER";
-        String secondCountry = "AUS";
+        String firstCountry = "ETH";
+        String secondCountry = "AUD";
         double amount = 100.00;
-        String expectedAmount = "23870.7"; //fix that decimal place111111
+        BigDecimal expectedAmount = new BigDecimal("23870.70"); //fix that decimal place111111
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
-        Assert.assertEquals("The expected converted amount from YEN to YUAN is ", expectedAmount, actualAmount);
+        Assert.assertEquals("The expected converted amount from ETH to AUD is ", expectedAmount, actualAmount);
 
     }
 
