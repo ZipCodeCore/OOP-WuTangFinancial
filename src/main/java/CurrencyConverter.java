@@ -1,17 +1,14 @@
 /**
  * Created by brianmullin on 5/22/17.
  */
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+
 import java.util.Map;
 import java.util.TreeMap;
 import java.math.BigDecimal;
-import java.util.*;
-import java.text.*;
+
 
 public class CurrencyConverter {
 
-    //double amount = new BigDecimal(); //Add this later
     //Turn Map keys to regex
     private Map<String, Double> conversionMap = new TreeMap<String, Double>() {
         {
@@ -33,7 +30,6 @@ public class CurrencyConverter {
 
     public CurrencyConverter(){}
 
-    //Find a way to keep this as a double or BigDecimal instead of String
     public BigDecimal convertTo(String firstCountry, String secondCountry, double amountEntered){
 
         double amount = calculateExchangeRate(firstCountry, secondCountry) * amountEntered;
@@ -58,9 +54,12 @@ public class CurrencyConverter {
 
 
     private double getSecondExchangeRate(String secondCountry){
+        //try {
+            return conversionMap.get(secondCountry);
 
-        return conversionMap.get(secondCountry);
+        //}catch(InvalidCountryKeyException icke){
 
+        //}
     }
 
 
