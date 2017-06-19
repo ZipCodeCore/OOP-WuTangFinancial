@@ -10,14 +10,10 @@ import java.math.BigDecimal;
 public class CurrencyConverterTest {
 
     CurrencyConverter converter;
-    //BigDecimal expectedAmount;
-    //BigDecimal actualAmount;
-    @Before
 
+    @Before
     public void setUp() {
         converter = new CurrencyConverter();
-//        expectedAmount = new BigDecimal("");
-//        actualAmount = new BigDecimal("");
 
     }
 
@@ -25,12 +21,12 @@ public class CurrencyConverterTest {
     public void testConvertDollarToEuro(){ //dollar to euro
         //:Given
         String firstCountry = "USD";
-        String secondCountry = "EURO";
+        String secondCountry = "EUR";
         double amount = 100.1456;
-        String expectedAmount = "94.14";
+        BigDecimal expectedAmount = new BigDecimal("94.14");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from USD to EURO is ", expectedAmount, actualAmount);
@@ -40,13 +36,13 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertEuroToDollar(){  //Euro to dollar
         //:Given
-        String firstCountry = "EURO";
+        String firstCountry = "EUR";
         String secondCountry = "USD";
         double amount = 100.00;
-        String expectedAmount = "106.38";
+        BigDecimal expectedAmount = new BigDecimal("106.39");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from EURO to USD is ", expectedAmount, actualAmount);
@@ -54,15 +50,15 @@ public class CurrencyConverterTest {
     }
 
     @Test
-    public void testConvertEuroToBritishPound(){  //Eur to Pound
+    public void testConvertEuroToBritishPound(){  //Euro to Pound
         //:Given
-        String firstCountry = "EURO";
-        String secondCountry = "POUND";
+        String firstCountry = "EUR";
+        String secondCountry = "GBP";
         double amount = 100.00;
-        String expectedAmount = "87.23";
+        BigDecimal expectedAmount = new BigDecimal("87.24");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from EURO to POUND is ", expectedAmount, actualAmount);
@@ -72,13 +68,13 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertBritishPoundToIndianRupee(){ //Pound to Rupee
         //:Given
-        String firstCountry = "POUND";
-        String secondCountry = "RUP";
+        String firstCountry = "GBP";
+        String secondCountry = "INR";
         double amount = 100.00;
-        String expectedAmount = "8331.71";
+        BigDecimal expectedAmount = new BigDecimal("8331.71");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from POUND to RUPEE is ", expectedAmount, actualAmount);
@@ -89,13 +85,13 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertRupeeToCanadianDollar(){ //Rupee to Can
         //:Given
-        String firstCountry = "RUP";
-        String secondCountry = "CAN";
+        String firstCountry = "INR";
+        String secondCountry = "CAD";
         double amount = 100.00;
-        String expectedAmount = "1.93";
+        BigDecimal expectedAmount = new BigDecimal("1.94");
 
         //:When
-        String actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
+        BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
 
         //:Then
         Assert.assertEquals("The expected converted amount from RUP to CAN is ", expectedAmount, actualAmount);
@@ -106,10 +102,10 @@ public class CurrencyConverterTest {
     @Test
     public void testCanadianDollarToSingaporeDollar(){ //Can to Sing
         //:Given
-        String firstCountry = "CAN";
-        String secondCountry = "SING";
+        String firstCountry = "CAD";
+        String secondCountry = "SGD";
         double amount = 100.00;
-        BigDecimal expectedAmount = new BigDecimal("108.33");
+        BigDecimal expectedAmount = new BigDecimal("108.34");
 
         //:When
         BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
@@ -123,8 +119,8 @@ public class CurrencyConverterTest {
     @Test
     public void testSingaporeDollarToSwissFranc(){ //Sing to Franc
         //:Given
-        String firstCountry = "SING";
-        String secondCountry = "FRANC";
+        String firstCountry = "SGD";
+        String secondCountry = "CHF";
         double amount = 100.00;
         BigDecimal expectedAmount = new BigDecimal("70.63");
 
@@ -140,10 +136,10 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertSwissFrancToMalaysianRinggit(){ //Franc to Ringgit
         //:Given
-        String firstCountry = "FRANC";
-        String secondCountry = "RINGGIT";
+        String firstCountry = "CHF";
+        String secondCountry = "MYR";
         double amount = 100.00;
-        BigDecimal expectedAmount = new BigDecimal("442.57");
+        BigDecimal expectedAmount = new BigDecimal("442.58");
 
         //:When
         BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
@@ -156,10 +152,10 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertRinggitToJapaneseYen(){ //Ringgit to Yen
         //:Given
-        String firstCountry = "RINGGIT";
-        String secondCountry = "YEN";
+        String firstCountry = "MYR";
+        String secondCountry = "JPY";
         double amount = 100.00;
-        BigDecimal expectedAmount = new BigDecimal("2591.5"); // fix this single decimal
+        BigDecimal expectedAmount = new BigDecimal("2591.50"); // fix this single decimal
 
         //:When
         BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
@@ -172,10 +168,10 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertJapaneseYenToChineseYuanRenminbi(){  //Yen to Yuan
         //:Given
-        String firstCountry = "YEN";
-        String secondCountry = "YUAN";
+        String firstCountry = "JPY";
+        String secondCountry = "CNY";
         double amount = 100.00;
-        BigDecimal expectedAmount = new BigDecimal("5.97");
+        BigDecimal expectedAmount = new BigDecimal("5.98");
 
         //:When
         BigDecimal actualAmount = converter.convertTo(firstCountry, secondCountry, amount);
@@ -188,8 +184,8 @@ public class CurrencyConverterTest {
     @Test
     public void testConvertChineseYuanRenminbiToBitcoin(){  //Yuan to Bitcoin
         //:Given
-        String firstCountry = "YUAN";
-        String secondCountry = "BITCOIN";
+        String firstCountry = "CNY";
+        String secondCountry = "BTC";
         double amount = 100.00;
         BigDecimal expectedAmount = new BigDecimal("0.01"); //Probably not correct, will fix
 
