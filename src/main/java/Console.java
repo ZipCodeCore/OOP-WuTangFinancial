@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Console {
@@ -33,12 +34,19 @@ public class Console {
         CurrencyType currencyType = getCurrencyType("Select by number, what type of currency do you have?");
         double amount = getDoubleInput("How much do you want to convert?");
         CurrencyType desiredCurrencyType = getCurrencyType("Select by number, what type of currency do you want to convert to?");
+
         long amountTimes100 = Math.round(amount*100);
         Money money = new Money(amountTimes100, currencyType);
         money.convert(desiredCurrencyType);
-        System.out.println("Thank you for your business!");
-        System.out.printf("You now have %.2f in %s in exchange for %.2f in %s\n",
-                money.getAmount(), money.getCurrencyType(), amount, currencyType);
+
+        NumberFormat oldFormat = currencyType.getNumberFormat();
+        NumberFormat newFormat = money.getCurrencyType().getNumberFormat();
+        System.out.println();
+        System.out.println("==============================================================================");
+        System.out.println("======================== Thank you for your business! ========================");
+        System.out.println("==============================================================================");
+        System.out.printf("\nYou now have %s in %s in exchange for %s in %s\n\n",
+                newFormat.format(money.getAmount()), money.getCurrencyType(), oldFormat.format(amount), currencyType);
     }
 
     private static CurrencyType getCurrencyType(String prompt) {
@@ -73,7 +81,7 @@ public class Console {
     }
 
     private static boolean getInputToContinue() {
-        String anotherConversion = getYesOrNoInput("Would you like to exchange currency again? [ Y/N ]");
+        String anotherConversion = getYesOrNoInput("============= Would you like to exchange currency again? [ Y/N ] =============");
         if("Y".equalsIgnoreCase(anotherConversion)) {
             return true;
         }

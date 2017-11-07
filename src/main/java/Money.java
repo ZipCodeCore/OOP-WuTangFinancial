@@ -7,10 +7,6 @@ public class Money {
         this.currencyType = currencyType;
     }
 
-    public long getAmountTimes100() {
-        return amountTimes100;
-    }
-
     public double getAmount() {
         return amountTimes100/100.0;
     }
