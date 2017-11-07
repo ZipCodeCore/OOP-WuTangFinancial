@@ -11,7 +11,7 @@ public class Converter {
         printCurrencies();
         Currency currencyToExchange = Console.getEnum("Currency to exchange: ");
         Currency convertToCurrency = Console.getEnum("Currency to convert to: ");
-        double amount = Console.getDouble("Amount: ");
+        double amount = Console.getDouble(currencyToExchange + " Amount: ");
 
         String convertedAmount = convert(amount, currencyToExchange, convertToCurrency);
 
