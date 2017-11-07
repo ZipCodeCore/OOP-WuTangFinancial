@@ -47,14 +47,12 @@ public class CurrencyConverter {
 
     public static String checkCurrencyType(String prompt) {
         String currencyType = Console.getStringInput(prompt);
-        do {
             try {
                 ConversionRates.valueOf(currencyType);
-                return currencyType;
             } catch (IllegalArgumentException e) {
-                currencyType = Console.getStringInput("Please enter a valid type of currency.");
+                currencyType = checkCurrencyType(prompt);
             }
-        } while(true);
+            return currencyType;
     } // end method checkCurrencyType
 
 } // end class CurrencyConverter

@@ -1,7 +1,10 @@
 import Utilities.Console;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
+
         Double currentCurrencyAmount = Console.getDoubleInput("How much money do you want to convert? ");
 
         String currentCurrency = CurrencyConverter.checkCurrencyType("What is your current currency? " + CurrencyConverter.getSupportedCurrencies());
