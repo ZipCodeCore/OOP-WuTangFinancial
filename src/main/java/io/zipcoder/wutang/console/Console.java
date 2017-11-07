@@ -3,25 +3,9 @@ package io.zipcoder.wutang.console;
 import io.zipcoder.wutang.converter.Converter;
 import io.zipcoder.wutang.currencies.*;
 
-import java.util.HashSet;
-
 public class Console {
 
-    final static HashSet<Currency> currencies = new HashSet<>();
     Converter converter = new Converter();
-
-    static {
-        currencies.add(new AUD());
-        currencies.add(new CAD());
-        currencies.add(new CHF());
-        currencies.add(new CNY());
-        currencies.add(new EUR());
-        currencies.add(new GBP());
-        currencies.add(new INR());
-        currencies.add(new JPY());
-        currencies.add(new SGD());
-        currencies.add(new USD());
-    }
 
     public void run() {
         System.out.println("Welcome to Wu-Tang Financial Currency Converter!");
@@ -54,17 +38,20 @@ public class Console {
 
     public Currency getCurrOfType(String input) {
         do {
-            for (Currency currency : currencies) {
-                if (currency.getClass().getSimpleName().equalsIgnoreCase(input))
-                    return currency;
+            for (CurrencyEnum curr : CurrencyEnum.values()) {
+                if (input.equalsIgnoreCase(curr.toString())) {
+                    return curr.getCurrencyOfType();
+                }
             }
             input = Input.getStringInput("Please try again.");
         } while (true);
     }
 
-    private static void printChoices(){
+    private void printChoices(){
         String choices = "We can convert between these currencies: ";
-        for (Currency currency: currencies) {
+        Currency currency;
+        for (CurrencyEnum currName : CurrencyEnum.values()) {
+            currency = getCurrOfType(currName.toString());
             choices += "\n[ "+currency.getClass().getSimpleName()+" ] - "+currency.getFullName();
         }
         System.out.println(choices);
