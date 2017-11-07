@@ -21,7 +21,7 @@ public class Console {
                 double userinput = input.nextDouble();
                 return userinput;
             } catch (IllegalArgumentException | InputMismatchException e) {
-                System.out.println("INVALID TRY AGAIN\n");
+                System.out.println("INVALID AMOUNT\n");
                 continue;
             }
         } while (true);
@@ -35,7 +35,7 @@ public class Console {
                 Currency enuminput = Currency.valueOf(userinput);
                 return enuminput;
             } catch (IllegalArgumentException e) {
-                System.out.println("INVALID TRY AGAIN\n");
+                System.out.println("INVALID CURRENCY\n");
                 continue;
             }
         } while (true);
