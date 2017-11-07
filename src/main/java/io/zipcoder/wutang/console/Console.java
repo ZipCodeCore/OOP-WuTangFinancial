@@ -3,7 +3,6 @@ package io.zipcoder.wutang.console;
 import io.zipcoder.wutang.converter.Converter;
 import io.zipcoder.wutang.currencies.*;
 
-import java.util.Collections;
 import java.util.HashSet;
 
 public class Console {
@@ -22,7 +21,6 @@ public class Console {
         currencies.add(new JPY());
         currencies.add(new SGD());
         currencies.add(new USD());
-
     }
 
     public void run() {
@@ -37,14 +35,21 @@ public class Console {
                 System.out.println("Thank you for using the Wu-Tang Currency Converter, Goodbye!");
                 break;
             } else {
-                Currency currType1 = getCurrOfType(input);
-                input = Input.getStringInput("What currency would you like to convert that to?");
-                Currency currType2 = getCurrOfType(input);
-                Double amount = Input.getPositiveDoubleInput("How much "+currType1.getFullName()+" would you like to convert to "+currType2.getFullName()+"?");
-                Double amountConverted = converter.convert(amount, currType1, currType2);
-                System.out.println("That comes out to be: "+currType2.printAmountInCurrency(amountConverted)+"\n\n");
+                doConversion(input);
             }
         } while (true);
+    }
+
+    private void doConversion(String input) {
+        Currency currType1 = getCurrOfType(input);
+
+        input = Input.getStringInput("What currency would you like to convert that to?");
+        Currency currType2 = getCurrOfType(input);
+
+        Double amount = Input.getPositiveDoubleInput("How much "+currType1.getFullName()+" would you like to convert to "+currType2.getFullName()+"?");
+        Double amountConverted = converter.convert(amount, currType1, currType2);
+
+        System.out.println("That comes out to be: "+currType2.printAmountInCurrency(amountConverted)+"\n\n");
     }
 
     public Currency getCurrOfType(String input) {
