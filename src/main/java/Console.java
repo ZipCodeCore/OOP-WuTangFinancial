@@ -10,6 +10,13 @@ public class Console {
         return userInput;
     }
 
+    public double getDoubleInput(String prompt){
+        System.out.println(prompt);
+        Scanner scanner = new Scanner(System.in);
+        Double doubleInput = Double.parseDouble(scanner.nextLine());
+        return doubleInput;
+    }
+
     public Currency getBaseCurrency(){
         boolean isValidCurrency = false;
         String currencyType = "";
@@ -42,7 +49,8 @@ public class Console {
     }
 
     public double getAmountToConvert(){
-        
+        double amountToConvert = getDoubleInput("How much would you like to convert?");
+        return amountToConvert;
     }
 
 }
