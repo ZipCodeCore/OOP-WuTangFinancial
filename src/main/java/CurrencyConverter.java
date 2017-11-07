@@ -3,7 +3,7 @@ import Utilities.Console;
 public class CurrencyConverter {
 
     private static final String supportedCurrencies = "(UsDollar, Euro," +
-            " BritishPound, IndianRupee, AustrialianDollar, CanadianDollar, SingaporeDollar " +
+            " BritishPound, IndianRupee, AustrialianDollar, CanadianDollar, SingaporeDollar," +
             " SwissFranc, MalaysianRinggit, JapaneseYen, ChineseYuanRenminbi)";
 
     public static String getSupportedCurrencies() {
