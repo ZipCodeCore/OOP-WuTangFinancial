@@ -2,11 +2,17 @@ import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Console {
+
+    private static CurrencyType currencyTypeInput;
+    private static double amountInput;
+    private static CurrencyType desiredCurrencyTypeInput;
+
     public static void display() {
         boolean hasAnotherTransaction = true;
         while(hasAnotherTransaction) {
             welcomeMessage();
             displayAvailableCurrencyTypes();
+            getTransactionInput();
             currencyConversionTransaction();
             hasAnotherTransaction = getInputToContinue();
         }
@@ -31,26 +37,28 @@ public class Console {
     }
 
     private static void currencyConversionTransaction() {
-        CurrencyType currencyType = getCurrencyType("Select by number, what type of currency do you have?");
-        double amount = getDoubleInput("How much do you want to convert?");
-        CurrencyType desiredCurrencyType = getCurrencyType("Select by number, what type of currency do you want to convert to?");
+        long amountTimes100 = Math.round(amountInput *100);
+        Money money = new Money(amountTimes100, currencyTypeInput);
+        money.convert(desiredCurrencyTypeInput);
 
-        long amountTimes100 = Math.round(amount*100);
-        Money money = new Money(amountTimes100, currencyType);
-        money.convert(desiredCurrencyType);
-
-        NumberFormat oldFormat = currencyType.getNumberFormat();
+        NumberFormat oldFormat = currencyTypeInput.getNumberFormat();
         NumberFormat newFormat = money.getCurrencyType().getNumberFormat();
         System.out.println();
         System.out.println("==============================================================================");
         System.out.println("======================== Thank you for your business! ========================");
         System.out.println("==============================================================================");
         System.out.printf("\nYou now have %s in %s in exchange for %s in %s\n\n",
-                newFormat.format(money.getAmount()), money.getCurrencyType(), oldFormat.format(amount), currencyType);
+                newFormat.format(money.getAmount()), money.getCurrencyType(), oldFormat.format(amountInput), currencyTypeInput);
+    }
+
+    private static void getTransactionInput() {
+        currencyTypeInput = getCurrencyType("Select by number, what type of currency do you have?");
+        amountInput = getDoubleInput("How much do you want to convert?");
+        desiredCurrencyTypeInput = getCurrencyType("Select by number, what type of currency do you want to convert to?");
     }
 
     private static CurrencyType getCurrencyType(String prompt) {
-        int input = Math.abs(getIntegerInput(prompt));
+        int input = Math.abs(getIntegerInput(prompt)) % 11;
         return CurrencyType.values()[input];
     }
 
