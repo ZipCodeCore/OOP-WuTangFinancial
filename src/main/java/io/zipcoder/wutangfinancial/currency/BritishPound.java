@@ -1,6 +1,6 @@
 package io.zipcoder.wutangfinancial.currency;
 
-public class BritishPound extends Currency{
+public class BritishPound extends ZCWCurrency {
 
     public BritishPound(Double amount){
         this(amount, 0.82);

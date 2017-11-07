@@ -1,6 +1,6 @@
 package io.zipcoder.wutangfinancial.currency;
 
-public class SwissFranc extends Currency{
+public class SwissFranc extends ZCWCurrency {
 
     public SwissFranc(Double amount){
         this(amount, 1.01);

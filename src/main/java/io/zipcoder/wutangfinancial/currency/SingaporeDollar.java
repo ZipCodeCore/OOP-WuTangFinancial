@@ -1,6 +1,6 @@
 package io.zipcoder.wutangfinancial.currency;
 
-public class SingaporeDollar extends Currency{
+public class SingaporeDollar extends ZCWCurrency {
 
     public SingaporeDollar(Double amount){
 

@@ -8,26 +8,27 @@ public class Console{
     private Currencies convertFrom;
     private Currencies convertTo;
     private Double startingAmount;
-    private Currency fromCurrency;
-    private Currency toCurrency;
 
     public void run(){
-
+        ZCWCurrency fromZCWCurrency;
+        ZCWCurrency toZCWCurrency;
         String runAgain;
+
         do {
-            displayCurrencies();
+            displayMenu();
             getUserInputs();
-            fromCurrency = createCurrencyObject(convertFrom);
-            toCurrency = createCurrencyObject(convertTo);
-            toCurrency = fromCurrency.convertToCurrency(toCurrency);
-            System.out.println(toCurrency.getAmount());
+            fromZCWCurrency = createCurrencyObject(convertFrom);
+            toZCWCurrency = createCurrencyObject(convertTo);
+            toZCWCurrency = fromZCWCurrency.convertToCurrency(toZCWCurrency);
+            System.out.println(toZCWCurrency.getAmount());
 
             runAgain = in.getStringInput("Run again? ");
+
         }while ("Y".equalsIgnoreCase(runAgain));
 
     }
 
-    private void displayCurrencies() {
+    private void displayMenu() {
         System.out.println("\n\n["+Currencies.USD+"] : United States Dollar");
         System.out.println("["+Currencies.EUR+"] : Euro");
         System.out.println("["+Currencies.GBP+"] : British Pound");
@@ -61,12 +62,12 @@ public class Console{
         }while (true);
     }
 
-    private Currency createCurrencyObject(Currencies c){
+    private ZCWCurrency createCurrencyObject(Currencies c){
 
         switch (c)
         {
             case USD:{ return (new UsDollar(startingAmount)); }
-            case EUR:{ return (new EuroCurrency(startingAmount)); }
+            case EUR:{ return (new EuroZCWCurrency(startingAmount)); }
             case GBP:{ return (new BritishPound(startingAmount)); }
             case INR:{ return (new IndianRupee(startingAmount)); }
             case AUD:{ return (new AustralianDollar(startingAmount)); }
@@ -78,6 +79,10 @@ public class Console{
             case CNY:{ return (new ChineseYuan(startingAmount)); }
             default: { return null; }
         }
+
+    }
+
+    private void displayCurrency(ZCWCurrency passedZCWCurrency){
 
     }
 

@@ -1,6 +1,6 @@
 package io.zipcoder.wutangfinancial.currency;
 
-public class JapaneseYen extends Currency{
+public class JapaneseYen extends ZCWCurrency {
 
     public JapaneseYen(Double amount){
         this(amount, 115.84);

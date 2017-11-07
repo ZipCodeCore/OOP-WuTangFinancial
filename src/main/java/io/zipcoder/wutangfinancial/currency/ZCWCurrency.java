@@ -1,15 +1,15 @@
 package io.zipcoder.wutangfinancial.currency;
 
-public abstract class Currency{
+public abstract class ZCWCurrency {
 
     private Double amount;
     private final Double exchRateToUSD;
 
-    private Currency(){ //No default constructor allowed
+    private ZCWCurrency(){ //No default constructor allowed
         exchRateToUSD=0.0;
     }
 
-    public Currency(Double amount, Double exchangeRateToUSD){
+    public ZCWCurrency(Double amount, Double exchangeRateToUSD){
         this.amount=amount;
         this.exchRateToUSD=exchangeRateToUSD;
     }
@@ -22,10 +22,10 @@ public abstract class Currency{
         return amount;
     }
 
-    public Currency convertToCurrency(Currency toCurrency){
+    public ZCWCurrency convertToCurrency(ZCWCurrency toZCWCurrency){
 
-        toCurrency.setAmount(amount/exchRateToUSD*toCurrency.exchRateToUSD);
+        toZCWCurrency.setAmount(amount/exchRateToUSD* toZCWCurrency.exchRateToUSD);
 
-        return toCurrency;
+        return toZCWCurrency;
     }
 }

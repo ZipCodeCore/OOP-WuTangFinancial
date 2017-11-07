@@ -1,14 +1,14 @@
-import io.zipcoder.wutangfinancial.currency.Currency;
+import io.zipcoder.wutangfinancial.currency.ZCWCurrency;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.Random;
 
-public abstract class TestCurrency {
+public abstract class TestZCWCurrency {
 
-    Currency cur1;
-    Currency cur2;
+    ZCWCurrency cur1;
+    ZCWCurrency cur2;
 
-    public TestCurrency(Currency cur1, Currency cur2){
+    public TestZCWCurrency(ZCWCurrency cur1, ZCWCurrency cur2){
         this.cur1=cur1;
         this.cur2=cur2;
     }
