@@ -1,7 +1,5 @@
 package kozulak.elliott;
 
-import java.util.Scanner;
-
 
 public class Main {
 
@@ -18,14 +16,14 @@ public class Main {
             }
 
 
-            Currency currencyFrom = Console.enumInput("\n\nEnter the currency your money is in: ");
+            Currency currencyFrom = Console.enumInput("\nEnter the currency your money is in: ");
             Double amount = Console.doubleInput("Enter the amount to convert");
             Currency currencyTo = Console.enumInput("Enter the currency to convert to: ");
 
-            double convertedAmount = Converter.convertCurency(currencyFrom, currencyTo, amount);
+            double convertedAmount = Converter.convertCurrency(currencyFrom, currencyTo, amount);
 
-            System.out.println("You have converted " + amount + " " + currencyFrom + " to " + convertedAmount + " " + currencyTo + "(s)");
-            repeat= Console.getStringInput("Would you like to convert more money?");
+            System.out.println("You have converted " + amount + " " + currencyFrom + " to " + convertedAmount + " " + currencyTo);
+            repeat= Console.getStringInput("Would you like to convert more money? {Yes} {No}");
         }while(!"no".equalsIgnoreCase(repeat));
 
     }
