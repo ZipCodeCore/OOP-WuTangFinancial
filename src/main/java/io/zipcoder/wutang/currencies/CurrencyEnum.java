@@ -1,35 +1,24 @@
 package io.zipcoder.wutang.currencies;
 
 public enum CurrencyEnum {
-    AUD,
-    CAD,
-    CHF,
-    CNY,
-    EUR,
-    GBP,
-    INR,
-    JPY,
-    SGD,
-    USD;
+    AUD(new AUD()),
+    CAD(new CAD()),
+    CHF(new CHF()),
+    CNY(new CNY()),
+    EUR(new EUR()),
+    GBP(new GBP()),
+    INR(new INR()),
+    JPY(new JPY()),
+    SGD(new SGD()),
+    USD(new USD());
 
-    public Currency getCurrencyOfType(){
+    Currency currency;
 
-        switch(this){
-            case AUD: return new AUD();
-            case CAD: return new CAD();
-            case CHF: return new CHF();
-            case CNY: return new CNY();
-            case EUR: return new EUR();
-            case GBP: return new GBP();
-            case INR: return new INR();
-            case JPY: return new JPY();
-            case SGD: return new SGD();
-            case USD: return new USD();
-        }
-        return null;
+    private CurrencyEnum(Currency currency) {
+        this.currency = currency;
     }
 
-
-
-
+    public Currency getCurrency() {
+        return this.currency;
+    }
 }

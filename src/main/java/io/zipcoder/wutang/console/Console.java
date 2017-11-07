@@ -40,7 +40,7 @@ public class Console {
         do {
             for (CurrencyEnum curr : CurrencyEnum.values()) {
                 if (input.equalsIgnoreCase(curr.toString())) {
-                    return curr.getCurrencyOfType();
+                    return curr.getCurrency();
                 }
             }
             input = Input.getStringInput("Please try again.");
