@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Console {
@@ -22,14 +23,18 @@ public class Console {
         return "yes".equalsIgnoreCase(input);
     }
 
+    public String formatDouble(double amount){
+        DecimalFormat tdp = new DecimalFormat("#,##0.00");
+        return tdp.format(amount);
+    }
 
     public String createFinalString(Currency currency1,Currency currency2,double amount){
-        String amountString = converter.formatDouble(amount);
+        String amountString = formatDouble(amount);
         String currencyName1 = currency1.getFullName(), currencyName2 = currency2.getFullName();
         String output = amountString +" "+ currencyName1 + " converts to ";
 
         double newAmount = converter.convertCurrency(currency1,currency2,amount);
-        String newAmountString = converter.formatDouble(newAmount);
+        String newAmountString = formatDouble(newAmount);
         output += newAmountString+" "+currencyName2+"\n";
         return output;
     }

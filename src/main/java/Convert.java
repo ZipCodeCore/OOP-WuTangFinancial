@@ -15,7 +15,7 @@ public class Convert {
     }
 
     public String formatDouble(double amount){
-        DecimalFormat tdp = new DecimalFormat("#,##0.00");
+        DecimalFormat tdp = new DecimalFormat("0.00");
         return tdp.format(amount);
     }
 
