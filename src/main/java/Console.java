@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Console {
@@ -74,6 +75,8 @@ public class Console {
     public double getAmountToConvert(){
         try {
             double amountToConvert = getDoubleInput("How much would you like to convert?");
+            DecimalFormat decimalFormat = new DecimalFormat("###.##");
+            amountToConvert = Double.parseDouble(decimalFormat.format(amountToConvert));
             return amountToConvert;
         }
         catch (NumberFormatException nfe) {
@@ -81,8 +84,8 @@ public class Console {
         }
     }
 
-    public void returnMoneyStatement(Currency baseCurrency, Currency returnedCurrency, double amountToExchange, double amountToReturn){
-        System.out.println("Here's " + amountToReturn + " " + returnedCurrency + "s for your " + amountToExchange + " " + baseCurrency + "s");
+    public void returnMoneyStatement(Currency baseCurrency, Currency returnedCurrency, String formattedAmountToExchange, String formattedAmountToReturn){
+        System.out.println("Here's " + formattedAmountToReturn + " " + returnedCurrency + " for your " + formattedAmountToExchange + " " + baseCurrency);
     }
 
 

@@ -14,12 +14,6 @@ class Menu {
                            "9)Malaysian Ringgit\n" +
                            "10)Japanese Yen\n" +
                            "11)Chinese Yuan Renminbi");
-
-//        NumberFormat us = NumberFormat.getCurrencyInstance(Locale.US);
-//
-//        System.out.println(us.format(10000));
     }
-
-
 
 }

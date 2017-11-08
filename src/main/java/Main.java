@@ -3,6 +3,7 @@ public class Main {
     public static void main(String[] args) {
         Console console = new Console();
         CurrencyExchange currencyExchange = new CurrencyExchange();
+        CurrencyFormatter currencyFormatter = new CurrencyFormatter();
 
         Currency base = console.getBaseCurrency();
         Currency returned = console.getReturnCurrency();
@@ -10,7 +11,10 @@ public class Main {
 
         Double amountToReturn = currencyExchange.exchangeMoney(base, returned, amountToConvert);
 
-        console.returnMoneyStatement(base, returned, amountToConvert, amountToReturn);
+        String formattedAmountToReturn = currencyFormatter.formatCurrencySymbol(amountToReturn, returned);
+        String formattedAmountToConvert = currencyFormatter.formatCurrencySymbol(amountToConvert, base);
+
+        console.returnMoneyStatement(base, returned, formattedAmountToConvert, formattedAmountToReturn);
     }
 
 }
