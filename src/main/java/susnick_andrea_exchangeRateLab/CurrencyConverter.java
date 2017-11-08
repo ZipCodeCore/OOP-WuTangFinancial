@@ -1,7 +1,5 @@
 package susnick_andrea_exchangeRateLab;
 
-import static java.lang.Double.valueOf;
-
 public class CurrencyConverter {
 
     public double currencyConversionCalculator(double currencyAmountToExchange, Currency fromCurrency, Currency toCurrency){
