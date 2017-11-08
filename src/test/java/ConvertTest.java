@@ -3,24 +3,25 @@ import org.junit.Test;
 
 public class ConvertTest {
     Convert testConvert = new Convert();
-    Currency currencyUS = testConvert.getCurrencyByType("US dollar");
-    Currency currencyEURO = testConvert.getCurrencyByType("euro");
-    Currency currencyPOUND = testConvert.getCurrencyByType("British pound");
-    Currency currencyRUPEE = testConvert.getCurrencyByType("indian rupee");
-    Currency currencyAUSTRALIAN = testConvert.getCurrencyByType("australian dollar");
-    Currency currencyCANADIAN = testConvert.getCurrencyByType("Canadian Dollar");
-    Currency currencySINGAPORE = testConvert.getCurrencyByType("singapore dollar");
-    Currency currencyFRANC = testConvert.getCurrencyByType("swiss franc");
-    Currency currencyRINGGIT = testConvert.getCurrencyByType("malaysian ringgit");
-    Currency currencyYEN = testConvert.getCurrencyByType("japanese yen");
-    Currency currencyYUANrENMINBI = testConvert.getCurrencyByType("chinese yuan Renminbi");
+
+    Currency currencyUS = testConvert.getCurrencyByType("USD");
+    Currency currencyEURO = testConvert.getCurrencyByType("EUR");
+    Currency currencyPOUND = testConvert.getCurrencyByType("GPB");
+    Currency currencyRUPEE = testConvert.getCurrencyByType("INR");
+    Currency currencyAUSTRALIAN = testConvert.getCurrencyByType("AUD");
+    Currency currencyCANADIAN = testConvert.getCurrencyByType("CAD");
+    Currency currencySINGAPORE = testConvert.getCurrencyByType("SGD");
+    Currency currencyFRANC = testConvert.getCurrencyByType("CHF");
+    Currency currencyRINGGIT = testConvert.getCurrencyByType("MYR");
+    Currency currencyYEN = testConvert.getCurrencyByType("JPY");
+    Currency currencyYUANrENMINBI = testConvert.getCurrencyByType("CNY");
 
 
     @Test
     public void getCurrencyByTypeTest(){
         double expected = 115.84;
 
-        Currency testCurrency = testConvert.getCurrencyByType("japanese yen");
+        Currency testCurrency = testConvert.getCurrencyByType("JPY");
         double actual = testCurrency.getRate();
 
         Assert.assertEquals(expected,actual,0);

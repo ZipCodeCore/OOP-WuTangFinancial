@@ -1,9 +1,11 @@
 public class Currency {
     private String currencyType;
     private double rate;
-    Currency(String currency,double rate){
+    private String currencyName;
+    Currency(String currency,double rate,String currencyName){
         this.currencyType = currency;
         this.rate = rate;
+        this.currencyName = currencyName;
     }
 
     public String getCurrencyType() {
@@ -12,5 +14,9 @@ public class Currency {
 
     public double getRate() {
         return rate;
+    }
+
+    public String getCurrencyName() {
+        return currencyName;
     }
 }

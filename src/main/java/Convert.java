@@ -7,6 +7,9 @@ public class Convert {
     private static DecimalFormat tdp = new DecimalFormat("0.00");
 
     Convert(){
+        String[] currencyNames = {"US Dollar","Euro","British Pound","Indian Rupee",
+                "Australian Dollar","Canadian Dollar","Singapore Dollar","Swiss Franc",
+                "Malaysian Ringgit","Japanese Yen","Chinese Yuan Renminbi"};
         String[] currencyTypes = {"USD","EUR","GPB","INR",
                 "AUD","CAD","SGD","CHF",
                 "MYR","JPY","CNY"};
@@ -14,7 +17,8 @@ public class Convert {
         for(int i =0;i<currencyTypes.length;i++){
             String currencyType = currencyTypes[i];
             double currencyRate = currencyRates[i];
-            Currency currentCurrency = new Currency(currencyType,currencyRate);
+            String currencyName = currencyNames[i];
+            Currency currentCurrency = new Currency(currencyType,currencyRate,currencyName);
             currencyRatesList.add(currentCurrency);
         }
     }

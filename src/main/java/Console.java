@@ -30,8 +30,8 @@ public class Console {
 
     public String createFinalString(Currency currency1,Currency currency2,double amount){
         String amountString = formatDouble(amount);
-        String currencyName1 = currency1.getCurrencyType();
-        String currencyName2 = currency2.getCurrencyType();
+        String currencyName1 = currency1.getCurrencyName();
+        String currencyName2 = currency2.getCurrencyName();
 
         String output = amountString +" "+ currencyName1 + " converts to ";
 
@@ -63,11 +63,7 @@ public class Console {
             returnCurrency = converter.getCurrencyByType(input);
             if(returnCurrency == null) {
                 print("Invalid input");
-            }
-//            else if(returnCurrency.getCurrencyType().equalsIgnoreCase(currency1.getCurrencyType())){
-//                print("Currency already used");
-//            }
-            else{
+            }else{
                 break;
             }
         }while(true);
@@ -75,7 +71,7 @@ public class Console {
     }
 
     public void printPossibleCurrencies(Currency currency){
-        String output = "\n|", currencyType = "";
+        String output = "\nAvailable currencies\n|", currencyType = "";
         if(currency != null) {
             currencyType = currency.getCurrencyType();
         }
@@ -87,7 +83,7 @@ public class Console {
                 output += " "+currentCurrencyType+" |";
             }
         }
-        print(output+"\n");
+        print(output);
     }
 
     public String getUserStringInput(String prompt){
