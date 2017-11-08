@@ -1,6 +1,7 @@
 package io.zipcode.wutangfinancial;
 
 import java.util.ArrayList;
+import java.text.*;
 
 public class Currency {
     private String name;
@@ -45,6 +46,8 @@ public class Currency {
             if(targetCurrency.equalsIgnoreCase(eachCurr.getName()))
                 targetCurrRate=eachCurr.getRate();
         }
-        return Math.round(baseAmount/baseCurrRate)*targetCurrRate;
+        double targetAmount= baseAmount/baseCurrRate*targetCurrRate;
+        DecimalFormat f = new DecimalFormat("##.00");
+        return Double.parseDouble(f.format(targetAmount));
     }
 }
