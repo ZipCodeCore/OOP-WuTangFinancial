@@ -7,7 +7,7 @@ public class Console {
 
     public static void splash(){
 
-        System.out.println("Hello and welcome to WuTang Financial, where it is still all so simple.\n\n\n");
+        System.out.println("Hello and welcome to WuTang Financial, where it is still all so simple.\n\n");
     }
 
     public static void startTheThing() {
@@ -15,9 +15,8 @@ public class Console {
             Console console = new Console();
             CurrencyHandler currencyHandler = new CurrencyHandler();
 
-            System.out.println("What currency you have brought to exchange?");
-            System.out.println("US_DOLLAR, EURO, BRITISH_POUND, INDIAN_RUPEE, AUSTRALIAN_DOLLAR, CANADIAN_DOLLAR, \n"+
-                               "SINGAPORE_DOLLAR, SWISS_FRANC, MALAYSIAN_RINGGIT, JAPANESE_YEN, CHINESE_YUAN_RENMINBI");
+            System.out.println("What currency you have brought to exchange? (options follow)");
+            console.printCurrencies();
             Currency sourceCurrency = console.getCurrencyType();
 
             System.out.println("and what are you converting to?");
@@ -60,6 +59,14 @@ public class Console {
             }
             System.out.println("Please enter a valid currency.");
         } while (true);
+    }
+
+    public void printCurrencies(){
+
+        for(Currency currency: Currency.values()){
+            System.out.println(currency.toString());
+        }
+
     }
 
 }
