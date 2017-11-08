@@ -7,7 +7,7 @@ public class ApplicationRun {
 
         double amountToConvert = Console.getUserInputDouble("How much money would you like to convert?");
 
-        System.out.println("You have many different options for conversions.\n" +
+        System.out.println("\n\nYou have many different options for conversions.\n" +
                 "Listed below are your options of Countries in which we support.\n" +
                 "=============================\n" +
                 "       1) US Dollar\n" +
@@ -39,7 +39,7 @@ public class ApplicationRun {
         do {
 
             try {
-                convertFrom = Console.getUserInputInteger("Please choose a currency type from above to convert from.\n" +
+                convertFrom = Console.getUserInputInteger("Please choose a currency type from above to CONVERT FROM.\n" +
                         "Please enter the corresponding number to your choice.");
                 currencyRateFrom = CurrencyConverter.getCurrencyRates(convertFrom);
                 break;
@@ -50,33 +50,6 @@ public class ApplicationRun {
 
         } while(true);
 
-            System.out.println("\n\n\n\n\nThe current conversion rate for " + CurrencyConverter.getCurrencyRatesName(convertFrom) +
-                    " against the U.S. Dollar is " + CurrencyConverter.getCurrencyRates(convertFrom) + ".");
-
-            System.out.println("Listed below are your options of Countries in which we support.\n" +
-                    "=============================\n" +
-                    "       1) US Dollar\n" +
-                    "=============================\n" +
-                    "         2) Euro\n" +
-                    "=============================\n" +
-                    "    3) British Pound\n" +
-                    "=============================\n" +
-                    "     4) Indian Rupee\n" +
-                    "=============================\n" +
-                    "   5) Australian Dollar\n" +
-                    "=============================\n" +
-                    "    6) Canadian Dollar\n" +
-                    "=============================\n" +
-                    "   7) Singapore Dollar\n" +
-                    "=============================\n" +
-                    "      8) Swiss Franc\n" +
-                    "=============================\n" +
-                    "   9) Malaysian Ringgit\n" +
-                    "=============================\n" +
-                    "     10) Japanese Yen\n" +
-                    "=============================\n" +
-                    "  11) Chinese Yuan Renminbi\n" +
-                    "=============================\n");
 
             int convertTo;
             double currencyRateTo;
@@ -84,7 +57,7 @@ public class ApplicationRun {
         do {
 
             try {
-                convertTo = Console.getUserInputInteger("Please choose a currency type from above to convert into.\n" +
+                convertTo = Console.getUserInputInteger("\n\nPlease choose a currency type from above to CONVERT INTO.\n" +
                         "Please enter the corresponding number to your choice.");
                 currencyRateTo = CurrencyConverter.getCurrencyRates(convertTo);
                 break;
@@ -95,14 +68,17 @@ public class ApplicationRun {
 
         } while(true);
 
-
-            System.out.println("\n\n\n\n\nThe current conversion rate for " + CurrencyConverter.getCurrencyRatesName(convertTo) +
-                    " against the U.S. Dollar is " + CurrencyConverter.getCurrencyRates(convertTo) + ".");
-
             double convertedAmount = CurrencyConverter.convertMoney(currencyRateFrom, currencyRateTo, amountToConvert);
 
-            System.out.println("Here is your conversion.\n" +
-                    CurrencyFormatter.formatCurrency(convertedAmount, convertTo) + "\n\n\n\n\n ");
+            System.out.println("\n\n\nYou converted " + CurrencyFormatter.formatCurrency(amountToConvert, convertFrom) + " from "
+                    + CurrencyConverter.getCurrencyRatesName(convertFrom) + " at a currency rate of " +
+                    CurrencyConverter.getCurrencyRates(convertFrom) + " to " +
+                    CurrencyConverter.getCurrencyRatesName(convertTo) +
+                    " at a currency rate of " + CurrencyConverter.getCurrencyRates(convertTo) + ".");
+
+            System.out.println("Your new amount is: " + CurrencyFormatter.formatCurrency(convertedAmount, convertTo) +
+            "\n----------------------------------------------------------------------------------------------" +
+                    "\n\n\n\n\n\n\n");
         }
     }
 
