@@ -24,7 +24,7 @@ public class Console {
             int targetSelection = console.getIntegerInput();
             Currency targetCurrency = console.getCurrencyByIndexNo(targetSelection);
 
-            System.out.println("and how much cash do you have in "+ currencyHandler.getCurrencySymbol(sourceCurrency) + " that you would like to convert today?");
+            System.out.println("and how much cash do you have in "+ sourceCurrency.getSymbol() + " that you would like to convert today?");
             double amountToConvert = console.getDoubleInput();
 
 
@@ -32,11 +32,13 @@ public class Console {
             BigDecimal convertedAmountBigDecimal = currencyHandler.formatDecimal(convertedAmount);
 
             System.out.println("Excellent, at the current exchange rate we can give you " + convertedAmountBigDecimal.toString()
-                    + " " + currencyHandler.getCurrencySymbol(targetCurrency) + "\n\n");
+                    + " " + targetCurrency.getSymbol() + "\n\n");
 
             console.startTheThing();
 
     }
+
+
 
     public double getDoubleInput() {
         Scanner scan = new Scanner(System.in);

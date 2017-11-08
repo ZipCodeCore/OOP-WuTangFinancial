@@ -7,14 +7,14 @@ public class CurrencyHandlerTest {
     public void getCurrencySymbolTest(){
         CurrencyHandler currencyHandler = new CurrencyHandler();
 
-        CurrencySymbol yen = CurrencySymbol.JAPANESE_YEN;
+        Currency yen = Currency.JAPANESE_YEN;
         Currency ringgit = Currency.MALAYSIAN_RINGGIT;
         Currency rupee = Currency.INDIAN_RUPEE;
 
         String expected = "¥, RM, ₹";
         String actual = yen.getSymbol() + ", " +
-                        currencyHandler.getCurrencySymbol(ringgit)+ ", " +
-                        currencyHandler.getCurrencySymbol(rupee);
+                        ringgit.getSymbol()+ ", " +
+                        rupee.getSymbol();
 
         Assert.assertEquals(expected,actual);
     }

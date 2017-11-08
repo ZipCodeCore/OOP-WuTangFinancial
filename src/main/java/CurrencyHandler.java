@@ -23,14 +23,6 @@ public class CurrencyHandler {
         return convertedAmountBigDecimal;
     }
 
-    public String getCurrencySymbol(Currency currency){
-        for(CurrencySymbol eachSymbol: CurrencySymbol.values()){
-            if(eachSymbol.toString().equals(currency.toString())){
-                return eachSymbol.getSymbol();
-            }
-        }return "impossible";
-    }
-
     public double OLDformatDecimal(double formatMe){
         DecimalFormat formatter = new DecimalFormat("0.##");
 
