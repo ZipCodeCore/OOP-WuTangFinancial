@@ -1,7 +1,9 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Console {
     static Scanner scanner = new Scanner(System.in);
+    DecimalFormat money = new DecimalFormat("$###,##0.00");
 
 
     public static Currency numToEnum(int optionPicked) {
@@ -19,6 +21,8 @@ public class Console {
         System.out.println("======================");
         System.out.println(" Foreign Exchange");
         System.out.println("======================");
+
+
         System.out.println();
         listOfCurrencies();
         System.out.println("Please pick a number of a currency to convert from:");
