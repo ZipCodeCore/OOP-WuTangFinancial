@@ -9,8 +9,8 @@ public class SwissFranc {
         return dollars / swissFrancValue;
     }
 
-    public double convertToRinggit(double dollars){
-        double francsInUSD = inUSD(dollars);
+    public double convertToRinggit(double franc){
+        double francsInUSD = inUSD(franc);
         return francsInUSD * 4.47;
     }
 }

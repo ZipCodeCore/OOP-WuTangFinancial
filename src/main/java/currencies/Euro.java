@@ -15,4 +15,8 @@ public class Euro extends Currency{
         return eurosInUSD * 0.88;
     }
 
+    public double getEuroValue() {
+        return euroValue;
+    }
+
 }
