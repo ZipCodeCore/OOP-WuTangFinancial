@@ -16,7 +16,7 @@ public class ConvertTest {
 
     @Test
     public void formatDoubleTest(){
-        String expected = "12,345.67";
+        String expected = "12345.67";
 
         String actual = testConvert.formatDouble(12345.67);
 
