@@ -9,9 +9,10 @@ public class Console {
     public void start(){
         do {
             print("Currency Converter");
+            printCurrencies();
             Currency currencyFrom = getCurrency("What would you like to convert from?");
-            double amount = getUserDoubleInput("How much would you like to convert?");
             Currency currencyTo = getCurrency("What would you like to convert to?");
+            double amount = getUserDoubleInput("Amount to convert?");
             String finalString = createFinalString(currencyFrom, currencyTo, amount);
             print(finalString);
         }while(runAgain());
@@ -54,7 +55,6 @@ public class Console {
     }
 
     public Currency getCurrency(String prompt){
-        printCurrencies();
         do{
             String input = getUserStringInput(prompt);
             for(Currency currency : Currency.values()){
