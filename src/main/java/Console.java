@@ -41,17 +41,14 @@ public class Console {
     }
 
     public double getUserDoubleInput(String prompt){
-        double returnDouble;
         do {
             String input = getUserStringInput(prompt);
             try{
-                returnDouble = Double.parseDouble(input);
-                break;
+                return Double.parseDouble(input);
             }catch(Exception e){
                 print("Invalid input");
             }
         }while(true);
-        return returnDouble;
     }
 
     public Currency getCurrency(String prompt){
