@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="434.0">Money</node>
+    <node x="37.133333333333354" y="648.0">Console</node>
+    <node x="100.63333333333335" y="948.0">Main</node>
+    <node x="37.80000000000001" y="0.0">CurrencyType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Money" target="CurrencyType">
+      <point x="69.0" y="-82.0" />
+      <point x="207.0" y="409.0" />
+      <point x="193.8" y="409.0" />
+      <point x="0.0" y="192.0" />
+    </edge>
+    <edge source="Console" target="CurrencyType">
+      <point x="104.33333333333331" y="-125.0" />
+      <point x="297.9666666666667" y="623.0" />
+      <point x="286.5" y="623.0" />
+      <point x="286.5" y="409.0" />
+      <point x="297.8" y="409.0" />
+      <point x="104.0" y="192.0" />
+    </edge>
+    <edge source="Main" target="Console">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="Console" target="Money">
+      <point x="-104.33333333333331" y="-125.0" />
+      <point x="89.30000000000004" y="623.0" />
+      <point x="69.0" y="623.0" />
+      <point x="-69.0" y="82.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.72" x="9.75" y="299.94444444444446" />
+  <SelectedNodes>
+    <node>Money</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
