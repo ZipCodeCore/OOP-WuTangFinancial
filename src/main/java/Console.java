@@ -17,7 +17,7 @@ public class Console {
             System.out.println("and what are you converting to?");
             Currency targetCurrency = console.getCurrencyType();
 
-            System.out.println("and how much would you like to convert today?");
+            System.out.println("and how much cash do you have in "+ sourceCurrency + " that you would like to convert today?");
             double amountToConvert = console.getDoubleInput();
 
 
