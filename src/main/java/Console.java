@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Console {
@@ -5,13 +6,17 @@ public class Console {
     public static void main(String[] args) {
         Console console = new Console();
         ConversionCalculator calculator = new ConversionCalculator();
+        Prompts printer = new Prompts();
+        DecimalFormat formatter = new DecimalFormat("0.00");
 
-        console.setOrigin(displayOriginPrompt());
-        console.setExchange(displayExchangePrompt());
-        console.setAmount(displayMoneyPrompt());
+        printer.printSplashLogo();
+        console.setOrigin(printer.displayOriginPrompt());
+        console.setExchange(printer.displayExchangePrompt());
+        console.setAmount(printer.displayMoneyPrompt());
 
         System.out.println("================================================================================");
-        System.out.print(console.getAmount() + " " + console.getOrigin() + " converted to " + console.getExchange() + " is ");
+        System.out.print(formatter.format(console.getAmount())
+                + " " + console.getOrigin() + " converted to " + console.getExchange() + " is ");
         System.out.println(calculator.convert(console.getAmount(), console.getOrigin(), console.getExchange()));
 
     }
@@ -19,65 +24,6 @@ public class Console {
     private Currency origin;
     private Currency exchange;
     private Double amount;
-
-    public static Currency displayOriginPrompt() {
-        System.out.println("================================================================================");
-        System.out.println("");
-        System.out.println("Enter one of the following currency types you would like to like to convert from");
-        System.out.println("");
-        for(Currency c : Currency.values()) {
-            System.out.print(c.toString() + " ");
-        }
-        System.out.println();
-        return getEnum(getString());
-    }
-
-    public static Currency displayExchangePrompt() {
-        System.out.println("================================================================================");
-        System.out.println("");
-        System.out.println("Enter one of the following currency types you would like to like to convert to");
-        System.out.println("");
-        for(Currency c : Currency.values()) {
-            System.out.print(c.toString() + " ");
-        }
-        System.out.println();
-        return getEnum(getString());
-    }
-
-    public static Double displayMoneyPrompt() {
-        System.out.println("================================================================================");
-        System.out.println("");
-        System.out.println("How much money would you like to convert?");
-        System.out.println("");
-        return getDouble();
-    }
-
-    public static Double getDouble() {
-        Scanner keyboard = new Scanner(System.in);
-        Double value =  keyboard.nextDouble();
-        return value;
-    }
-
-    public static String getString() {
-        Scanner keyboard = new Scanner(System.in);
-        String value =  keyboard.nextLine();
-        return value;
-
-    }
-
-    public static Currency getEnum(String prompt) {
-
-        do {
-            try {
-                String userinput = prompt.toUpperCase();
-                Currency enuminput = Currency.valueOf(userinput);
-                return enuminput;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Error");
-                continue;
-            }
-        } while (true);
-    }
 
     public Currency getOrigin() {
         return origin;
@@ -102,4 +48,5 @@ public class Console {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
 }

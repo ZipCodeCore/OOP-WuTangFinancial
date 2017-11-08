@@ -9,7 +9,7 @@ public class ConversionCalculator {
         return formatDecimals(amount * rate);
     }
 
-    private static String formatDecimals(Double toFormat) {
+    public static String formatDecimals(Double toFormat) {
 //        return String.format("%.2d", toFormat.toString());
         DecimalFormat formatter = new DecimalFormat();
         formatter.setMinimumFractionDigits(2);
