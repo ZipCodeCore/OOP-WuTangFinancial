@@ -8,7 +8,9 @@ public class Main {
         Currency returned = console.getReturnCurrency();
         Double amountToConvert = console.getAmountToConvert();
 
-        System.out.println(currencyExchange.exchangeMoney(base, returned, amountToConvert));
+        Double amountToReturn = currencyExchange.exchangeMoney(base, returned, amountToConvert);
+
+        console.returnMoneyStatement(base, returned, amountToConvert, amountToReturn);
     }
 
 }

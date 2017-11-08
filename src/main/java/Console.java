@@ -39,35 +39,35 @@ public class Console {
     }
 
     public Currency verifyCurrency(String currencyOption){
-        Currency currency;
+        Currency currencyType;
         switch (currencyOption){
-            case "1": currency = Currency.UsDollar;
+            case "1": currencyType = Currency.UsDollar;
                     break;
-            case "2": currency = Currency.Euro;
+            case "2": currencyType = Currency.Euro;
                     break;
-            case "3": currency = Currency.BritishPound;
+            case "3": currencyType = Currency.BritishPound;
                     break;
-            case "4": currency = Currency.IndianRupee;
+            case "4": currencyType = Currency.IndianRupee;
                     break;
-            case "5": currency = Currency.AustralianDollar;
+            case "5": currencyType = Currency.AustralianDollar;
                     break;
-            case "6": currency = Currency.CanadianDollar;
+            case "6": currencyType = Currency.CanadianDollar;
                     break;
-            case "7": currency = Currency.SingaporeDollar;
+            case "7": currencyType = Currency.SingaporeDollar;
                     break;
-            case "8": currency = Currency.SwissFranc;
+            case "8": currencyType = Currency.SwissFranc;
                     break;
-            case "9": currency = Currency.MalaysianRinggit;
+            case "9": currencyType = Currency.MalaysianRinggit;
                     break;
-            case "10": currency = Currency.JapaneseYen;
+            case "10": currencyType = Currency.JapaneseYen;
                      break;
-            case "11": currency = Currency.ChineseYuanRenminbi;
+            case "11": currencyType = Currency.ChineseYuanRenminbi;
                      break;
-            default: currency = null;
+            default: currencyType = null;
                 System.out.println("Invalid input. Please enter the number associated with your currency");
                      break;
         }
-        return currency;
+        return currencyType;
     }
 
 
@@ -79,6 +79,10 @@ public class Console {
         catch (NumberFormatException nfe) {
             return getAmountToConvert();
         }
+    }
+
+    public void returnMoneyStatement(Currency baseCurrency, Currency returnedCurrency, double amountToExchange, double amountToReturn){
+        System.out.println("Here's " + amountToReturn + " " + returnedCurrency + "s for your " + amountToExchange + " " + baseCurrency + "s");
     }
 
 

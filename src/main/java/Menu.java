@@ -1,9 +1,7 @@
-import java.text.NumberFormat;
-import java.util.Locale;
 
-public class Menu {
+class Menu {
 
-    public static void printCurrencyOptions(){
+    static void printCurrencyOptions(){
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
                            "1)US Dollar\n" +
                            "2)Euro\n" +
