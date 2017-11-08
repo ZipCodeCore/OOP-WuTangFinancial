@@ -2,13 +2,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CurrencyTest {
-    Currency testCurrency = new Currency("USD",1.00,"US Dollar");
+    Currency testCurrency = Currency.USD;
 
     @Test
     public void getCurrencyTypeTest(){
         String expected = "USD";
 
-        String actual = testCurrency.getCurrencyType();
+        String actual = testCurrency.name();
 
         Assert.assertEquals(expected,actual);
     }
@@ -26,7 +26,7 @@ public class CurrencyTest {
     public void getCurrencyNameTest(){
         String expected = "US Dollar";
 
-        String actual = testCurrency.getCurrencyName();
+        String actual = testCurrency.getFullName();
 
         Assert.assertEquals(expected,actual);
     }
