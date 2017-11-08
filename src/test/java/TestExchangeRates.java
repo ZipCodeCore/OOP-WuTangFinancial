@@ -7,16 +7,16 @@ public class TestExchangeRates {
     double currentCurrency = 50;
 
     double USD = ExchangeRates.USD.getRate();
-    double Euro = ExchangeRates.EURO.getRate();
-    double BritishPound = ExchangeRates.BRITISHPOUND.getRate();
-    double IndianRupee = ExchangeRates.INDIANRUPEE.getRate();
-    double AustralianDollar = ExchangeRates.AUSTRALIANDOLLAR.getRate();
-    double CanadianDollar = ExchangeRates.CANADIANDOLLAR.getRate();
-    double SingaporeDollar = ExchangeRates.SINGAPOREDOLLAR.getRate();
-    double SwissFranc = ExchangeRates.SWISSFRANC.getRate();
-    double MalaysianRinggit = ExchangeRates.MALAYSIANRINGGIT.getRate();
-    double JapaneseYen = ExchangeRates.JAPANESEYEN.getRate();
-    double ChineseYuanRenmimbi = ExchangeRates.CHINESEYUANRENMINBI.getRate();
+    double Euro = ExchangeRates.Euro.getRate();
+    double BritishPound = ExchangeRates.BritishPound.getRate();
+    double IndianRupee = ExchangeRates.IndianRupee.getRate();
+    double AustralianDollar = ExchangeRates.AustralianDollar.getRate();
+    double CanadianDollar = ExchangeRates.CanadianDollar.getRate();
+    double SingaporeDollar = ExchangeRates.SingaporeDollar.getRate();
+    double SwissFranc = ExchangeRates.SwissFranc.getRate();
+    double MalaysianRinggit = ExchangeRates.MalaysianRinggit.getRate();
+    double JapaneseYen = ExchangeRates.JapaneseYen.getRate();
+    double ChineseYuanRenmimbi = ExchangeRates.ChineseYuanRenminbi.getRate();
 
     @Test
     public void usdToEuro(){

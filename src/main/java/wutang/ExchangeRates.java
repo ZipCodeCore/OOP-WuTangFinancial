@@ -2,16 +2,16 @@ package wutang;
 
 public enum ExchangeRates {
     USD (1.00),
-    EURO(.94),
-    BRITISHPOUND(.82),
-    INDIANRUPEE(68.32),
-    AUSTRALIANDOLLAR(1.35),
-    CANADIANDOLLAR(1.32),
-    SINGAPOREDOLLAR(1.43),
-    SWISSFRANC(1.01),
-    MALAYSIANRINGGIT(4.47),
-    JAPANESEYEN(115.84),
-    CHINESEYUANRENMINBI(6.92),;
+    Euro(.94),
+    BritishPound(.82),
+    IndianRupee(68.32),
+    AustralianDollar(1.35),
+    CanadianDollar(1.32),
+    SingaporeDollar(1.43),
+    SwissFranc(1.01),
+    MalaysianRinggit(4.47),
+    JapaneseYen(115.84),
+    ChineseYuanRenminbi(6.92),;
 
     private double rate;
 
