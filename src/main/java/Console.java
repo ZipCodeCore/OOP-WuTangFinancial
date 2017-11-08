@@ -5,12 +5,16 @@ import java.util.Scanner;
 
 public class Console {
 
+    public static void splash(){
+
+        System.out.println("Hello and welcome to WuTang Financial, where it is still all so simple.\n\n\n");
+    }
+
     public static void startTheThing() {
 
             Console console = new Console();
             CurrencyHandler currencyHandler = new CurrencyHandler();
 
-            System.out.println("Hello and welcome to WuTang Financial, where it is still all so simple.");
             System.out.println("What currency you have brought to exchange?");
             System.out.println("US_DOLLAR, EURO, BRITISH_POUND, INDIAN_RUPEE, AUSTRALIAN_DOLLAR, CANADIAN_DOLLAR, \n"+
                                "SINGAPORE_DOLLAR, SWISS_FRANC, MALAYSIAN_RINGGIT, JAPANESE_YEN, CHINESE_YUAN_RENMINBI");
@@ -27,7 +31,9 @@ public class Console {
             BigDecimal convertedAmountBigDecimal = currencyHandler.formatDecimal(convertedAmount);
 
             System.out.println("Excellent, at the current exchange rate we can give you " + convertedAmountBigDecimal.toString()
-                    + " " + currencyHandler.getCurrencySymbol(targetCurrency));
+                    + " " + currencyHandler.getCurrencySymbol(targetCurrency) + "\n\n");
+
+            console.startTheThing();
 
     }
 
