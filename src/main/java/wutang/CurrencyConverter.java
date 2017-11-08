@@ -1,46 +1,27 @@
 package wutang;
 
-import javax.sound.midi.Soundbank;
-import java.security.spec.ECField;
-
-import static wutang.ExchangeRates.USD;
 
 public class CurrencyConverter {
 
     public void currencyExchange() {
+
         ExchangeRates currentCurrency;
         ExchangeRates newCurrency;
         Double newTotal;
 
-        Double num = Console.getDoubleInput("How much money would you like to exchange?");
+        Double moneyInput = Console.getDoubleInput("How much money would you like to exchange?");
 
-        int i = 1;
-        for(ExchangeRates rate : ExchangeRates.values()) {
-            System.out.print(i++ + ") ");
-            System.out.println(rate.name());
-        }
+        Console.printCurrencyOptions();
+        currentCurrency = Console.getCurrency("What kind of currency are you exchanging? Choose a number from above.");
 
-        Integer currentType = Console.getIntegerInput("\nWhat kind of currency are you exchanging? Choose a number from above.\n");
 
-        int j = 1;
-        for(ExchangeRates rate : ExchangeRates.values()) {
-            System.out.print(j++ + ") ");
-            System.out.println(rate.name());
-        }
+        Console.printCurrencyOptions();
+        newCurrency = Console.getCurrency("What new currency would you like to receive? Choose a number from above.");
 
-        Integer newType = Console.getIntegerInput("\nWhat new currency would you like? Choose a number from above.");
+        newTotal = CurrencyCalculator.convert(moneyInput, currentCurrency, newCurrency);
 
-        
 
-        currentCurrency = ExchangeRates.values()[currentType - 1];
-        newCurrency = ExchangeRates.values()[newType - 1];
-        newTotal = num / currentCurrency.getRate() * newCurrency.getRate();
-
-        System.out.printf("Your new currency is: " + "%.2f", newTotal);
-        //need to fix formatting of round number
-        //need to add exceptions
-        //math conversion should be done in separate class
-        //print out the type of new currency
+        System.out.printf("Your %,.2f in %s was converted to %s which totaled: %,.2f", moneyInput, currentCurrency, newCurrency, newTotal);
 
     }
 

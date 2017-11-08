@@ -2,8 +2,10 @@ package wutang;
 
 public class CurrencyCalculator {
 
-    public double convert(Double moneyInput, Enum currentCurrency, Enum newCurrency){
-        return Double.parseDouble(null);
+    public static Double convert(Double moneyInput, ExchangeRates currentCurrency, ExchangeRates newCurrency){
+        Double newTotal;
+        newTotal = moneyInput / currentCurrency.getRate() * newCurrency.getRate();
+        return newTotal;
 
     }
 }

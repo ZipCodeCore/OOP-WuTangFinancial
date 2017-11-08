@@ -32,4 +32,27 @@ public class Console {
         return userInput;
     }
 
+    public static ExchangeRates getCurrency(String prompt) {
+        Integer currentType = Console.getIntegerInput("\n" + prompt);
+        ExchangeRates currentCurrency;
+        try {
+            currentCurrency = ExchangeRates.values()[currentType - 1];
+            System.out.println("\nThe currency you chose is: " + currentCurrency);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("\nInvalid number choice. Please choose numbers from 1 to 11.");
+            printCurrencyOptions();
+            currentCurrency = getCurrency(prompt);
+        }
+        return currentCurrency;
+    }
+
+    public static void printCurrencyOptions() {
+        System.out.println();
+        int j = 1;
+        for(ExchangeRates rate : ExchangeRates.values()) {
+            System.out.print(j++ + ") ");
+            System.out.println(rate.name());
+        }
+    }
+
 }
