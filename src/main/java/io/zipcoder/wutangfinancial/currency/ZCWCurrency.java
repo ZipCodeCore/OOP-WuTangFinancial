@@ -28,4 +28,6 @@ public abstract class ZCWCurrency {
 
         return toZCWCurrency;
     }
+
+    public abstract String getLocalFormatAmount();
 }
