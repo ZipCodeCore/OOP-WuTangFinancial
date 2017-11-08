@@ -53,7 +53,7 @@ public class Currency {
             if(i.getName().equalsIgnoreCase(targetCurrency))
                 targetCurrencyRate = i.rate;
         }
-        double inDollar = Math.rint(sourceAmount/baseCurrencyRate);
+        double inDollar = Math.round(sourceAmount/baseCurrencyRate);
         double targetAmount = inDollar*targetCurrencyRate;
         return targetAmount;
     }
