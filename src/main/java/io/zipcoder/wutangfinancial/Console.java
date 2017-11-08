@@ -29,17 +29,12 @@ public class Console{
     }
 
     private void displayMenu() {
-        System.out.println("\n\n["+Currencies.USD+"] : United States Dollar");
-        System.out.println("["+Currencies.EUR+"] : Euro");
-        System.out.println("["+Currencies.GBP+"] : British Pound");
-        System.out.println("["+Currencies.INR+"] : Indian Rupee");
-        System.out.println("["+Currencies.AUD+"] : Australian Dollar");
-        System.out.println("["+Currencies.CAD+"] : Canadian Dollar");
-        System.out.println("["+Currencies.SGD+"] : Singapore Dollar");
-        System.out.println("["+Currencies.CHF+"] : Swiss Franc");
-        System.out.println("["+Currencies.MYR+"] : Malaysian Ringgit");
-        System.out.println("["+Currencies.JPY+"] : Japanese Yen");
-        System.out.println("["+Currencies.CNY+"] : Chinese Yuan");
+        System.out.println("\n");
+
+        for (Currencies c : Currencies.values())
+        {
+            System.out.println("["+c+"] : "+c.nameOfCurrency());
+        }
     }
 
     private void getUserInputs(){
