@@ -6,6 +6,5 @@ public class Wu_Tang
     {
         Console console = new Console();
         console.opening();
-//
     }
 }

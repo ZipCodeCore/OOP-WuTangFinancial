@@ -1,13 +1,13 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+
 public class Console {
     static Scanner scanner = new Scanner(System.in);
-    DecimalFormat money = new DecimalFormat("$###,##0.00");
 
 
     public static Currency numToEnum(int optionPicked) {
-        return Currency.values()[optionPicked-1];
+        return Currency.values()[optionPicked - 1];
     }
 
     public static void listOfCurrencies(){
@@ -21,7 +21,6 @@ public class Console {
         System.out.println("======================");
         System.out.println(" Foreign Exchange");
         System.out.println("======================");
-
 
         System.out.println();
         listOfCurrencies();
@@ -38,7 +37,9 @@ public class Console {
         double amountInput = scanner.nextDouble();
         double convertedAmount = Convert.convertCurency(firstOption, secondOption, amountInput);
 
-        System.out.println("Exchanged amount is: " + convertedAmount);
+        DecimalFormat money = new DecimalFormat("##0.00");
+
+        System.out.println("Exchanged amount is: " + money.format(convertedAmount));
     }
 
 

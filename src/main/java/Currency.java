@@ -11,7 +11,7 @@ public enum Currency {
     JapaneseYen(115.84),
     ChineseYuanRenminbi(6.92);
 
-    final double rate;
+    double rate;
 
     Currency(double rate) {
         this.rate = rate;
@@ -19,6 +19,10 @@ public enum Currency {
 
     public double getRate() {
         return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
     public double toCurrency(double amount){
