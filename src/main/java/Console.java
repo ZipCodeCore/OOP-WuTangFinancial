@@ -15,12 +15,14 @@ public class Console {
             Console console = new Console();
             CurrencyHandler currencyHandler = new CurrencyHandler();
 
-            System.out.println("What currency you have brought to exchange? (options follow)");
+            System.out.println("What currency you have brought to exchange?");
             console.printCurrencies();
-            Currency sourceCurrency = console.getCurrencyType();
+            int sourceSelection = console.getIntegerInput();
+            Currency sourceCurrency = console.getCurrencyByIndexNo(sourceSelection);
 
             System.out.println("and what are you converting to?");
-            Currency targetCurrency = console.getCurrencyType();
+            int targetSelection = console.getIntegerInput();
+            Currency targetCurrency = console.getCurrencyByIndexNo(targetSelection);
 
             System.out.println("and how much cash do you have in "+ currencyHandler.getCurrencySymbol(sourceCurrency) + " that you would like to convert today?");
             double amountToConvert = console.getDoubleInput();
@@ -46,6 +48,28 @@ public class Console {
         return dblInput;
     }
 
+    public Integer getIntegerInput(){
+        Scanner scan = new Scanner(System.in);
+        Integer intInput;
+        String stringInput = scan.nextLine();
+
+        intInput = Integer.valueOf(stringInput);
+        return  intInput;
+    }
+
+    public Currency getCurrencyByIndexNo(int index){
+        do {
+            for (Currency currency: Currency.values()){
+                if (currency.ordinal() == index -1){
+                    return currency;
+                }
+            }
+            System.out.println("Not a valid entry.");
+
+        }while (index >11);
+        return null;
+    }
+
     public Currency getCurrencyType() {
         Scanner scan = new Scanner(System.in);
 
@@ -62,9 +86,10 @@ public class Console {
     }
 
     public void printCurrencies(){
-
+        int i = 1;
         for(Currency currency: Currency.values()){
-            System.out.println(currency.toString());
+            System.out.println(i + ") " +currency.toString());
+            i++;
         }
 
     }
