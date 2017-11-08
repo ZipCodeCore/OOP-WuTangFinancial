@@ -13,13 +13,12 @@ public class CurrencyTest {
 
         double source = 500;
         double expected = 500*115.84;
-        double actual = Currency.US_DOLLAR.convertTo(Currency.JAPANESE_YEN, source);
-
         CurrencyHandler currencyHandler = new CurrencyHandler();
-        BigDecimal actualBigDecimal = currencyHandler.formatDecimal(actual);
         BigDecimal expectedBigDecimal = currencyHandler.formatDecimal(expected);
 
-        Assert.assertEquals(expectedBigDecimal, actualBigDecimal);
+        BigDecimal actual = currencyHandler.convertTwo(Currency.US_DOLLAR, Currency.JAPANESE_YEN, source);
+
+        Assert.assertEquals(expectedBigDecimal, actual);
 
     }
 
@@ -30,13 +29,12 @@ public class CurrencyTest {
 
         double source = 500;
         double expected = 500 * 0.94;
-        double actual = Currency.US_DOLLAR.convertTo(Currency.EURO, source);
-
         CurrencyHandler currencyHandler = new CurrencyHandler();
-        BigDecimal actualBigDecimal = currencyHandler.formatDecimal(actual);
         BigDecimal expectedBigDecimal = currencyHandler.formatDecimal(expected);
 
-        Assert.assertEquals(expectedBigDecimal,actualBigDecimal);
+        BigDecimal actual = currencyHandler.convertTwo(Currency.US_DOLLAR, Currency.EURO, source);
+
+        Assert.assertEquals(expectedBigDecimal,actual);
     }
 
 //    Convert Euro to Dollar

@@ -13,6 +13,24 @@ public class CurrencyHandler {
         return bigDecimal;
     }
 
+    public BigDecimal convertTwo(Currency source, Currency target, double amount){
+
+        double conversionFactor = target.getRate() / source.getRate();
+        double convertedAmount = amount * conversionFactor;
+
+        BigDecimal convertedAmountBigDecimal = formatDecimal(convertedAmount);
+
+        return convertedAmountBigDecimal;
+    }
+
+    public String getCurrencySymbol(Currency currency){
+        for(CurrencySymbol eachSymbol: CurrencySymbol.values()){
+            if(eachSymbol.toString().equals(currency.toString())){
+                return eachSymbol.getSymbol();
+            }
+        }return "impossible";
+    }
+
     public double OLDformatDecimal(double formatMe){
         DecimalFormat formatter = new DecimalFormat("0.##");
 

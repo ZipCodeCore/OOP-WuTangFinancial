@@ -29,8 +29,7 @@ public enum Currency {
 
     public double convertTo(Currency targetCurrency, double amount){
 
-        double conversionFactor = 0;
-        conversionFactor = targetCurrency.getRate() / this.getRate();
+        double conversionFactor = targetCurrency.getRate() / this.getRate();
         double convertedAmount = amount * conversionFactor;
 
 
