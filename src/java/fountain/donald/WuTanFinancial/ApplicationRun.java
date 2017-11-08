@@ -71,7 +71,7 @@ public class ApplicationRun {
             double convertedAmount = CurrencyConverter.convertMoney(currencyRateFrom, currencyRateTo, amountToConvert);
 
             System.out.println("\n\n\nYou converted " + CurrencyFormatter.formatCurrency(amountToConvert, convertFrom) + " from "
-                    + CurrencyConverter.getCurrencyRatesName(convertFrom) + " at a currency rate of " +
+                    + CurrencyConverter.getCurrencyRatesName(convertFrom) + ", at a currency rate of " +
                     CurrencyConverter.getCurrencyRates(convertFrom) + " to " +
                     CurrencyConverter.getCurrencyRatesName(convertTo) +
                     " at a currency rate of " + CurrencyConverter.getCurrencyRates(convertTo) + ".");
