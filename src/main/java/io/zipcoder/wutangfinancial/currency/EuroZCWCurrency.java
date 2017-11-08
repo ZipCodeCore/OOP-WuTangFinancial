@@ -1,12 +1,9 @@
 package io.zipcoder.wutangfinancial.currency;
 
 import java.text.NumberFormat;
-import java.util.Currency;
 import java.util.Locale;
 
 public class EuroZCWCurrency extends ZCWCurrency {
-
-//    private io.zipcoder.wutangfinancial.currency.UsDollar(){}
 
     public EuroZCWCurrency(Double amount) {
 
@@ -21,11 +18,8 @@ public class EuroZCWCurrency extends ZCWCurrency {
     public String getLocalFormatAmount(){
         String formatted;
 
-        Currency euro = Currency.getInstance("EUR");
-        NumberFormat euroFormat = NumberFormat.getCurrencyInstance();
-
-        euroFormat.setCurrency(euro);
-
+        NumberFormat euroFormat = NumberFormat.getCurrencyInstance(new Locale("en", "MT"));
+            //Locale used is English-speaking Malta to force display of Euro as desired
         formatted=euroFormat.format(this.getAmount());
 
         return formatted;

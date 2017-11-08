@@ -20,7 +20,7 @@ public class Console{
             fromZCWCurrency = createCurrencyObject(convertFrom);
             toZCWCurrency = createCurrencyObject(convertTo);
             toZCWCurrency = fromZCWCurrency.convertToCurrency(toZCWCurrency);
-            System.out.println(toZCWCurrency.getAmount());
+            System.out.println(toZCWCurrency.getLocalFormatAmount());
 
             runAgain = in.getStringInput("Run again? ");
 
