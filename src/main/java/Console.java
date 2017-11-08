@@ -33,9 +33,7 @@ public class Console {
 
             System.out.println("Excellent, at the current exchange rate we can give you " + convertedAmountBigDecimal.toString()
                     + " " + targetCurrency.getSymbol() + "\n\n");
-
-            console.startTheThing();
-
+        
     }
 
 
