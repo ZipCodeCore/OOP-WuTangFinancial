@@ -10,7 +10,7 @@ public class Console {
             Console console = new Console();
             CurrencyHandler currencyHandler = new CurrencyHandler();
 
-            System.out.println("Hello and welcome to WuTang Financial, where we know that Cash Rules Everything Around Me (and you).");
+            System.out.println("Hello and welcome to WuTang Financial, where it is still all so simple.");
             System.out.println("What currency you have brought to exchange?");
             Currency sourceCurrency = console.getCurrencyType();
 
@@ -55,41 +55,3 @@ public class Console {
     }
 
 }
-
-/*
-                   if(stringInput.equals(Currency.CANADIAN_DOLLAR)){
-                    currency = Currency.CANADIAN_DOLLAR;
-                    return currency;
-                    }else if(stringInput.equals(Currency.JAPANESE_YEN)){
-                    currency = Currency.JAPANESE_YEN;
-                    return currency;
-                    }else if(stringInput.equals(Currency.SINGAPORE_DOLLAR)){
-                    currency = Currency.SINGAPORE_DOLLAR;
-                    return currency;
-                    }else if(stringInput.equals(Currency.US_DOLLAR)){
-                    currency = Currency.US_DOLLAR;
-                    return currency;
-                    }else if(stringInput.equals(Currency.AUSTRALIAN_DOLLAR)) {
-                    currency = Currency.AUSTRALIAN_DOLLAR;
-                    return currency;
-                    }else if(stringInput.equals(Currency.CHINESE_YUAN_RENMINBI)) {
-                    currency = Currency.CHINESE_YUAN_RENMINBI;
-                    return currency;
-                    }else if(stringInput.equals(Currency.SWISS_FRANC)) {
-                    currency = Currency.SWISS_FRANC;
-                    return currency;
-                    }else if(stringInput.equals(Currency.BRITISH_POUND)) {
-                    currency = Currency.BRITISH_POUND;
-                    return currency;
-                    }else if(stringInput.equals(Currency.EURO)) {
-                    currency = Currency.EURO;
-                    return currency;
-                    }else if(stringInput.equals(Currency.INDIAN_RUPEE)) {
-                    currency = Currency.INDIAN_RUPEE;
-                    return currency;
-                    }else if(stringInput.equals(Currency.MALAYSIAN_RINGGIT)) {
-                    currency = Currency.MALAYSIAN_RINGGIT;
-                    return currency;
-                    }else {
-                    System.out.println("We don't currently support that conversion.");
-         */
