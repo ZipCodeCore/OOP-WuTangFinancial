@@ -6,30 +6,36 @@ import java.util.Scanner;
 public class OutputConsole {
 
 
+
+    private int outputCurrencyTypeIndex;
+
+
     public int outputCurrencyType() {
-        int inputCurrencyType;
+
         Scanner scanner = new Scanner(System.in);
-        inputCurrencyType = -1;
+        outputCurrencyTypeIndex = -1;
         do{
             System.out.println("Insert the currency  index to convert to:\n" +
                     "1. USD\n2. Euro\n3. British Pound\n4. Indian Rupee\n" +
                     "5. Australian Dollar\n6. Canadian Dollar\n7. Singapore Dollar\n" +
                     "8. Swiss Franc\n9. Malaysian Renggit\n10. Japanese Yen\n" +
                     "11. Chinese Yaun Renminbi\n");
-            inputCurrencyType = Integer.parseInt(scanner.nextLine());
-        } while (inputCurrencyType>11
-                || inputCurrencyType<1 );
+            outputCurrencyTypeIndex = Integer.parseInt(scanner.nextLine());
+        } while (outputCurrencyTypeIndex>11
+                || outputCurrencyTypeIndex<1 );
 
-        return inputCurrencyType;
+        return outputCurrencyTypeIndex;
+    }
+
+    public int getInputCurrencyType() {
+        return outputCurrencyTypeIndex;
     }
 
 
-
-
-    public double dollarToOutput(int outputCurrencyType, double inputAmount){
+    public double dollarToOutput(int outputCurrencyTypeIndex, double inputAmount){
         double outputAmount=0;
         NonDollarCurrencies nonDollarCurrencies = new NonDollarCurrencies();
-        switch (outputCurrencyType){
+        switch (outputCurrencyTypeIndex){
             case (1):
                 return nonDollarCurrencies.dollarConvertor(inputAmount);
             case (2):
@@ -62,9 +68,9 @@ public class OutputConsole {
     public String printCurrencyConvertedValue(double dollarToOutputValue) {
 
         DecimalFormat decimalFormat = new DecimalFormat("###,###.##");
-        InputConsole inputConsole = new InputConsole();
+        CurrencyFormatter currencyFormatter = new CurrencyFormatter();
 
-        String formattedValue = decimalFormat.format(dollarToOutputValue);
+        String formattedValue = currencyFormatter.printFormatedCurrencyType(outputCurrencyTypeIndex)+decimalFormat.format(dollarToOutputValue);
         return formattedValue;
     }
 }

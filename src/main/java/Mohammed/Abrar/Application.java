@@ -1,11 +1,10 @@
 package Mohammed.Abrar;
 
-import java.text.DecimalFormat;
-
 public class Application {
     public static void main(String[] args) {
         InputConsole inputConsole = new InputConsole();
         OutputConsole outputConsole = new OutputConsole();
+        CurrencyFormatter currencyFormatter = new CurrencyFormatter();
 
 
         double inputToDollar = inputConsole.inputToDollar(inputConsole.inputCurrencyType()
