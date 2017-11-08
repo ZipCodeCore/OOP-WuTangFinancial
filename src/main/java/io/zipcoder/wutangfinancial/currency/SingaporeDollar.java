@@ -12,17 +12,8 @@ public class SingaporeDollar extends ZCWCurrency {
     }
 
     public SingaporeDollar(Double amount, Double exchangeRateToUSD){
-        super(amount, exchangeRateToUSD);
-    }
 
-    public String getLocalFormatAmount(){
-        String formatted;
-
-        NumberFormat singaporeFormat = NumberFormat.getCurrencyInstance(new Locale("en","SG"));
-
-        formatted=singaporeFormat.format(this.getAmount());
-
-        return formatted;
+        super(amount, exchangeRateToUSD, "en", "SG");
     }
 
 }

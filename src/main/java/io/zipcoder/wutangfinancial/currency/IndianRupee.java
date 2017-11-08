@@ -1,8 +1,5 @@
 package io.zipcoder.wutangfinancial.currency;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class IndianRupee extends ZCWCurrency {
 
     public IndianRupee(Double amount){
@@ -10,17 +7,7 @@ public class IndianRupee extends ZCWCurrency {
     }
 
     public IndianRupee(Double amount, Double exchangeRateToUSD){
-        super(amount, exchangeRateToUSD);
+
+        super(amount, exchangeRateToUSD, "en", "IN");
     }
-
-    public String getLocalFormatAmount(){
-        String formatted;
-
-        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en","IN"));
-
-        formatted=indiaFormat.format(this.getAmount());
-
-        return formatted;
-    }
-
 }

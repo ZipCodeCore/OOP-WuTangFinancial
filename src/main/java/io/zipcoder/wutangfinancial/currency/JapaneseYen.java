@@ -1,8 +1,5 @@
 package io.zipcoder.wutangfinancial.currency;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class JapaneseYen extends ZCWCurrency {
 
     public JapaneseYen(Double amount){
@@ -10,17 +7,7 @@ public class JapaneseYen extends ZCWCurrency {
     }
 
     public JapaneseYen(Double amount, Double exchangeRateToUSD){
-        super(amount, exchangeRateToUSD);
+
+        super(amount, exchangeRateToUSD, "ja", "JP");
     }
-
-    public String getLocalFormatAmount(){
-        String formatted;
-
-        NumberFormat japanFormat = NumberFormat.getCurrencyInstance(new Locale("ja","JP"));
-
-        formatted=japanFormat.format(this.getAmount());
-
-        return formatted;
-    }
-
 }
