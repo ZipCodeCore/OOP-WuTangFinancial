@@ -4,8 +4,8 @@ public class Console {
     static Scanner scanner = new Scanner(System.in);
 
 
-    public static String numToEnum(int optionPicked) {
-        return ""+Currency.values()[optionPicked-1];
+    public static Currency numToEnum(int optionPicked) {
+        return Currency.values()[optionPicked-1];
     }
 
     public static void listOfCurrencies(){
@@ -24,39 +24,18 @@ public class Console {
         System.out.println("Please pick a number of a currency to convert from:");
 
         int input = scanner.nextInt();
+        Currency firstOption = numToEnum(input);
 
+        listOfCurrencies();
+        System.out.println("Please pick a number of the currency to convert to:");
+        input = scanner.nextInt();
+        Currency secondOption = numToEnum(input);
+        System.out.println("Enter the amount you want to exchange:");
+        double amountInput = scanner.nextDouble();
+        double convertedAmount = Convert.convertCurency(firstOption, secondOption, amountInput);
 
-        switch (Currency.valueOf(numToEnum(input))){
-
-            case USDollar:
-                listOfCurrencies();
-                System.out.println("Please pick a number of the currency to convert to:");
-                secondChoice();
-
-
-                break;
-            case Euro:
-                break;
-            case BritishPound:
-                break;
-            case IndianRupee:
-                break;
-            case AustralianDollar:
-                break;
-            case CanadianDollar:
-                break;
-            case SingaporeDollar:
-                break;
-            case SwissFranc:
-                break;
-            case MalaysianRinggit:
-                break;
-            case JapaneseYen:
-                break;
-            case ChineseYuanRenminbi:
-                break;
-        }
+        System.out.println("Exchanged amount is: " + convertedAmount);
     }
 
-    
+
 }
