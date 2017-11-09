@@ -17,6 +17,7 @@ public enum Currency {
     final double exchangeRate;
 
     Currency(String name, double exchangeRate){
+
         this.exchangeRate = exchangeRate;
     }
 

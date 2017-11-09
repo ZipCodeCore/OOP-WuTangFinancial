@@ -7,7 +7,7 @@ public class CurrencyConverter {
         double fromRate = fromCurrency.getExchangeRate();
         double toRate = toCurrency.getExchangeRate();
 
-        double newCurrencyAmount = Math.round ((currencyAmountToExchange * fromRate / toRate) * 100.00) / 100.00;
+        double newCurrencyAmount = Math.round ((currencyAmountToExchange * toRate / fromRate) * 100.00) / 100.00;
 
         return newCurrencyAmount;
     }
