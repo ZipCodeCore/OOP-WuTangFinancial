@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class Display {
 
-    public Display(){}
+    public Display() {
+    }
 
     private static NumberFormat formatter = new DecimalFormat("#0.00");
     private static Scanner sc = new Scanner(System.in);
@@ -22,6 +23,7 @@ public class Display {
     public static ConversionRates getCurrencySelection(String prompt) {
         System.out.println(prompt);
         int choice = sc.nextInt() - 1;
+        sc.nextLine();
         return ConversionRates.values()[choice];
     }
 
@@ -35,13 +37,12 @@ public class Display {
                 Display.print("Please enter a number.");
                 continue;
             }
-        }while (true);
+        } while (true);
     }
 
-    public static void printCurrencies(){
+    public static void printCurrencies() {
         int i = 0;
-        for(ConversionRates m: currencyGiven)
-        {
+        for (ConversionRates m : currencyGiven) {
             String currencyName = ConversionRates.values()[i].getName();
             System.out.printf("%d) " + currencyName + "%n", m.ordinal() + 1, m);
             i++;
@@ -51,32 +52,30 @@ public class Display {
     public static boolean anotherConversion() {
 
         do {
-        System.out.println("Would you like to perform another conversion? (Yes/No)");
-        String answer = sc.nextLine();
+            System.out.println("Would you like to perform another conversion? (Yes/No)");
+            String answer = sc.nextLine();
 
-            if("YES".equalsIgnoreCase(answer)){
+            if ("YES".equalsIgnoreCase(answer)) {
                 return true;
-            }
-            else if("NO".equalsIgnoreCase(answer)){
+            } else if ("NO".equalsIgnoreCase(answer)) {
                 return false;
-            }
-            else{
+            } else {
                 Display.print("ERROR: PLEASE INPUT YES OR NO!");
             }
-        }while(true);
+        } while (true);
     }
 
-    public String formatUserAmount(double userAmount){
+    public String formatUserAmount(double userAmount) {
         formattedUserAmount = formatter.format(userAmount);
         return formattedUserAmount;
     }
 
-    public String formatConvertedAmount(double convertedAmount){
+    public String formatConvertedAmount(double convertedAmount) {
         formattedConvertedAmount = formatter.format(convertedAmount);
         return formattedConvertedAmount;
     }
 
-    public void printConversion(double userAmount, double convertedAmount, ConversionRates in, ConversionRates out){
+    public void printConversion(double userAmount, double convertedAmount, ConversionRates in, ConversionRates out) {
         String roundedUserAmount = formatUserAmount(userAmount);
         String roundedConvertedAmount = formatConvertedAmount(convertedAmount);
 
