@@ -1,13 +1,16 @@
 package kozulak.elliott;
 
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Console {
     public static String getStringInput(String prompt) {
         Scanner sc = new Scanner(System.in);
         System.out.println(prompt);
         String userInuput = sc.nextLine();
-        return userInuput;
+        return userInuput.toUpperCase();
     }
 
 
@@ -23,12 +26,17 @@ public class Console {
         } while (true);
     }
 
-    public static Currency enumInput(String prompt) {
+    public static String currencyInput(String prompt) {
         do {
+            String currency;
             try {
                 String userInput = getStringInput(prompt).toUpperCase();
-                Currency enumUserInput = Currency.valueOf(userInput.replace(" ","_"));
-                return enumUserInput;
+                if (userInput.length() < 4)
+                    currency = Stream.of(CurrencyNames.values()).map(CurrencyNames::getAbbreviation).filter(s -> s.equalsIgnoreCase(userInput)).collect(Collectors.joining());
+                else currency = CurrencyNames.valueOf(userInput.replace(" ", "_")).getAbbreviation();
+                if (currency.isEmpty())
+                    throw (new IllegalArgumentException());
+                return currency;
             } catch (IllegalArgumentException iae) {
                 continue;
             }

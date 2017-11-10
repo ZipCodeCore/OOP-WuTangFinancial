@@ -1,19 +1,23 @@
 package kozulak.elliott;
 
-public enum Currency {
-    USD(1.00), EURO(0.94), BRITISH_POUND(0.82),INDIAN_RUPEE(68.32), AUSTRALIAN_DOLLAR(1.35), CANADIAN_DOLLAR(1.32), SINGAPORE_DOLLAR(1.43), SWISS_FRANC(1.01), MALAYSIAN_RINGGIT(4.47),JAPANESE_YEN(115.84), CHINESE_YUAN_RENMINBI(6.92);
+public class Currency {
+    private double conversionRate;
+    private String abbreviation;
 
-    private double rateToDollar;
-
-    Currency(Double rateToDollar){
-        this.rateToDollar=rateToDollar;
+    public Currency( String abbreviation,double conversionRate){
+        this.conversionRate=conversionRate;
+        this.abbreviation=abbreviation;
     }
 
-    public double toDollar(double amount){
-        return amount/rateToDollar;
+    public Double convertToDollar(double amount){
+        return amount/conversionRate;
     }
 
-    public double getConversionRate(){
-        return rateToDollar;
+    public Double getConversionRate(){
+        return conversionRate;
     }
+    public String getAbbreviation(){
+        return abbreviation;
+    }
+
 }

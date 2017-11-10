@@ -2,7 +2,10 @@ package kozulak.elliott;
 
 public class Converter {
 
-    public static double convertCurrency(Currency from, Currency to, double amount) {
-        return from.toDollar(amount) * to.getConversionRate();
+    public static Double convertCurrency(String fromCurrency, String toCurrency, Double amount) {
+        CurrencyLoader currencyLoader = new CurrencyLoader();
+        double fromRate =currencyLoader.currencyMap().get(fromCurrency);
+        double toRate =currencyLoader.currencyMap().get(toCurrency);
+        return (toRate/fromRate)*amount;
     }
 }

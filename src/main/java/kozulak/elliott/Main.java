@@ -1,31 +1,38 @@
 package kozulak.elliott;
 
 
+
 public class Main {
 
 
     public static void main(String[] args) {
-        Currency[] currencies = Currency.values();
-        String repeat="yes";
+
+        String repeat = "yes";
 
         do {
-            for (int i = 0; i < currencies.length; i++) {
-                System.out.print("{" + currencies[i] + "} ");
-                if (i == 6)
-                    System.out.println("");
-            }
+            printCurrencies(CurrencyNames.values());
 
-
-            Currency currencyFrom = Console.enumInput("\nEnter the currency your money is in: ");
+            String currencyFrom = Console.currencyInput("\nEnter the currency your money is in: ");
             Double amount = Console.doubleInput("Enter the amount to convert");
-            Currency currencyTo = Console.enumInput("Enter the currency to convert to: ");
+            String currencyTo = Console.currencyInput("Enter the currency to convert to: ");
 
-            double convertedAmount = Converter.convertCurrency(currencyFrom, currencyTo, amount);
+            Double convertedAmount = Converter.convertCurrency(currencyFrom, currencyTo, amount);
 
             System.out.println("You have converted " + amount + " " + currencyFrom + " to " + convertedAmount + " " + currencyTo);
-            repeat= Console.getStringInput("Would you like to convert more money? {Yes} {No}");
-        }while(!"no".equalsIgnoreCase(repeat));
+
+            repeat = Console.getStringInput("Would you like to convert more money? {Yes} {No}");
+        } while (!"no".equalsIgnoreCase(repeat));
 
     }
+
+    private static void printCurrencies(CurrencyNames names[]) {
+
+        for (int i = 0; i < names.length; i++) {
+            System.out.print("{" + names[i] + "} ");
+            if (i == 6)
+                System.out.println("");
+        }
+    }
+
 
 }
