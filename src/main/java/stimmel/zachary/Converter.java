@@ -17,7 +17,7 @@ public class Converter {
 
         System.out.println("Converted " + formatter.format(amount) + " " + currencyToExchange + " to " + convertedAmount + " " + convertToCurrency + ".");
 
-        start();
+        
 
     }
 
