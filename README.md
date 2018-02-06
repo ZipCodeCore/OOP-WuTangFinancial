@@ -18,7 +18,7 @@ Now that he is an INTERNATIONAL rock star making crazy loot, he must make sure t
 | Currency | Rate |
 |----------|------|
 | Us Dollar| 1.00 |
-| Euro                  | 0.94 |
+| io.zipcoder.herion.Euro                  | 0.94 |
 | British Pound         | 0.82  |
 | Indian Rupee          | 68.32 |
 | Australian Dollar	    |	1.35|
@@ -35,9 +35,9 @@ Create a program that can convert any currency into the requested type.
 
 There MUST be Unit test testing the following scenarios 
 
-1. Convert Dollar to Euro
-2. Convert Euro to Dollar
-3. Convert Euro to British Pound
+1. Convert Dollar to io.zipcoder.herion.Euro
+2. Convert io.zipcoder.herion.Euro to Dollar
+3. Convert io.zipcoder.herion.Euro to British Pound
 4. Convert British Pound to Indian Rupee
 5. Convert Rupee to Canadian Dollar
 6. Convert Canadian Dollar to Singapore Dollar
