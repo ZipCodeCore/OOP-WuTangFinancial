@@ -1,3 +1,7 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 /**
  * filename:
  * project: wu-tang-financial
@@ -19,7 +23,7 @@ public class CurrencyConverter {
 
         private final float rate;
 
-        private Currency(float rate) {
+        Currency(float rate) {
             this.rate = rate;
         }
 
@@ -29,14 +33,20 @@ public class CurrencyConverter {
     }
 
     public static float convertToUSD(float amount, Currency cur) {
-        return 0.0f;
+        return siphon(amount / cur.getRate());
     }
 
     public static float convertFromUSD(float amount, Currency cur) {
-        return 0.0f;
+        return siphon(amount * cur.getRate());
     }
 
     public static float convertForeign(float amount, Currency source, Currency target) {
-        return 0.0f;
+        return siphon(convertFromUSD(convertToUSD(amount, source), target));
+    }
+
+    private static float siphon(float c) {
+        BigDecimal bigDec = new BigDecimal(Float.toString(c));
+        bigDec = bigDec.setScale(2, RoundingMode.HALF_UP);
+        return bigDec.floatValue();
     }
 }
