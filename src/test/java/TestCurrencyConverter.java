@@ -6,85 +6,221 @@ public class TestCurrencyConverter {
 
     @Test
     public void testMultiplyBy100(){
-        double expectedNumber = 6832;
-        double actual = CurrencyConverter.multiplyBy100(CurrencyConverter.INDIAN_RUPEE);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 68.32;
+
+        //When
+        double actual = CurrencyConverter.multiplyBy100(initialValue);
+
+        //Then
+        double expectedValue = 6832;
+        Assert.assertTrue(actual == expectedValue);
+
+
     }
 
     @Test
     public void testDivideBy100(){
-        double expectedNumber = 68.32;
-        double actual = CurrencyConverter.divideBy100(CurrencyConverter.multiplyBy100(CurrencyConverter.INDIAN_RUPEE));
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = CurrencyConverter.multiplyBy100(CurrencyConverter.INDIAN_RUPEE);
+
+        //When
+        double actual = CurrencyConverter.divideBy100(initialValue);
+
+        //Then
+        double expectedValue = 68.32;
+        Assert.assertTrue(actual == expectedValue);
     }
 
     @Test
     public void testConvertFromDollars(){
-        double expectedNumber = 68.32;
-        double actual = CurrencyConverter.convertFromDollars(1, CurrencyConverter.INDIAN_RUPEE);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 1;
+
+        //When
+        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.INDIAN_RUPEE);
+
+        //Then
+        double expectedValue = 68.32;
+        Assert.assertTrue(actual == expectedValue);
     }
 
     @Test
     public void testConvertFromDollarsWithDecimal(){
-        double expectedNumber = 102.48;
-        double actual = CurrencyConverter.convertFromDollars(1.5, CurrencyConverter.INDIAN_RUPEE);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 1.5;
+
+        //When
+        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.INDIAN_RUPEE);
+
+        //Then
+        double expectedValue = 102.48;
+        Assert.assertTrue(actual == expectedValue);
     }
 
 
     @Test
     public void testConvertFromDollarsWithDecimal2(){
-        double expectedNumber = 136.3;
-        double actual = CurrencyConverter.convertFromDollars(100.96, CurrencyConverter.AUSTRALIAN_DOLLAR);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 100.96;
+
+        //When
+        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.AUSTRALIAN_DOLLAR);
+
+        //Then
+        double expectedValue =136.3;
+        Assert.assertTrue(actual == expectedValue);
+
     }
 
     @Test
     public void testConvertToDollars(){
-        double expectedNumber = 1;
-        double actual = CurrencyConverter.convertToDollars(68.32, CurrencyConverter.INDIAN_RUPEE);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 68.32;
+
+        //When
+        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.INDIAN_RUPEE);
+
+        //Then
+        double expectedValue = 1;
+        Assert.assertTrue(actual == expectedValue);
     }
 
     @Test
     public void testConvertToDollarsWithDecimal(){
-        double expectedNumber = 14.56;
-        double actual = CurrencyConverter.convertToDollars(100.76, CurrencyConverter.CHINESE_YUAN);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 100.76;
+
+        //When
+        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.CHINESE_YUAN);
+
+        //Then
+        double expectedValue = 14.56;
+        Assert.assertTrue(actual == expectedValue);
     }
 
     @Test
     public void testConvertToDollarsWithDecimal2(){
-        double expectedNumber = 9531.84;
-        double actual = CurrencyConverter.convertToDollars(12582.03, CurrencyConverter.CANADIAN_DOLLAR);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 12582.03;
+
+        //When
+        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.CANADIAN_DOLLAR);
+
+        //Then
+        double expectedValue = 9531.84;
+        Assert.assertTrue(actual == expectedValue);
     }
 
     @Test
     public void testDollarToEuro(){
-        double expectedNumber = 94;
-        double actual = CurrencyConverter.convertFromDollars(100,CurrencyConverter.EURO);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.EURO);
+
+        //Then
+        double expectedValue =94;
+        Assert.assertTrue(actual == expectedValue);
     }
 
     @Test
     public void testEuroToDollar(){
-        double expectedNumber = 106.38;
-        double actual = CurrencyConverter.convertToDollars(100,CurrencyConverter.EURO);
-        System.out.println(actual);
-        Assert.assertTrue(actual == expectedNumber);
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.EURO);
+
+        //Then
+        double expectedValue = 106.38;
+        Assert.assertTrue(actual == expectedValue);
     }
 
+    @Test
+    public void testEuroToBritishPound(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.EURO, CurrencyConverter.BRITISH_POUND);
+
+        //Then
+        double expectedValue = 87.23;
+        Assert.assertTrue(actual == expectedValue);
+    }
+
+    @Test
+    public void testBritishPoundToIndianRupee(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.BRITISH_POUND, CurrencyConverter.INDIAN_RUPEE);
+
+        //Then
+        double expectedValue = 8331.62;
+        Assert.assertTrue(actual == expectedValue);
+    }
+
+    @Test
+    public void testIndianRupeeToCanadianDollar(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.INDIAN_RUPEE, CurrencyConverter.CANADIAN_DOLLAR);
+
+        //Then
+        double expectedValue = 1.93;
+        Assert.assertTrue(actual == expectedValue);;
+    }
+
+    @Test
+    public void testCanadianDollarToSingaporeDollar(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.CANADIAN_DOLLAR, CurrencyConverter.SINGAPORE_DOLLAR);
+
+        //Then
+        double expectedValue = 108.34;
+        Assert.assertTrue(actual == expectedValue);;
+    }
+
+    @Test
+    public void testSingaporeDollarToSwissFranc(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.SINGAPORE_DOLLAR, CurrencyConverter.SWISS_FRANC);
+
+        //Then
+        double expectedValue = 70.63;
+        Assert.assertTrue(actual == expectedValue);;
+    }
+
+    @Test
+    public void testSwissFrancToMalaysianRinggit(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.SWISS_FRANC, CurrencyConverter.MALAYSIAN_RINGGIT);
+
+        //Then
+        double expectedValue = 442.57;
+        Assert.assertTrue(actual == expectedValue);;
+    }
 
 
 }

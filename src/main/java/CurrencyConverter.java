@@ -13,6 +13,10 @@ public class CurrencyConverter {
     public static final double JAPANESE_YEN = 115.84;
     public static final double CHINESE_YUAN = 6.92;
 
+    public static double convertFromForeignAToForiegnB (double denomination, double originalCurrency, double newCurrency){
+        return convertFromDollars(convertToDollars(denomination,originalCurrency), newCurrency);
+    }
+
     public static double convertFromDollars(double denominationInDollars, double targetCurrency) {
         double workingDollars = multiplyBy100(denominationInDollars);
         return divideBy100(Math.round(workingDollars * targetCurrency));
