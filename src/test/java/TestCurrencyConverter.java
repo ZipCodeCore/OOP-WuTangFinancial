@@ -222,5 +222,33 @@ public class TestCurrencyConverter {
         Assert.assertTrue(actual == expectedValue);;
     }
 
+    @Test
+    public void testMalaysianRinggitToJapaneseYen(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.MALAYSIAN_RINGGIT, CurrencyConverter.JAPANESE_YEN);
+
+        //Then
+        double expectedValue = 2591.34;
+        Assert.assertTrue(actual == expectedValue);;
+    }
+
+    @Test
+    public void testJapaneseYenToChineseYuan(){
+        //Given
+        double initialValue = 100;
+
+        //When
+        double actual = CurrencyConverter.convertFromForeignAToForiegnB
+                (initialValue,CurrencyConverter.JAPANESE_YEN, CurrencyConverter.CHINESE_YUAN);
+
+        //Then
+        double expectedValue = 5.95;
+        Assert.assertTrue(actual == expectedValue);;
+    }
+
 
 }
