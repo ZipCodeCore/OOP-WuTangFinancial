@@ -1,6 +1,6 @@
 public class CurrencyExchange {
 
-    public static final double US_DOLLAR =	1.00;
+    public static final double US_DOLLAR = 1.00;
     public static final double EURO = 0.94;
     public static final double BRITISH_POUND = 0.82;
     public static final double INDIAN_RUPEE = 68.32;
