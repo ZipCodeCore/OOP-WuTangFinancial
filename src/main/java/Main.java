@@ -1,8 +1,9 @@
 public class Main {
-    public static void main(){
-        Selector.InitialCurrencySelector();
-        Selector.SecondCurrencySelector();
-        Selector.CurrencyAmout();
-        Selector.ConvertCurrencies();
+    public static void main(String[] args){
+        Selector start = new Selector();
+        start.initialCurrencySelector();
+        start.secondCurrencySelector();
+        start.currencyAmout();
+        System.out.println(start.convertCurrencies());
     }
 }

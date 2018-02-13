@@ -1,18 +1,19 @@
 
 
+import java.util.Formatter;
 import java.util.Scanner;
 
-public class Selector extends Currencies{
-    private static Scanner firstCurrency = new Scanner(System.in);
-    private static int firstCurrencyInput;
-    private static double firstCurrencyRate;
-    private static double secondCurrencyRate;
-    private static Scanner secondCurrencySelection = new Scanner(System.in);
-    private static int secondCurrencyInput;
-    private static Scanner valueToBeConverted = new Scanner(System.in);
-    private static double valueToBeConvertedInput;
+public class Selector extends Currencies {
+    private Scanner firstCurrency = new Scanner(System.in);
+    private int firstCurrencyInput;
+    private double firstCurrencyRate;
+    private double secondCurrencyRate;
+    private Scanner secondCurrencySelection = new Scanner(System.in);
+    private int secondCurrencyInput;
+    private Scanner valueToBeConverted = new Scanner(System.in);
+    private double valueToBeConvertedInput;
 
-    public static void InitialCurrencySelector(){
+    public void initialCurrencySelector() {
         System.out.println("Please make a selection for your initial currency: \n" +
                 "1 for USDollar\n" +
                 "2 for Euro\n" +
@@ -30,7 +31,7 @@ public class Selector extends Currencies{
 
     }
 
-    public static void  firstCurrencyAnswer(Integer firstCurrencyInput) {
+    public void firstCurrencyAnswer(Integer firstCurrencyInput) {
         switch (firstCurrencyInput) {
             case 1:
                 firstCurrencyRate = usDollar;
@@ -72,7 +73,7 @@ public class Selector extends Currencies{
         }
     }
 
-    public static void SecondCurrencySelector() {
+    public void secondCurrencySelector() {
         System.out.println("Please make a selection for the currency you would like to convert to: \n" +
                 "1 for USDollar\n" +
                 "2 for Euro\n" +
@@ -86,11 +87,11 @@ public class Selector extends Currencies{
                 "10 for Japanese Yen\n" +
                 "11 for Chinese Yuan Renminbi");
         secondCurrencyInput = secondCurrencySelection.nextInt();
-        SecondCurrencyAnswer(secondCurrencyInput);
+        secondCurrencyAnswer(secondCurrencyInput);
 
     }
 
-    public static void  SecondCurrencyAnswer(Integer secondCurrencyInput) {
+    public void secondCurrencyAnswer(Integer secondCurrencyInput) {
         switch (secondCurrencyInput) {
             case 1:
                 secondCurrencyRate = usDollar;
@@ -133,17 +134,23 @@ public class Selector extends Currencies{
 
     }
 
-    public static void CurrencyAmout() {
-        System.out.println("Please enter the amount you with to sonvert:");
-        valueToBeConvertedInput =valueToBeConverted.nextDouble();
+    public void currencyAmout() {
+        System.out.println("Please enter the amount you wish to convert:");
+        valueToBeConvertedInput = valueToBeConverted.nextDouble();
     }
 
-    public static void ConvertCurrencies() {
-        double convertedValue = (valueToBeConvertedInput/firstCurrencyRate) * secondCurrencyRate;
+    public String convertCurrencies() {
+        double convertedValue = (valueToBeConvertedInput / firstCurrencyRate) * secondCurrencyRate;
         if (firstCurrencyRate == secondCurrencyRate) {
-            System.out.println("Those are the same currencies!");
-        }else {
-            System.out.printf("%.2f converted is equal to %.2f", valueToBeConvertedInput, convertedValue);
+            return "Those are the same currencies!";
+        } else {
+            Formatter string = new Formatter();
+            string.format("%.2f converted is equal to %.2f", valueToBeConvertedInput, convertedValue);
+            return string.toString();
         }
+    }
+
+    public void setValueToBeConvertedInput(double input){
+        valueToBeConvertedInput = input;
     }
 }
