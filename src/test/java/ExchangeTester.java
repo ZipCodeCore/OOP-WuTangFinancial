@@ -7,6 +7,23 @@ import org.junit.Test;
 public class ExchangeTester {
 
 
+    @Test
+    public void testFormatter() {
+        ExchangeMaster m = new ExchangeMaster();
+        double numberToFormat = 36.7569;
+        String expected = "36.76";
+        String actual = m.formatCurrency(numberToFormat);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFormatter2() {
+        ExchangeMaster m = new ExchangeMaster();
+        double numberToFormat = 0.1;
+        String expected = "0.10";
+        String actual = m.formatCurrency(numberToFormat);
+        Assert.assertEquals(expected, actual);
+    }
 
     @Test
     public void testDollarToEuro() {

@@ -4,17 +4,17 @@ public class ExchangeMaster {
 
 
 
-    public double usDollarRate = 1;
-    public double euroRate = 0.94;
-    public double britishPoundRate = 0.82;
-    public double indianRupeeRate = 68.32;
-    public double australianDollarRate = 1.35;
-    public double canadianDollarRate = 1.32;
-    public double singaporeDollarRate = 1.43;
-    public double swissFrancRate = 1.01;
-    public double malaysianRinggitRate = 4.47;
-    public double japaneseYenRate = 115.84;
-    public double chineseYuanRenminbiRate = 6.92;
+    public final double usDollarRate = 1;
+    public final double euroRate = 0.94;
+    public final double britishPoundRate = 0.82;
+    public final double indianRupeeRate = 68.32;
+    public final double australianDollarRate = 1.35;
+    public final double canadianDollarRate = 1.32;
+    public final double singaporeDollarRate = 1.43;
+    public final double swissFrancRate = 1.01;
+    public final double malaysianRinggitRate = 4.47;
+    public final double japaneseYenRate = 115.84;
+    public final double chineseYuanRenminbiRate = 6.92;
 
     public String converter (double originalCurrencyAmount, String typeOfOriginalCurrency, String currencyToConvertTo) {
         double unformatted = (originalCurrencyAmount/rateReturner(typeOfOriginalCurrency))*rateReturner(currencyToConvertTo);
