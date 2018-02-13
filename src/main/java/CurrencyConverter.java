@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -8,7 +9,7 @@ import java.util.TreeMap;
 public class CurrencyConverter {
     private double convertIn;
     private TreeMap<String, Double> convertList;
-    private double convertedValue;
+    public double convertedValue;
 
     public CurrencyConverter(double valueToConvert){
         this.convertIn = valueToConvert;
@@ -22,54 +23,46 @@ public class CurrencyConverter {
         this.convertList.put("swiss franc", 1.01);
         this.convertList.put("malaysian ringgit", 4.47);
         this.convertList.put("japanese yen", 115.84);
-        this.convertList.put("chinese yen renminbi", 6.92);
-        this.convertedValue = 0.0;
+        this.convertList.put("chinese yuan renminbi", 6.92);
+
     }
 
     public double convertingInterface(double moneyValue, String beginningC, String endDestination){
         Double conversionRate;
 
         //from other to USD
-        if (endDestination.toLowerCase().equals("us dollar")){
-            for(Map.Entry<String, Double> entry : convertList.entrySet()){
-                if (entry.equals(beginningC.toLowerCase())){
-                    conversionRate = entry.getValue();
-                    this.convertedValue = fromOthertoUSD(moneyValue, conversionRate);
-                }
-            }
-
+        if ((endDestination.toLowerCase()).equals("us dollar")){
+                    conversionRate = convertList.get(beginningC.toLowerCase());
+                    convertedValue = fromOthertoUSD(moneyValue, conversionRate);
         }
         //from USD to other
         else if(beginningC.toLowerCase().equals("us dollar")){
-            for(Map.Entry<String, Double> entry : convertList.entrySet()){
-                if (entry.equals(endDestination.toLowerCase())){
-                    conversionRate = entry.getValue();
-                    convertedValue = fromOthertoUSD(moneyValue, conversionRate);
-                }
-            }
+                    conversionRate = convertList.get(endDestination.toLowerCase());
+                    convertedValue = fromUSDtoOther(moneyValue, conversionRate);
         }
 
 
         else{
             //convert beginning to USD
             double result = 0.0;
-            for(Map.Entry<String, Double> entry : convertList.entrySet()){
-                if (entry.equals(beginningC.toLowerCase())){
-                    conversionRate = entry.getValue();
+                    conversionRate = convertList.get(beginningC.toLowerCase());
                     result = fromOthertoUSD(moneyValue, conversionRate);
 
-                }
-            }
-
             //convert USD to other
-            for(Map.Entry<String, Double> entry : convertList.entrySet()){
-                if (entry.equals(endDestination.toLowerCase())){
-                    conversionRate = entry.getValue();
-                    convertedValue = fromUSDtoOther(result, conversionRate);;
-                }
-            }
+                    conversionRate = convertList.get(endDestination.toLowerCase());
+                    convertedValue = fromUSDtoOther(result, conversionRate);
+
         }
-        return convertedValue;
+
+        //money rounding
+        double temp = convertedValue*100;
+
+        temp = Math.round(temp);
+
+        double result = temp/100;
+
+        //return result
+        return result;
 
     }
 
@@ -78,8 +71,8 @@ public class CurrencyConverter {
         return result;
     }
 
-    public double fromOthertoUSD(double passInValue, Double conversionRate){
-        double result = passInValue/conversionRate;
+    public Double fromOthertoUSD(double passInValue, Double conversionRate){
+        Double result = passInValue/ (Double.valueOf(conversionRate));
         return result;
     }
 }
