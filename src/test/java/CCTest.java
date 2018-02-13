@@ -73,12 +73,29 @@ public class CCTest {
     }
 
     @Test
-    public void testFromEurotoPound(){
-        String start = "EURO";
-        String end = "British Pound";
-        double inValue = 1590.65;
+    public void testFromSwisstoMalaysia(){
+        String start = "Swiss franc";
+        String end = "Malaysian Ringgit";
+        double inValue = 1.99;
         CurrencyConverter currencyConverter = new CurrencyConverter(inValue);
         currencyConverter.convertingInterface(inValue, start, end);
     }
 
+    @Test
+    public void testFromMaltoJapan(){
+        String start = "Malaysian Ringgit";
+        String end = "Japanese Yen";
+        double inValue = 5648;
+        CurrencyConverter currencyConverter = new CurrencyConverter(inValue);
+        currencyConverter.convertingInterface(inValue, start, end);
+    }
+
+    @Test
+    public void testFromJapantoChina(){
+        String end = "Chinese Yuan Renminbi";
+        String start = "Japanese Yen";
+        double inValue = 785738578;
+        CurrencyConverter currencyConverter = new CurrencyConverter(inValue);
+        currencyConverter.convertingInterface(inValue, start, end);
+    }
 }
