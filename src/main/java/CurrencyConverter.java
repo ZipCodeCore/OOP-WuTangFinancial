@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.HashMap;
 
 public class CurrencyConverter {
@@ -24,8 +25,10 @@ public class CurrencyConverter {
     }
 
 
-    public Float makeConversion (String fromCurrencyCode, String toCurrencyCode, Float amountToConvert) {
-        return (converter.get(toCurrencyCode) / (converter.get(fromCurrencyCode)))* amountToConvert;
+    public String makeConversion (String fromCurrencyCode, String toCurrencyCode, Float amountToConvert) {
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
+        String result =currencyFormatter.format(converter.get(toCurrencyCode) / (converter.get(fromCurrencyCode))* amountToConvert);
+        return result;
 
 
     }
