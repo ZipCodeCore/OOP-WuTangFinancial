@@ -30,8 +30,7 @@ public class CCTest {
         double expected = 160.50;
         CurrencyConverter currencyConverter = new CurrencyConverter(inValue);
         double actual = currencyConverter.convertingInterface(inValue, start, end);
-        Assert.assertEquals(expected, actual, delta);
-    }
+        Assert.assertEquals(expected, actual, delta); }
 
     @Test
     public void testFromEurotoPound(){
