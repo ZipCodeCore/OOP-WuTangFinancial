@@ -11,7 +11,7 @@ public class CurrencyConverter {
     private TreeMap<String, Double> convertList;
     public double convertedValue;
 
-    public CurrencyConverter(double valueToConvert){
+    public CurrencyConverter(double valueToConvert) {
         this.convertIn = valueToConvert;
         this.convertList = new TreeMap<String, Double>();
         this.convertList.put("euro", 0.94);
@@ -27,52 +27,49 @@ public class CurrencyConverter {
 
     }
 
-    public double convertingInterface(double moneyValue, String beginningC, String endDestination){
+    public double convertingInterface(double moneyValue, String beginningC, String endDestination) {
         Double conversionRate;
 
         //from other to USD
-        if ((endDestination.toLowerCase()).equals("us dollar")){
-                    conversionRate = convertList.get(beginningC.toLowerCase());
-                    convertedValue = fromOthertoUSD(moneyValue, conversionRate);
+        if ((endDestination.toLowerCase()).equals("us dollar")) {
+            conversionRate = convertList.get(beginningC.toLowerCase());
+            convertedValue = fromOthertoUSD(moneyValue, conversionRate);
         }
         //from USD to other
-        else if(beginningC.toLowerCase().equals("us dollar")){
-                    conversionRate = convertList.get(endDestination.toLowerCase());
-                    convertedValue = fromUSDtoOther(moneyValue, conversionRate);
-        }
-
-
-        else{
+        else if (beginningC.toLowerCase().equals("us dollar")) {
+            conversionRate = convertList.get(endDestination.toLowerCase());
+            convertedValue = fromUSDtoOther(moneyValue, conversionRate);
+        } else {
             //convert beginning to USD
-            double result = 0.0;
-                    conversionRate = convertList.get(beginningC.toLowerCase());
-                    result = fromOthertoUSD(moneyValue, conversionRate);
+            double result;
+            conversionRate = convertList.get(beginningC.toLowerCase());
+            result = fromOthertoUSD(moneyValue, conversionRate);
 
             //convert USD to other
-                    conversionRate = convertList.get(endDestination.toLowerCase());
-                    convertedValue = fromUSDtoOther(result, conversionRate);
+            conversionRate = convertList.get(endDestination.toLowerCase());
+            convertedValue = fromUSDtoOther(result, conversionRate);
 
         }
 
         //money rounding
-        double temp = convertedValue*100;
+        double temp = convertedValue * 100;
 
         temp = Math.round(temp);
 
-        double result = temp/100;
+        double result = temp / 100;
 
         //return result
         return result;
 
     }
 
-    public double fromUSDtoOther(double passInValue, Double conversionRate){
-        double result = passInValue*conversionRate;
+    public double fromUSDtoOther(double passInValue, Double conversionRate) {
+        double result = passInValue * conversionRate;
         return result;
     }
 
-    public Double fromOthertoUSD(double passInValue, Double conversionRate){
-        Double result = passInValue/ (Double.valueOf(conversionRate));
+    public Double fromOthertoUSD(double passInValue, Double conversionRate) {
+        Double result = passInValue / (Double.valueOf(conversionRate));
         return result;
     }
 }
