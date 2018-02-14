@@ -5,11 +5,10 @@ import java.util.TreeMap;
 public class Rate {
 
     private String country;
-    private BigDecimal rate;
+    private Double rate;
 
     TreeMap<String, Double> currenyCollection = new TreeMap<String, Double>() {
         {
-
             put("USD", 1.00);
             put("EUR", 0.94);
             put("GBP", 0.82);
@@ -23,27 +22,14 @@ public class Rate {
             put("CNY", 6.92);
         }
 
-
     };
 
     public Rate(){
 
     }
 
-    private double getFirstCountry (String country1) {
-        return currenyCollection.get(country1);
-    }
-
-    private double getSecondCountry (String country2) {
-        return currenyCollection.get(country2);
-    }
-
-    private double getRate (String country1, String country2) {
-        return getSecondCountry(country2) / getFirstCountry(country1);
-    }
-
     public BigDecimal conversion ( String country1, String country2, double amount) {
-        double convertedAmount = getRate(country1,country2) * amount;
+        double convertedAmount = (currenyCollection.get(country2) / currenyCollection.get(country1)) * amount;
         BigDecimal currencyAmount = new BigDecimal(convertedAmount);
         return currencyAmount.setScale(2, BigDecimal.ROUND_CEILING);
 
@@ -53,7 +39,7 @@ public class Rate {
 
     public static void main(String[] args) {
 
-        System.out.println();
+
 
     }
 }
