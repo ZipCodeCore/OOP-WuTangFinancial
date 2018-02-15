@@ -42,6 +42,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 1000;
+        System.out.printf(indianRupee.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
 
 
@@ -57,6 +58,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 6832;
+        System.out.printf(indianRupee.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
 
 
@@ -72,6 +74,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 68.32;
+        System.out.printf(indianRupee.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -85,6 +88,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 68.32;
+        System.out.printf(indianRupee.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -98,6 +102,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 102.48;
+        System.out.printf(indianRupee.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -112,6 +117,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue =136.3;
+        System.out.printf(australianDollar.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
 
     }
@@ -126,6 +132,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 1;
+        System.out.printf(dollar.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -139,6 +146,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 14.56;
+        System.out.printf(chineseYuan.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -152,6 +160,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 9531.84;
+        System.out.printf(canadianDollar.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -165,6 +174,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue =94;
+        System.out.printf(euro.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -178,6 +188,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 106.38;
+        System.out.printf(dollar.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -191,6 +202,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 87.23;
+        System.out.printf(euro.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -204,6 +216,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 8331.62;
+        System.out.printf(britishPound.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);
     }
 
@@ -217,6 +230,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 1.93;
+        System.out.printf(indianRupee.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);;
     }
 
@@ -230,6 +244,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 108.34;
+        System.out.printf(canadianDollar.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);;
     }
 
@@ -243,6 +258,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 70.63;
+        System.out.printf(singaporeDollar.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);;
     }
 
@@ -256,6 +272,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 442.57;
+        System.out.printf(swissFranc.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);;
     }
 
@@ -269,6 +286,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 2591.34;
+        System.out.printf(malaysianRinggit.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);;
     }
 
@@ -282,8 +300,7 @@ public class TestCurrencies {
 
         //Then
         double expectedValue = 5.95;
+        System.out.printf(japaneseYen.displayWithSymbol(expectedValue));
         Assert.assertTrue(actual == expectedValue);;
     }
-
-
 }

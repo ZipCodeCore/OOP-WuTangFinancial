@@ -1,8 +1,16 @@
 public abstract class Currency {
     private double exchangeRate;
+    private String currencySymbol;
 
-    public Currency(double exchangeRate){
+
+    public Currency(double exchangeRate, String currencySymbol){
         this.exchangeRate = exchangeRate;
+        this.currencySymbol = currencySymbol;
+    }
+
+    @Deprecated
+    public Currency(double exchangeRate){
+        this(exchangeRate, null);
     }
 
     protected  void changeRate(double newRate){
@@ -37,5 +45,13 @@ public abstract class Currency {
         double dividedValue = valueToDivide / 100;
         return dividedValue;
     }
+
+    protected String displayWithSymbol (double amount){
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.format("%4s", this.currencySymbol)).append(" " + amount + "\n");
+        return builder.toString();
+    }
+
+
 
 }
