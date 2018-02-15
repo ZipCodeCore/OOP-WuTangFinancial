@@ -1,5 +1,6 @@
 import java.text.NumberFormat;
 import java.util.TreeMap;
+import java.text.DecimalFormat;
 
 public class WuTangFinancial {
 
@@ -23,9 +24,8 @@ public class WuTangFinancial {
     }
 
         public String currencyConverter(String beginning, String ending, Double amountToConvert) {
-            DecimalFormat df = new DecimalFormat("#.##");
-            String result = df.format(Double.toString(this.convertList.get(ending)/ this.convertList.get(beginning) * amountToConvert));
-
+            DecimalFormat df=new DecimalFormat("###.##");
+            String result = df.format(this.convertList.get(ending)/ this.convertList.get(beginning) * amountToConvert);
             return result;
         }
 
