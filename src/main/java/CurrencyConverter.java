@@ -10,6 +10,7 @@ public class CurrencyConverter {
     private double convertIn;
     private TreeMap<String, Double> convertList;
     public double convertedValue;
+    private final String USD = "us dollar";
     private final String euro = "euro";
     private final String bP = "british pound";
     private final String iR = "indian rupee";
@@ -20,13 +21,11 @@ public class CurrencyConverter {
     private final String mR = "malaysian ringgit";
     private final String jY = "japanese yen";
     private final String cYR = "chinese yuan renminbi";
-    public enum  currencyTypes{
-        euro, britishPound, indianRupee
-    }
 
     public CurrencyConverter(double valueToConvert) {
         this.convertIn = valueToConvert;
         this.convertList = new TreeMap<String, Double>();
+        this.convertList.put(USD, 1.00);
         this.convertList.put(euro, 0.94);
         this.convertList.put(bP, 0.82);
         this.convertList.put(iR, 68.32);
@@ -41,28 +40,15 @@ public class CurrencyConverter {
     }
 
     public double convertingInterface(double moneyValue, String beginningC, String endDestination) {
-        Double conversionRate;
-
-        //from other to USD
-        if ((endDestination.toLowerCase()).equals("us dollar")) {
-            conversionRate = convertList.get(beginningC.toLowerCase());
-            convertedValue = fromOthertoUSD(moneyValue, conversionRate);
-        }
-        //from USD to other
-        else if (beginningC.toLowerCase().equals("us dollar")) {
-            conversionRate = convertList.get(endDestination.toLowerCase());
-            convertedValue = fromUSDtoOther(moneyValue, conversionRate);
-        } else {
+        double conversionRate;
             //convert beginning to USD
-            double result;
+            double buffer;
             conversionRate = convertList.get(beginningC.toLowerCase());
-            result = fromOthertoUSD(moneyValue, conversionRate);
+            buffer = fromOthertoUSD(moneyValue, conversionRate);
 
             //convert USD to other
             conversionRate = convertList.get(endDestination.toLowerCase());
-            convertedValue = fromUSDtoOther(result, conversionRate);
-
-        }
+            convertedValue = fromUSDtoOther(buffer, conversionRate);
 
         //money rounding
         double temp = convertedValue * 100;
