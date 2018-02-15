@@ -1,16 +1,59 @@
 import org.junit.Assert;
 //import org.junit.Before;
+import org.junit.Before;
 import org.junit.Test;
 
-public class TestCurrencyConverter {
+public class TestCurrencies {
+
+    Dollar dollar;
+    AustralianDollar australianDollar;
+    BritishPound britishPound;
+    CanadianDollar canadianDollar;
+    ChineseYuan chineseYuan;
+    Euro euro;
+    IndianRupee indianRupee;
+    JapaneseYen japaneseYen;
+    MalaysianRinggit malaysianRinggit;
+    SingaporeDollar singaporeDollar;
+    SwissFranc swissFranc;
+
+    @Before
+    public void setUp() {
+        dollar = new Dollar(1.00);
+        australianDollar = new AustralianDollar(1.35);
+        britishPound = new BritishPound(0.82);
+        canadianDollar = new CanadianDollar(1.32);
+        chineseYuan = new ChineseYuan(6.92);
+        euro = new Euro(0.94);
+        indianRupee = new IndianRupee(68.32);
+        japaneseYen = new JapaneseYen(115.84);
+        malaysianRinggit = new MalaysianRinggit(4.47);
+        singaporeDollar = new SingaporeDollar(1.43);
+        swissFranc = new SwissFranc(1.01);
+    }
+
+    @Test
+    public void testChangeRate(){
+        //Given
+        indianRupee.changeRate(1000);
+
+        //When
+        double actual = indianRupee.getRate();
+
+        //Then
+        double expectedValue = 1000;
+        Assert.assertTrue(actual == expectedValue);
+
+
+    }
 
     @Test
     public void testMultiplyBy100(){
         //Given
-        double initialValue = 68.32;
+        double initialValue = this.indianRupee.getRate();
 
         //When
-        double actual = CurrencyConverter.multiplyBy100(initialValue);
+        double actual = indianRupee.multiplyBy100(initialValue);
 
         //Then
         double expectedValue = 6832;
@@ -22,10 +65,10 @@ public class TestCurrencyConverter {
     @Test
     public void testDivideBy100(){
         //Given
-        double initialValue = CurrencyConverter.multiplyBy100(CurrencyConverter.INDIAN_RUPEE);
+        double initialValue = indianRupee.multiplyBy100(indianRupee.getRate());
 
         //When
-        double actual = CurrencyConverter.divideBy100(initialValue);
+        double actual = indianRupee.divideBy100(initialValue);
 
         //Then
         double expectedValue = 68.32;
@@ -38,7 +81,7 @@ public class TestCurrencyConverter {
         double initialValue = 1;
 
         //When
-        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.INDIAN_RUPEE);
+        double actual = indianRupee.convertFromDollars(initialValue);
 
         //Then
         double expectedValue = 68.32;
@@ -51,7 +94,7 @@ public class TestCurrencyConverter {
         double initialValue = 1.5;
 
         //When
-        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.INDIAN_RUPEE);
+        double actual = indianRupee.convertFromDollars(initialValue);
 
         //Then
         double expectedValue = 102.48;
@@ -65,7 +108,7 @@ public class TestCurrencyConverter {
         double initialValue = 100.96;
 
         //When
-        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.AUSTRALIAN_DOLLAR);
+        double actual = australianDollar.convertFromDollars(initialValue);
 
         //Then
         double expectedValue =136.3;
@@ -79,7 +122,7 @@ public class TestCurrencyConverter {
         double initialValue = 68.32;
 
         //When
-        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.INDIAN_RUPEE);
+        double actual = indianRupee.convertToDollars(initialValue);
 
         //Then
         double expectedValue = 1;
@@ -92,7 +135,7 @@ public class TestCurrencyConverter {
         double initialValue = 100.76;
 
         //When
-        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.CHINESE_YUAN);
+        double actual = chineseYuan.convertToDollars(initialValue);
 
         //Then
         double expectedValue = 14.56;
@@ -105,7 +148,7 @@ public class TestCurrencyConverter {
         double initialValue = 12582.03;
 
         //When
-        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.CANADIAN_DOLLAR);
+        double actual = canadianDollar.convertToDollars(initialValue);
 
         //Then
         double expectedValue = 9531.84;
@@ -118,7 +161,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromDollars(initialValue, CurrencyConverter.EURO);
+        double actual = euro.convertFromDollars(initialValue);
 
         //Then
         double expectedValue =94;
@@ -131,7 +174,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertToDollars(initialValue, CurrencyConverter.EURO);
+        double actual = euro.convertToDollars(initialValue);
 
         //Then
         double expectedValue = 106.38;
@@ -144,8 +187,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.EURO, CurrencyConverter.BRITISH_POUND);
+        double actual = euro.convertToNewCurrency(initialValue, britishPound);
 
         //Then
         double expectedValue = 87.23;
@@ -158,8 +200,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.BRITISH_POUND, CurrencyConverter.INDIAN_RUPEE);
+        double actual = britishPound.convertToNewCurrency(initialValue, indianRupee);
 
         //Then
         double expectedValue = 8331.62;
@@ -172,8 +213,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.INDIAN_RUPEE, CurrencyConverter.CANADIAN_DOLLAR);
+        double actual = indianRupee.convertToNewCurrency(initialValue, canadianDollar);
 
         //Then
         double expectedValue = 1.93;
@@ -186,8 +226,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.CANADIAN_DOLLAR, CurrencyConverter.SINGAPORE_DOLLAR);
+        double actual = canadianDollar.convertToNewCurrency(initialValue, singaporeDollar);
 
         //Then
         double expectedValue = 108.34;
@@ -200,8 +239,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.SINGAPORE_DOLLAR, CurrencyConverter.SWISS_FRANC);
+        double actual = singaporeDollar.convertToNewCurrency(initialValue, swissFranc);
 
         //Then
         double expectedValue = 70.63;
@@ -214,8 +252,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.SWISS_FRANC, CurrencyConverter.MALAYSIAN_RINGGIT);
+        double actual = swissFranc.convertToNewCurrency(initialValue, malaysianRinggit);
 
         //Then
         double expectedValue = 442.57;
@@ -228,8 +265,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.MALAYSIAN_RINGGIT, CurrencyConverter.JAPANESE_YEN);
+        double actual = malaysianRinggit.convertToNewCurrency(initialValue, japaneseYen);
 
         //Then
         double expectedValue = 2591.34;
@@ -242,8 +278,7 @@ public class TestCurrencyConverter {
         double initialValue = 100;
 
         //When
-        double actual = CurrencyConverter.convertFromForeignAToForiegnB
-                (initialValue,CurrencyConverter.JAPANESE_YEN, CurrencyConverter.CHINESE_YUAN);
+        double actual = japaneseYen.convertToNewCurrency(initialValue, chineseYuan);
 
         //Then
         double expectedValue = 5.95;
