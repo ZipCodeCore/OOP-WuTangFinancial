@@ -22,6 +22,24 @@ public class CurrencyConverterTest {
 
     }
     @Test
+    public void convertEurotoDollar() {
+        //Arrange
+        double initialValue = .94; //starting currency
+        double expectedValue = 1; //what you want your currency to exchange
+        String startingCurrency = "EUR";
+        String endingCurrency = "USD";
+
+        //Act
+        CurrencyConverter currencyConverter = new CurrencyConverter(); //new object to test method
+        double actual = currencyConverter.convert(initialValue, startingCurrency, endingCurrency);
+        //call on our method 'convert; with values to test
+
+        //Assert
+        Assert.assertEquals(expectedValue, actual, .000000001);
+        //delta means how long we want our decimal to go
+
+    }
+    @Test
     public void convertEurotoPound() {
         //Arrange
         double initialValue = .94; //starting currency

@@ -1,5 +1,8 @@
  public class CurrencyConverter {
-
+//private forces encapsulation
+     //static only one value shared by entire class
+     //final cannot be changed
+     //double type
      private static final double USD = 1.00;
      private static final double EUR = 0.94;
      private static final double GBP = 0.82;
@@ -15,7 +18,7 @@
 
      //method 'convert' to get the value(amount of money to exchange) * ending/starting
      public double convert(double value, String starting, String ending) {
-
+//to convert you need to take the value given and
          return value * getExchangeRate(ending) / getExchangeRate(starting);
      }
 
