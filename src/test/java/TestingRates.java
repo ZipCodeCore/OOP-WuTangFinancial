@@ -29,9 +29,9 @@ public class TestingRates {
         }
 
         @Test
-        public void testRUPEEtoCAD () {
-        double expectedAmount = 1.55;
-        double actualAmount = testRate.conversionFormula("RUPEE", "CAD", 80.00);
+        public void testEUROtoPOUND () {
+        double expectedAmount = 21.80;
+        double actualAmount = testRate.conversionFormula("EURO", "POUND", 25.00);
         Assert.assertEquals("Convert Rupee to Canadian Dollar", expectedAmount, actualAmount, 0.1);
         }
 
@@ -40,6 +40,13 @@ public class TestingRates {
         double expectedAmount = 2916.10;
         double actualAmount = testRate.conversionFormula("POUND", "RUPEE", 35.00);
         Assert.assertEquals("Convert British Pound to Indian Rupee", expectedAmount, actualAmount, 0.1);
+        }
+
+        @Test
+        public void testRUPEEtoCAD () {
+        double expectedAmount = 1.55;
+        double actualAmount = testRate.conversionFormula("RUPEE", "CAD", 80.00);
+        Assert.assertEquals("Convert Rupee to Canadian Dollar", expectedAmount, actualAmount, 0.1);
         }
 
         @Test
