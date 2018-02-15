@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.text.DecimalFormat;
 
     /**
      * Created by Kibret
@@ -31,8 +32,9 @@ public class CurrencyConverter {
 
 
     public String currencyConverter(String fromCurrencyCode, String toCurrencyCode, Float amountToConvert) {
-        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
-        String result =currencyFormatter.format(exchangeRateRecord.get(toCurrencyCode) / (exchangeRateRecord.get(fromCurrencyCode))* amountToConvert);
+        DecimalFormat formatter = new DecimalFormat("0.##");
+        // NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
+        String result =formatter.format(exchangeRateRecord.get(toCurrencyCode) / (exchangeRateRecord.get(fromCurrencyCode))* amountToConvert);
         return result;
 
 
