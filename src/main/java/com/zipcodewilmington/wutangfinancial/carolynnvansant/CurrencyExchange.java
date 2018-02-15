@@ -1,10 +1,4 @@
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.Iterator;
-import java.util.Scanner;
-
+package com.zipcodewilmington.wutangfinancial.carolynnvansant;
 
 public class CurrencyExchange {
 //exchange rate table is computed in dollar to __
@@ -28,9 +22,9 @@ public class CurrencyExchange {
     }
 
 
-    public Double currencyRateConversion(Double firstRate, Double secondRate, Double money) {
-        Double conversion = (Math.round((1 / firstRate)*secondRate)*100d)/100d;
-        Double currencyLast = money * conversion;
+    public static Double currencyRateConversion(Double firstRate, Double secondRate, Double money) {
+        Double conversion = (1 / firstRate)*secondRate;
+        Double currencyLast = Math.round(money * conversion * 100d)/100d;
         return currencyLast;
     }
 
