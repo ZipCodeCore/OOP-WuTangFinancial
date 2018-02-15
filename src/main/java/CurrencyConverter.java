@@ -10,20 +10,33 @@ public class CurrencyConverter {
     private double convertIn;
     private TreeMap<String, Double> convertList;
     public double convertedValue;
+    private final String euro = "euro";
+    private final String bP = "british pound";
+    private final String iR = "indian rupee";
+    private final String a$ = "australian dollar";
+    private final String c$ = "canadian dollar";
+    private final String s$ = "singapore dollar";
+    private final String sF = "swiss franc";
+    private final String mR = "malaysian ringgit";
+    private final String jY = "japanese yen";
+    private final String cYR = "chinese yuan renminbi";
+    public enum  currencyTypes{
+        euro, britishPound, indianRupee
+    }
 
     public CurrencyConverter(double valueToConvert) {
         this.convertIn = valueToConvert;
         this.convertList = new TreeMap<String, Double>();
-        this.convertList.put("euro", 0.94);
-        this.convertList.put("british pound", 0.82);
-        this.convertList.put("indian rupee", 68.32);
-        this.convertList.put("australian dollar", 1.35);
-        this.convertList.put("canadian dollar", 1.32);
-        this.convertList.put("singapore dollar", 1.43);
-        this.convertList.put("swiss franc", 1.01);
-        this.convertList.put("malaysian ringgit", 4.47);
-        this.convertList.put("japanese yen", 115.84);
-        this.convertList.put("chinese yuan renminbi", 6.92);
+        this.convertList.put(euro, 0.94);
+        this.convertList.put(bP, 0.82);
+        this.convertList.put(iR, 68.32);
+        this.convertList.put(a$, 1.35);
+        this.convertList.put(c$, 1.32);
+        this.convertList.put(s$, 1.43);
+        this.convertList.put(sF, 1.01);
+        this.convertList.put(mR, 4.47);
+        this.convertList.put(jY, 115.84);
+        this.convertList.put(cYR, 6.92);
 
     }
 
