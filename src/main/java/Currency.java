@@ -1,5 +1,4 @@
-import java.util.Scanner;
-
+import java.text.DecimalFormat;
 
 public class Currency {
     public static final double USD = 1.00;
@@ -14,9 +13,12 @@ public class Currency {
     public static final double YEN = 115.84;
     public static final double YUAN = 6.92;
 
-
-    public static double exchanger(double initialVal, double firstCurrency, double secondCurrency) {
-        return (initialVal / firstCurrency) * secondCurrency;
+    private static double exchangerCalculation (double initialVal, double firstCurrency, double secondCurrency, double exchanger) {
+        exchanger = secondCurrency * (initialVal / firstCurrency);
+        return exchanger;
     }
 
+    public double getExchanger(double exchanger){
+        return exchanger;
+    }
 }
