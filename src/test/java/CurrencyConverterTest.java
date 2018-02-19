@@ -17,10 +17,11 @@ public class ConverterTest {
 
     enum testCurrencyEnum {USD,EUR,GBP, INR, AUD, CAD, SGD, CHF, MYR, JPY, CNY};
 
-    private double getExchangeRate (testCurrencyEnum theCurrency){
+    private double getExchangeRate (testCurrencyEnum desiredXRate){
 
-        switch(theCurrency){
-            case USD: return 1.00;
+        //i am not yet sure if i need to use return or System.out.println(). I think it's the latter.
+        switch(desiredXRate){
+            case USD: System.out.println(1.00);
             break;
 
             case EUR: return 0.94;
@@ -56,14 +57,7 @@ public class ConverterTest {
             default:
                 return 0.00;
 
-        }
     }
-
-    public static void main(String[] args) {
-
-    }
-
-    Converter testConverter;
 
     @Before
     public void setup (){
@@ -74,13 +68,86 @@ public class ConverterTest {
 
     @Test
     public void dollarToEuroTest(){
-        CurrencyConverter.dollarToEuroTest("EUR");
+        CurrencyConverter.dollarToEuroTest();
         double expected = 0;
         double actual = 0;
         Assert.assertequals(expected, actual, 0.001);
     }
 
+    @Test
+        public void euroToDollarTest(){
+            CurrencyConverter.euroToDollarTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+
+        @Test
+        public void dollarToBritishPoundTest(){
+            CurrencyConverter.dollarToBritishPoundTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+
+        @Test
+        public void poundToIndianRupeeTest(){
+            CurrencyConverter.poundToIndianRupeeTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+
+        @Test
+        public void rupeeToCanadianDollarTest(){
+            CurrencyConverter.rupeeToCanadianDollarTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+
+        @Test
+        public void CanadianDollarToSingaporeDollarTest(){
+            CurrencyConverter.CanadianDollarToSingaporeDollarTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+
+        @Test
+        public void singaporeDollarToSwissFrancTest(){
+            CurrencyConverter.singaporeDollarToSwissFrancTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+
+        @Test
+        public void swissFrancToMalaysianRingittTest(){
+            CurrencyConverter.swissFrancToMalaysianRingittTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+        @Test
+        public void japaneseYentoChineseYuanRenminbi(){
+            CurrencyConverter.swissFrancToMalaysianRingittTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
+        @Test
+        public void malaysianRingittToJapaneseYuanTest(){
+            CurrencyConverter.malaysianRingittToJapaneseYuanTest();
+            double expected = 0;
+            double actual = 0;
+            Assert.assertequals(expected, actual, 0.001);
+        }
 
 
-    //end
+
+
+
+
+        //end
 }
